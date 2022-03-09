@@ -29,6 +29,8 @@ struct SitUpsSumView: View {
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal)
                 Spacer()
+            }.onAppear{
+                pickerSelection2 = 0
             }
             if pickerSelection == 0{
                 if pickerSelection2 == 0{
