@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PushUpsView: View {
-    @ObservedObject var calc = PushController()
+    @ObservedObject var pushUpsControlller = PushUpsController()
     @State var saveFlag = false
     @State var revise = false
     @State var stopFlag = false
@@ -18,7 +18,7 @@ struct PushUpsView: View {
         let height = bounds.height
         let width = bounds.width
         ZStack{
-            Image("u")
+            Image("udetate_gray")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .opacity(0.3)
@@ -43,7 +43,7 @@ struct PushUpsView: View {
                         .padding()
                 }
                 Spacer()
-                Text("\(calc.counter)")
+                Text("\(pushUpsControlller.counter)")
                     .font(.largeTitle)
                     .padding()
                 Spacer()
@@ -51,7 +51,7 @@ struct PushUpsView: View {
                     Spacer()
                     if saveFlag {
                         Button(action: {
-                            calc.startCalc()
+                            pushUpsControlller.startCalc()
                             saveFlag = false
                             stopFlag = true
                             status = 1
@@ -70,7 +70,7 @@ struct PushUpsView: View {
                             .padding()
                     } else {
                         Button(action: {
-                            calc.startCalc()
+                            pushUpsControlller.startCalc()
                             saveFlag = false
                             stopFlag = true
                             status = 1
@@ -79,7 +79,7 @@ struct PushUpsView: View {
                                 .font(.title)
                                 .foregroundColor(Color.white)
                                 .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("startColor2"))
+                                .background(Color("light_blue"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
                                 .padding(.trailing)
@@ -92,8 +92,8 @@ struct PushUpsView: View {
                     if(saveFlag){
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
-                            calc.saveDate()
-                            calc.counter = 0
+                            pushUpsControlller.saveDate()
+                            pushUpsControlller.counter = 0
                             saveFlag = false
                             status = 0
                         }) {
@@ -109,7 +109,7 @@ struct PushUpsView: View {
                     }else{
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
-                            calc.stopCalc()
+                            pushUpsControlller.stopCalc()
                             saveFlag = true
                             stopFlag = false
                             status = 2
@@ -132,7 +132,7 @@ struct PushUpsView: View {
                     }.labelsHidden()
                         .padding()
                     Spacer()
-                    TextField("count", value: $calc.counter, formatter: NumberFormatter())
+                    TextField("count", value: $pushUpsControlller.counter, formatter: NumberFormatter())
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.title2)
                         .frame(width: width * 0.3)
@@ -143,7 +143,7 @@ struct PushUpsView: View {
                 if revise {
                     HStack{
                         Button(action: {
-                            calc.minus()
+                            pushUpsControlller.minus()
                         }, label: {
                             Text("ー")
                                 .font(.title)
@@ -151,14 +151,14 @@ struct PushUpsView: View {
                         }).padding([.leading, .bottom])
                         Spacer()
                         Button(action: {
-                            calc.plus()
+                            pushUpsControlller.plus()
                         }, label: {
                             Text("＋")
                                 .font(.title)
                         }).padding(.bottom)
                         Spacer()
                         Button(action: {
-                            calc.reset()
+                            pushUpsControlller.reset()
                         }, label: {
                             Text("Reset")
                                 .font(.title)

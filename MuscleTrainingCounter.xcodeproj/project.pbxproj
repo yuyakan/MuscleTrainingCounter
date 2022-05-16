@@ -11,14 +11,14 @@
 		4B1280FA27D5F129000890E2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1280F927D5F129000890E2 /* SwiftUICharts */; };
 		4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
 		4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
-		4B2FE2D327D8B86C007B77E6 /* Tutorial1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */; };
-		4B2FE2D427D8B86C007B77E6 /* Tutorial1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */; };
-		4B2FE2D627D8BD4D007B77E6 /* Tutorial2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */; };
-		4B2FE2D727D8BD4D007B77E6 /* Tutorial2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */; };
+		4B2FE2D327D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* AirpodsSettingTutorialView.swift */; };
+		4B2FE2D427D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* AirpodsSettingTutorialView.swift */; };
+		4B2FE2D627D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */; };
+		4B2FE2D727D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */; };
 		4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
 		4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
-		4B508F8027D670C2007B1EA8 /* PushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushController.swift */; };
-		4B508F8127D670C2007B1EA8 /* PushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushController.swift */; };
+		4B508F8027D670C2007B1EA8 /* PushUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */; };
+		4B508F8127D670C2007B1EA8 /* PushUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E7B27D3B180000A5A4F /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7A27D3B180000A5A4F /* Tests_iOSLaunchTests.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
@@ -29,12 +29,12 @@
 		4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E6127D3B17E000A5A4F /* ContentView.swift */; };
 		4BD50E8C27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
 		4BD50E8D27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
-		4BD50E9D27D3B2D3000A5A4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */; };
-		4BD50E9E27D3B2D3000A5A4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */; };
+		4BD50E9D27D3B2D3000A5A4F /* SitUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */; };
+		4BD50E9E27D3B2D3000A5A4F /* SitUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */; };
 		4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
 		4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
-		4BD50EA327D4A505000A5A4F /* SitUpsSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */; };
-		4BD50EA427D4A505000A5A4F /* SitUpsSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */; };
+		4BD50EA327D4A505000A5A4F /* SumGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SumGraphView.swift */; };
+		4BD50EA427D4A505000A5A4F /* SumGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SumGraphView.swift */; };
 		4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
 		4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
 		A9902CA531F9FEF854B33B01 /* Pods_MuscleTrainingCounter__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */; };
@@ -61,10 +61,10 @@
 		20F2CFEBC7C3C22837C0A680 /* Pods-MuscleTrainingCounter (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (iOS).debug.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleTrainingCounter__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1View.swift; sourceTree = "<group>"; };
-		4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2View.swift; sourceTree = "<group>"; };
+		4B2FE2D227D8B86C007B77E6 /* AirpodsSettingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirpodsSettingTutorialView.swift; sourceTree = "<group>"; };
+		4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTutorialView.swift; sourceTree = "<group>"; };
 		4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsView.swift; sourceTree = "<group>"; };
-		4B508F7F27D670C1007B1EA8 /* PushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushController.swift; sourceTree = "<group>"; };
+		4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsController.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,9 +77,9 @@
 		4BD50E8027D3B180000A5A4F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsController.swift; sourceTree = "<group>"; };
 		4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsView.swift; sourceTree = "<group>"; };
-		4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsSumView.swift; sourceTree = "<group>"; };
+		4BD50EA227D4A505000A5A4F /* SumGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumGraphView.swift; sourceTree = "<group>"; };
 		4BE3A47027F835A400C32B42 /* MuscleTrainingCounter--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MuscleTrainingCounter--iOS--Info.plist"; sourceTree = "<group>"; };
 		4BE3A47127F8383100C32B42 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		B1C399156F0EB9D3D413E00E /* Pods-MuscleTrainingCounter (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (macOS).release.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (macOS)/Pods-MuscleTrainingCounter (macOS).release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +132,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4B93F9132832B7BB0076288F /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */,
+				4B2FE2D227D8B86C007B77E6 /* AirpodsSettingTutorialView.swift */,
+				4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		4BD50E5A27D3B17D000A5A4F = {
 			isa = PBXGroup;
 			children = (
@@ -150,16 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */,
+				4B93F9132832B7BB0076288F /* Tutorial */,
 				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
 				4BD50E6127D3B17E000A5A4F /* ContentView.swift */,
-				4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */,
-				4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */,
-				4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */,
 				4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */,
+				4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */,
 				4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */,
-				4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */,
-				4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */,
-				4B508F7F27D670C1007B1EA8 /* PushController.swift */,
+				4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */,
+				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -444,17 +452,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD50E9D27D3B2D3000A5A4F /* ViewController.swift in Sources */,
+				4BD50E9D27D3B2D3000A5A4F /* SitUpsController.swift in Sources */,
 				4BD50E8A27D3B180000A5A4F /* ContentView.swift in Sources */,
-				4B2FE2D327D8B86C007B77E6 /* Tutorial1View.swift in Sources */,
-				4B508F8027D670C2007B1EA8 /* PushController.swift in Sources */,
+				4B2FE2D327D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
+				4B508F8027D670C2007B1EA8 /* PushUpsController.swift in Sources */,
 				4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */,
 				4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8827D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
-				4BD50EA327D4A505000A5A4F /* SitUpsSumView.swift in Sources */,
-				4B2FE2D627D8BD4D007B77E6 /* Tutorial2View.swift in Sources */,
+				4BD50EA327D4A505000A5A4F /* SumGraphView.swift in Sources */,
+				4B2FE2D627D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,17 +470,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD50E9E27D3B2D3000A5A4F /* ViewController.swift in Sources */,
+				4BD50E9E27D3B2D3000A5A4F /* SitUpsController.swift in Sources */,
 				4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */,
-				4B2FE2D427D8B86C007B77E6 /* Tutorial1View.swift in Sources */,
-				4B508F8127D670C2007B1EA8 /* PushController.swift in Sources */,
+				4B2FE2D427D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
+				4B508F8127D670C2007B1EA8 /* PushUpsController.swift in Sources */,
 				4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */,
 				4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8927D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
-				4BD50EA427D4A505000A5A4F /* SitUpsSumView.swift in Sources */,
-				4B2FE2D727D8BD4D007B77E6 /* Tutorial2View.swift in Sources */,
+				4BD50EA427D4A505000A5A4F /* SumGraphView.swift in Sources */,
+				4B2FE2D727D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

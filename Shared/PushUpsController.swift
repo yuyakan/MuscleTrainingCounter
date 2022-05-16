@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  PushController.swift
 //  MuscleTrainingCounter
 //
-//  Created by 上別縄祐也 on 2022/03/06.
+//  Created by 上別縄祐也 on 2022/03/08.
 //
 
 import UIKit
@@ -10,64 +10,46 @@ import CoreMotion
 import SwiftUI
 import AVFoundation
 
-class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
+class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
     @Published var counter = 0
-    @Published var array: [Double] = [0.0]
-    @Published var arrayW: [Double] = [0.0]
-    @Published var arrayM: [Double] = [0.0]
+    @Published var daySumCount: [Double] = [0.0]
+    @Published var weekSumCount: [Double] = [0.0]
+    @Published var monthSumCount: [Double] = [0.0]
     
     let Airpods = CMHeadphoneMotionManager()
     
     var number = 0
-    var alls : Double = 0.0
-    var alls_m : Double = 0.0
-    var alls2 : Double = 0.0
-    var alls_m2 : Double = 0.0
-    var flag = false
-    var flag_m = true
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        Airpods.delegate = self
-    }
-
-    override func viewWillAppear(_ flag: Bool){
-        super.viewWillAppear(flag)
-        UIApplication.shared.isIdleTimerDisabled = true
-    }
+    var alls : Double = 0
+    var alls_m : Double = 0
+    var flag = true
+    var flag_m = false
     
     func startCalc(){
         print("start")
         Airpods.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
             guard let motion = motion else { return }
-            self?.getDataRotate(motion)
+            self?.getDataAccel(motion)
         })
     }
     
-    func getDataRotate(_ data: CMDeviceMotion){
-        let x = data.rotationRate.x
+    func getDataAccel(_ data: CMDeviceMotion){
         let y = data.userAcceleration.y
-        if ((x > 0.0 || y > 0.0) && flag == true){
-            alls += x
-            alls2 += y
-            print(alls)
-        }else if((x < 0.0 || y < 0.0) && flag_m == true){
-            alls_m += x
+        if (y > 0.0 && flag == true){
+            alls += y
+        }else if(y < 0.0 && flag_m == true){
             alls_m += y
         }
-        if (alls > 20.0 || alls2 > 0.7){
+        if (alls  > 1.0){
             flag_m = true
-            alls_m = 0.0
             alls = 0.0
+            alls_m = 0.0
         }
-        if ((alls_m < -20 || alls_m2 < -2.0) && flag_m == true){
+        if (alls_m < -0.8 && flag_m == true){
             counter += 1
             flag = true
             flag_m = false
             alls = 0.0
             alls_m = 0.0
-            alls2 = 0.0
-            alls_m2 = 0.0
             number += 1
         }
     }
@@ -98,7 +80,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, Observ
         formatter.dateFormat = "yyyy/MM/dd"
         formatter_m.dateFormat = "yyyy/MM"
         
-        let now_day = Date()
+        let now_day = Date(timeIntervalSinceNow: 60 * 60 * 9)
         
         var judge = Bool()
         var judge_w = Bool()
@@ -107,8 +89,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, Observ
         var daySpan = 0
         var weekSpan = 0
 
-        if UD.object(forKey: "today") != nil {
-            let past_day = UD.object(forKey: "today") as! Date
+        if UD.object(forKey: "today_p") != nil {
+            let past_day = UD.object(forKey: "today_p") as! Date
             let now = formatter.string(from: now_day)
             let past = formatter.string(from: past_day)
             let span = now_day.timeIntervalSince(past_day)
@@ -128,50 +110,48 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, Observ
             let span_w = now_.timeIntervalSince(past_)
             weekSpan = Int(span_w/60/60/24/7)
 
+             //日にちが変わっていた場合
             if now != past {
                 judge = true
             }
             else {
                 judge = false
-                print(now)
             }
             
             if now_w != past_w {
                 judge_w = true
-                UD.set([0.0], forKey: "NumArray")
+                UD.set([0.0], forKey: "NumArray_p")
             }
             else {
                 judge_w = false
-                print(now_w)
             }
 
             if now_m != past_m {
-                judge_m = true
-                UD.set([0.0], forKey: "NumArray_w")
+               judge_m = true
+                UD.set([0.0], forKey: "NumArray_w_p")
             }
             else {
-                judge_m = false
-                print(now_m)
+               judge_m = false
             }
-            UD.set(now_day, forKey: "today")
+            UD.set(now_day, forKey: "today_p")
          }
-        
+         //初回実行のみelse
          else {
              judge = true
              judge_w = true
              judge_m = true
              
-             UD.set(now_day, forKey: "today")
-             UD.set([0.0], forKey: "NumArray")
-             UD.set([0.0], forKey: "NumArray_w")
-             UD.set([0.0], forKey: "NumArray_m")
+             UD.set(now_day, forKey: "today_p")
+             UD.set([0.0], forKey: "NumArray_p")
+             UD.set([0.0], forKey: "NumArray_w_p")
+             UD.set([0.0], forKey: "NumArray_m_p")
          }
 
          /* 日付が変わった場合はtrueの処理 */
          if judge == true {
               judge = false
-             if UD.array(forKey: "NumArray") != nil {
-                 valueToSave = UD.array(forKey: "NumArray")! as! [Double]
+             if UD.array(forKey: "NumArray_p") != nil {
+                 valueToSave = UD.array(forKey: "NumArray_p")! as! [Double]
                  if daySpan > 1 {
                      for i in 2...daySpan{
                          print(i)
@@ -179,80 +159,75 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, Observ
                      }
                  }
              }else{
-                 UD.set(valueToSave, forKey: "NumArray")
+                 UD.set(valueToSave, forKey: "NumArray_p")
              }
              valueToSave.append(Double(counter))
-             UserDefaults.standard.set(valueToSave, forKey: "NumArray")
+             UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
              
          }
          else {
-             if UD.array(forKey: "NumArray") != nil {
-                 valueToSave = UD.array(forKey: "NumArray")! as! [Double]
+             if UD.array(forKey: "NumArray_p") != nil {
+                 valueToSave = UD.array(forKey: "NumArray_p")! as! [Double]
                  temp = valueToSave.removeLast()
                  valueToSave.append(Double(counter) + temp)
              }else{
-                 UD.set(valueToSave, forKey: "NumArray")
+                 UD.set(valueToSave, forKey: "NumArray_p")
                  valueToSave.append(Double(counter))
              }
-             UserDefaults.standard.set(valueToSave, forKey: "NumArray")
+             UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
          }
         
         if judge_w == true {
              judge_w = false
-            if UD.array(forKey: "NumArray_w") != nil {
-                valueToSave = UD.array(forKey: "NumArray_w")! as! [Double]
+            if UD.array(forKey: "NumArray_w_p") != nil {
+                valueToSave = UD.array(forKey: "NumArray_w_p")! as! [Double]
                 if weekSpan > 1 {
                     for i in 2...weekSpan{
                         print(i)
                         valueToSave.append(0.0)
                     }
                 }
-                print("a")
             }else{
-                UD.set(valueToSave, forKey: "NumArray_w")
-                print("b")
+                UD.set(valueToSave, forKey: "NumArray_w_p")
             }
             valueToSave.append(Double(counter))
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w")
+            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
             
         }
         else {
-            if UD.array(forKey: "NumArray_w") != nil {
-                valueToSave = UD.array(forKey: "NumArray_w")! as! [Double]
+            if UD.array(forKey: "NumArray_w_p") != nil {
+                valueToSave = UD.array(forKey: "NumArray_w_p")! as! [Double]
                 temp = valueToSave.removeLast()
                 valueToSave.append(Double(counter) + temp)
-                print("c")
             }else{
-                UD.set(valueToSave, forKey: "NumArray_w")
+                UD.set(valueToSave, forKey: "NumArray_w_p")
                 valueToSave.append(Double(counter))
-                print("d")
             }
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w")
+            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
         }
         
         if judge_m == true {
              judge_m = false
-            if UD.array(forKey: "NumArray_m") != nil {
-                valueToSave = UD.array(forKey: "NumArray_m")! as! [Double]
+            if UD.array(forKey: "NumArray_m_p") != nil {
+                valueToSave = UD.array(forKey: "NumArray_m_p")! as! [Double]
             }else{
-                UD.set(valueToSave, forKey: "NumArray_m")
+                UD.set(valueToSave, forKey: "NumArray_m_p")
             }
             valueToSave.append(Double(counter))
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m")
+            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
             
         }
         else {
-            if UD.array(forKey: "NumArray_m") != nil {
-                valueToSave = UD.array(forKey: "NumArray_m")! as! [Double]
+            if UD.array(forKey: "NumArray_m_p") != nil {
+                valueToSave = UD.array(forKey: "NumArray_m_p")! as! [Double]
                 temp = valueToSave.removeLast()
                 valueToSave.append(Double(counter) + temp)
             }else{
-                UD.set(valueToSave, forKey: "NumArray_m")
+                UD.set(valueToSave, forKey: "NumArray_m_p")
                 valueToSave.append(Double(counter))
             }
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m")
+            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
         }
-        
         number = 0
         counter = 0
         alls = 0
@@ -262,17 +237,14 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, Observ
     }
     
     func ArrayDisplay(){
-        array = (UD.array(forKey: "NumArray") ?? [0.0]) as! [Double]
+        daySumCount = (UD.array(forKey: "NumArray_p") ?? [0.0]) as! [Double]
     }
     
     func ArrayDisplayW(){
-        arrayW = (UD.array(forKey: "NumArray_w") ?? [0.0]) as! [Double]
+        weekSumCount = (UD.array(forKey: "NumArray_w_p") ?? [0.0]) as! [Double]
     }
     
     func ArrayDisplayM(){
-        arrayM = (UD.array(forKey: "NumArray_m") ?? [0.0]) as! [Double]
+        monthSumCount = (UD.array(forKey: "NumArray_m_p") ?? [0.0]) as! [Double]
     }
 }
-
-
-

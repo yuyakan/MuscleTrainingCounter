@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct Tutorial2View: View {
+struct CompleteTutorialView: View {
     var body: some View {
         let bounds = UIScreen.main.bounds
         let height = bounds.height
 
         ZStack{
-            Color("startColor2").edgesIgnoringSafeArea(.all)
+            Color("light_blue").edgesIgnoringSafeArea(.all)
             VStack{
-                Image("f_")
+                Image("fukkin_white")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: height * 0.2)
                 Text("Start when you are ready!")
                     .font(.title)
-                Image("u_")
+                Image("udetate_white")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: height * 0.2)
@@ -30,8 +30,3 @@ struct Tutorial2View: View {
     }
 }
 
-struct Tutorial2View_Previews: PreviewProvider {
-    static var previews: some View {
-        Tutorial2View()
-    }
-}

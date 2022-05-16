@@ -10,17 +10,17 @@ import SwiftUICharts
 
 struct ContentView: View {
     @State var tabIndex:Int = 0
-    @State var visit = UserDefaults.standard.bool(forKey: "visit")
+    @State var isVisit = UserDefaults.standard.bool(forKey: "visit")
     var body: some View {
         VStack{
             TabView(selection: $tabIndex){
                 SitUpsView().tabItem{
                     Group{
-                        Image("f3")
+                        Image("small_fukkin_gray")
                         Text("Sit-ups")
                     }
                 }.tag(0)
-                SitUpsSumView()
+                SumGraphView()
                     .tabItem{
                     Group{
                         Image(systemName: "chart.bar")
@@ -29,13 +29,13 @@ struct ContentView: View {
                 }.tag(1)
                 PushUpsView().tabItem{
                     Group{
-                        Image("u2")
+                        Image("small_udetate_gray")
                         Text("Push-ups")
                     }
                 }
             }.padding(.bottom)
-                .fullScreenCover(isPresented: $visit, content: {
-                    TutorialView(visit: $visit)
+                .fullScreenCover(isPresented: $isVisit, content: {
+                    TutorialView(visit: $isVisit)
                 })
             BannerAd(unitID: "ca-app-pub-3940256099942544/2934735716")//テスト
                 .frame(height: 50)
@@ -50,8 +50,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 func setup(){
-    let visit = UserDefaults.standard.bool(forKey: "visit")
-    if visit {
+    let isVisit = UserDefaults.standard.bool(forKey: "visit")
+    if isVisit {
         print("二回目以降")
         UserDefaults.standard.set(false, forKey: "visit")
     } else {

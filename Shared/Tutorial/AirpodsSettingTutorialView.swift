@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Tutorial1View: View {
+struct AirpodsSettingTutorialView: View {
     var body: some View {
         ZStack{
-            Color("startColor2").edgesIgnoringSafeArea(.all)
+            Color("light_blue").edgesIgnoringSafeArea(.all)
             VStack{
                 HStack{
                     Image(systemName: "airpods.gen3")

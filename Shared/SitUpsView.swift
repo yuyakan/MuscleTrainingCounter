@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SitUpsView: View {
-    @ObservedObject var calc = ViewController()
+    @ObservedObject var sitUpsControlller = SitUpsController()
     @State var saveFlag = false
     @State var revise = false
     @State var stopFlag = false
@@ -18,7 +18,7 @@ struct SitUpsView: View {
         let height = bounds.height
         let width = bounds.width
         ZStack{
-            Image("f")
+            Image("fukkin_gray")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .opacity(0.5)
@@ -43,7 +43,7 @@ struct SitUpsView: View {
                         .padding()
                 }
                 Spacer()
-                Text("\(calc.counter)")
+                Text("\(sitUpsControlller.counter)")
                     .font(.largeTitle)
                     .padding()
                 Spacer()
@@ -51,7 +51,7 @@ struct SitUpsView: View {
                     Spacer()
                     if saveFlag {
                         Button(action: {
-                            calc.startCalc()
+                            sitUpsControlller.startCalc()
                             saveFlag = false
                             status = 1
                             stopFlag = true
@@ -68,7 +68,7 @@ struct SitUpsView: View {
                             .padding()
                     }else {
                         Button(action: {
-                            calc.startCalc()
+                            sitUpsControlller.startCalc()
                             saveFlag = false
                             status = 1
                             stopFlag = true
@@ -77,7 +77,7 @@ struct SitUpsView: View {
                                 .font(.title)
                                 .foregroundColor(Color.white)
                                 .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("startColor2"))
+                                .background(Color("light_blue"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
                                 .padding(.trailing)
@@ -90,8 +90,8 @@ struct SitUpsView: View {
                     if(saveFlag){
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
-                            calc.saveDate()
-                            calc.counter = 0
+                            sitUpsControlller.saveDate()
+                            sitUpsControlller.counter = 0
                             saveFlag = false
                             status = 0
                         }) {
@@ -107,7 +107,7 @@ struct SitUpsView: View {
                     }else{
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
-                            calc.stopCalc()
+                            sitUpsControlller.stopCalc()
                             saveFlag = true
                             status = 2
                             stopFlag = false
@@ -130,7 +130,7 @@ struct SitUpsView: View {
                     }.labelsHidden()
                         .padding()
                     Spacer()
-                    TextField("count", value: $calc.counter, formatter: NumberFormatter())
+                    TextField("count", value: $sitUpsControlller.counter, formatter: NumberFormatter())
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.title2)
                         .frame(width: width * 0.3)
@@ -141,7 +141,7 @@ struct SitUpsView: View {
                 if revise {
                     HStack{
                         Button(action: {
-                            calc.minus()
+                            sitUpsControlller.minus()
                         }, label: {
                             Text("ー")
                                 .font(.title)
@@ -149,14 +149,14 @@ struct SitUpsView: View {
                         }).padding([.leading, .bottom])
                         Spacer()
                         Button(action: {
-                            calc.plus()
+                            sitUpsControlller.plus()
                         }, label: {
                             Text("＋")
                                 .font(.title)
                         }).padding(.bottom)
                         Spacer()
                         Button(action: {
-                            calc.reset()
+                            sitUpsControlller.reset()
                         }, label: {
                             Text("Reset")
                                 .font(.title)

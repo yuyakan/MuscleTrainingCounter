@@ -16,9 +16,9 @@ struct TutorialView: View {
         VStack{
             TabView(selection: $selection,
                 content: {
-                    Tutorial1View()
+                    AirpodsSettingTutorialView()
                         .tag(1)
-                    Tutorial2View()
+                    CompleteTutorialView()
                         .tag(2)
             })
                 .tabViewStyle(PageTabViewStyle())
@@ -32,7 +32,7 @@ struct TutorialView: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .frame(width: height * 0.1, height: height * 0.1)
-                    .background(Color("startColor2"))
+                    .background(Color("light_blue"))
                     .clipShape(Circle())
                     .shadow(color: .gray, radius: 6, x: 0, y: 0)
                     .padding()
