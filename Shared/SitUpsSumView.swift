@@ -82,13 +82,33 @@ struct SitUpsSumView: View {
             VStack{
                 Spacer()
                 if pickerSelection == 0{
-                    Text("Total　：　\(Int(calc.array.reduce(0, +)))")
-                        .font(.largeTitle)
-                        .padding(.bottom, height * 0.05)
+                    if pickerSelection2 == 0{
+                        Text("Total　：　\(Int(calc.array.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }else if pickerSelection2 == 1{
+                        Text("Total　：　\(Int(calc.arrayW.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }else{
+                        Text("Total　：　\(Int(calc.arrayM.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }
                 }else{
-                    Text("Total　：　\(Int(calc2.array.reduce(0, +)))")
-                        .font(.largeTitle)
-                        .padding(.bottom, height * 0.05)
+                    if pickerSelection2 == 0{
+                        Text("Total　：　\(Int(calc2.array.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }else if pickerSelection2 == 1{
+                        Text("Total　：　\(Int(calc2.arrayW.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }else{
+                        Text("Total　：　\(Int(calc2.arrayM.reduce(0, +)))")
+                            .font(.largeTitle)
+                            .padding(.bottom, height * 0.05)
+                    }
                 }
             }
         }

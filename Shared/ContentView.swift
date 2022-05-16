@@ -37,6 +37,8 @@ struct ContentView: View {
                 .fullScreenCover(isPresented: $visit, content: {
                     TutorialView(visit: $visit)
                 })
+            BannerAd(unitID: "ca-app-pub-3940256099942544/2934735716")//テスト
+                .frame(height: 50)
         }
     }
 }

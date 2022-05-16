@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32C865EDD00AFD338FE9C30A /* Pods_MuscleTrainingCounter__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71E29E4FAC4455645A78B8D /* Pods_MuscleTrainingCounter__iOS_.framework */; };
+		4B1280FA27D5F129000890E2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1280F927D5F129000890E2 /* SwiftUICharts */; };
+		4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
+		4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
+		4B2FE2D327D8B86C007B77E6 /* Tutorial1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */; };
+		4B2FE2D427D8B86C007B77E6 /* Tutorial1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */; };
+		4B2FE2D627D8BD4D007B77E6 /* Tutorial2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */; };
+		4B2FE2D727D8BD4D007B77E6 /* Tutorial2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */; };
+		4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
+		4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
+		4B508F8027D670C2007B1EA8 /* PushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushController.swift */; };
+		4B508F8127D670C2007B1EA8 /* PushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushController.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E7B27D3B180000A5A4F /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7A27D3B180000A5A4F /* Tests_iOSLaunchTests.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
@@ -17,6 +29,15 @@
 		4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E6127D3B17E000A5A4F /* ContentView.swift */; };
 		4BD50E8C27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
 		4BD50E8D27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
+		4BD50E9D27D3B2D3000A5A4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */; };
+		4BD50E9E27D3B2D3000A5A4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */; };
+		4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
+		4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
+		4BD50EA327D4A505000A5A4F /* SitUpsSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */; };
+		4BD50EA427D4A505000A5A4F /* SitUpsSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */; };
+		4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
+		4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
+		A9902CA531F9FEF854B33B01 /* Pods_MuscleTrainingCounter__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20F2CFEBC7C3C22837C0A680 /* Pods-MuscleTrainingCounter (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (iOS).debug.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleTrainingCounter__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1View.swift; sourceTree = "<group>"; };
+		4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2View.swift; sourceTree = "<group>"; };
+		4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsView.swift; sourceTree = "<group>"; };
+		4B508F7F27D670C1007B1EA8 /* PushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushController.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +77,15 @@
 		4BD50E8027D3B180000A5A4F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsView.swift; sourceTree = "<group>"; };
+		4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsSumView.swift; sourceTree = "<group>"; };
+		4BE3A47027F835A400C32B42 /* MuscleTrainingCounter--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MuscleTrainingCounter--iOS--Info.plist"; sourceTree = "<group>"; };
+		4BE3A47127F8383100C32B42 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		B1C399156F0EB9D3D413E00E /* Pods-MuscleTrainingCounter (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (macOS).release.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (macOS)/Pods-MuscleTrainingCounter (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		B22B4207655C4258948D173A /* Pods-MuscleTrainingCounter (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (iOS).release.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		B71E29E4FAC4455645A78B8D /* Pods_MuscleTrainingCounter__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleTrainingCounter__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25792CA8FB6DB130D2EA36F /* Pods-MuscleTrainingCounter (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (macOS).debug.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (macOS)/Pods-MuscleTrainingCounter (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1280FA27D5F129000890E2 /* SwiftUICharts in Frameworks */,
+				32C865EDD00AFD338FE9C30A /* Pods_MuscleTrainingCounter__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9902CA531F9FEF854B33B01 /* Pods_MuscleTrainingCounter__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,14 +123,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247B3EF45A72C2ED8C4531C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B71E29E4FAC4455645A78B8D /* Pods_MuscleTrainingCounter__iOS_.framework */,
+				4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4BD50E5A27D3B17D000A5A4F = {
 			isa = PBXGroup;
 			children = (
+				4BE3A47027F835A400C32B42 /* MuscleTrainingCounter--iOS--Info.plist */,
 				4BD50E5F27D3B17E000A5A4F /* Shared */,
 				4BD50E6E27D3B180000A5A4F /* macOS */,
 				4BD50E7727D3B180000A5A4F /* Tests iOS */,
 				4BD50E8327D3B180000A5A4F /* Tests macOS */,
 				4BD50E6827D3B180000A5A4F /* Products */,
+				EF3C869B33191C03FDC9BFA4 /* Pods */,
+				247B3EF45A72C2ED8C4531C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +150,16 @@
 			isa = PBXGroup;
 			children = (
 				4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */,
+				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
 				4BD50E6127D3B17E000A5A4F /* ContentView.swift */,
+				4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */,
+				4B2FE2D227D8B86C007B77E6 /* Tutorial1View.swift */,
+				4B2FE2D527D8BD4D007B77E6 /* Tutorial2View.swift */,
+				4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */,
+				4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */,
+				4BD50EA227D4A505000A5A4F /* SitUpsSumView.swift */,
+				4BD50E9C27D3B2D3000A5A4F /* ViewController.swift */,
+				4B508F7F27D670C1007B1EA8 /* PushController.swift */,
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -141,6 +202,17 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		EF3C869B33191C03FDC9BFA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20F2CFEBC7C3C22837C0A680 /* Pods-MuscleTrainingCounter (iOS).debug.xcconfig */,
+				B22B4207655C4258948D173A /* Pods-MuscleTrainingCounter (iOS).release.xcconfig */,
+				D25792CA8FB6DB130D2EA36F /* Pods-MuscleTrainingCounter (macOS).debug.xcconfig */,
+				B1C399156F0EB9D3D413E00E /* Pods-MuscleTrainingCounter (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,15 +220,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BD50E9027D3B180000A5A4F /* Build configuration list for PBXNativeTarget "MuscleTrainingCounter (iOS)" */;
 			buildPhases = (
+				E3E9AC8A9D87554F866550AF /* [CP] Check Pods Manifest.lock */,
 				4BD50E6327D3B180000A5A4F /* Sources */,
 				4BD50E6427D3B180000A5A4F /* Frameworks */,
 				4BD50E6527D3B180000A5A4F /* Resources */,
+				B69154868C668D6B0A022739 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "MuscleTrainingCounter (iOS)";
+			packageProductDependencies = (
+				4B1280F927D5F129000890E2 /* SwiftUICharts */,
+			);
 			productName = "MuscleTrainingCounter (iOS)";
 			productReference = 4BD50E6727D3B180000A5A4F /* MuscleTrainingCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BD50E9327D3B180000A5A4F /* Build configuration list for PBXNativeTarget "MuscleTrainingCounter (macOS)" */;
 			buildPhases = (
+				6B2885BE51878BD98C084E5D /* [CP] Check Pods Manifest.lock */,
 				4BD50E6927D3B180000A5A4F /* Sources */,
 				4BD50E6A27D3B180000A5A4F /* Frameworks */,
 				4BD50E6B27D3B180000A5A4F /* Resources */,
@@ -249,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 4BD50E5A27D3B17D000A5A4F;
+			packageReferences = (
+				4B1280F827D5F129000890E2 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 4BD50E6827D3B180000A5A4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,13 +375,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B2885BE51878BD98C084E5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleTrainingCounter (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69154868C668D6B0A022739 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3E9AC8A9D87554F866550AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleTrainingCounter (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BD50E6327D3B180000A5A4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD50E9D27D3B2D3000A5A4F /* ViewController.swift in Sources */,
 				4BD50E8A27D3B180000A5A4F /* ContentView.swift in Sources */,
+				4B2FE2D327D8B86C007B77E6 /* Tutorial1View.swift in Sources */,
+				4B508F8027D670C2007B1EA8 /* PushController.swift in Sources */,
+				4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */,
+				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
+				4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */,
+				4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8827D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
+				4BD50EA327D4A505000A5A4F /* SitUpsSumView.swift in Sources */,
+				4B2FE2D627D8BD4D007B77E6 /* Tutorial2View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +462,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD50E9E27D3B2D3000A5A4F /* ViewController.swift in Sources */,
 				4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */,
+				4B2FE2D427D8B86C007B77E6 /* Tutorial1View.swift in Sources */,
+				4B508F8127D670C2007B1EA8 /* PushController.swift in Sources */,
+				4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */,
+				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
+				4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */,
+				4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8927D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
+				4BD50EA427D4A505000A5A4F /* SitUpsSumView.swift in Sources */,
+				4B2FE2D727D8BD4D007B77E6 /* Tutorial2View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +623,7 @@
 		};
 		4BD50E9127D3B180000A5A4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20F2CFEBC7C3C22837C0A680 /* Pods-MuscleTrainingCounter (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -468,6 +632,8 @@
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MuscleTrainingCounter--iOS--Info.plist";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Get accelaration data by Airpods";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +656,7 @@
 		};
 		4BD50E9227D3B180000A5A4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B22B4207655C4258948D173A /* Pods-MuscleTrainingCounter (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -498,6 +665,8 @@
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MuscleTrainingCounter--iOS--Info.plist";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Get accelaration data by Airpods";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,6 +690,7 @@
 		};
 		4BD50E9427D3B180000A5A4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25792CA8FB6DB130D2EA36F /* Pods-MuscleTrainingCounter (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -549,6 +719,7 @@
 		};
 		4BD50E9527D3B180000A5A4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C399156F0EB9D3D413E00E /* Pods-MuscleTrainingCounter (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -703,6 +874,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B1280F827D5F129000890E2 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B1280F927D5F129000890E2 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1280F827D5F129000890E2 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4BD50E5B27D3B17D000A5A4F /* Project object */;
 }

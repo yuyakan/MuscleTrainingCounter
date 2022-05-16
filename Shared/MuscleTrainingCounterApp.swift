@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -17,6 +18,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct MuscleTrainingCounterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    init(){
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
