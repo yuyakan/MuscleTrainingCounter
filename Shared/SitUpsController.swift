@@ -115,16 +115,13 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
             let nowMonth = monthFormatter.string(from: date)
             let pastMonth = monthFormatter.string(from: pastDay)
             
-            let thisWeekDay = Calendar.current.dateComponents([.weekday], from: date).weekday!
-            let n = thisWeekDay - 1
-            let now_ = Calendar.current.date(byAdding: .day, value: -n, to: date)!
+            let thisWeekDay = Calendar.current.dateComponents([.weekday], from: date).weekday! - 1
+            let now_ = Calendar.current.date(byAdding: .day, value: -thisWeekDay, to: date)!
             let thisWeek = dayFormatter.string(from: now_)
-            let thisWeekDay_p = Calendar.current.dateComponents([.weekday], from: pastDay).weekday!
-            let n_p = thisWeekDay_p - 1
-            let past_ = Calendar.current.date(byAdding: .day, value: -n_p, to: pastDay)!
-            let past_w = dayFormatter.string(from: past_)
-            let span_w = now_.timeIntervalSince(past_)
-            weekSpan = Int(span_w/60/60/24/7)
+            let pastWeekDay = Calendar.current.dateComponents([.weekday], from: pastDay).weekday! - 1
+            let past_ = Calendar.current.date(byAdding: .day, value: -pastWeekDay, to: pastDay)!
+            let pastWeek = dayFormatter.string(from: past_)
+            weekSpan = Int(now_.timeIntervalSince(past_)/60/60/24/7)
 
             if now != past {
                 dayCountFlag = true
@@ -134,7 +131,7 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
                 print(now)
             }
             
-            if thisWeek != past_w {
+            if thisWeek != pastWeek {
                 weekCountFlag = true
                 UD.set([0.0], forKey: "NumArray")
             }
