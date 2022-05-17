@@ -38,21 +38,21 @@ struct SumGraphView: View {
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.ArrayDisplay()
+                            sitUpsControlller.displayDay()
                         })
                 }else if pickerSelection2 == 1 {
                     LineView(data: sitUpsControlller.weekSumCount, title: "Sit-ups", legend: "Times / 1week")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.ArrayDisplayW()
+                            sitUpsControlller.displayWeek()
                         })
                 }else {
                     LineView(data: sitUpsControlller.monthSumCount, title: "Sit-ups", legend: "Times / 1month")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.ArrayDisplayM()
+                            sitUpsControlller.displayMonth()
                         })
                 }
             }else {
@@ -61,21 +61,21 @@ struct SumGraphView: View {
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.ArrayDisplay()
+                            pushUpsControlller.displayDay()
                         })
                 }else if pickerSelection2 == 1 {
                     LineView(data: pushUpsControlller.weekSumCount, title: "Push-ups", legend: "Times / 1week")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.ArrayDisplayW()
+                            pushUpsControlller.displayWeek()
                         })
                 }else {
                     LineView(data: pushUpsControlller.monthSumCount, title: "Push-ups", legend: "Times / 1month")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.ArrayDisplayM()
+                            pushUpsControlller.displayMonth()
                         })
                 }
             }

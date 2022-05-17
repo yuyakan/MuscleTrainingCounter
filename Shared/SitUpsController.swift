@@ -255,15 +255,15 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
         minusCountFlag = false
     }
     
-    func ArrayDisplay(){
-        weekSumCount = (UD.array(forKey: "NumArray") ?? [0.0]) as! [Double]
+    func displayDay(){
+        daySumCount = (UD.array(forKey: "NumArray") ?? [0.0]) as! [Double]
     }
     
-    func ArrayDisplayW(){
+    func displayWeek(){
         weekSumCount = (UD.array(forKey: "NumArray_w") ?? [0.0]) as! [Double]
     }
     
-    func ArrayDisplayM(){
+    func displayMonth(){
         monthSumCount = (UD.array(forKey: "NumArray_m") ?? [0.0]) as! [Double]
     }
 }

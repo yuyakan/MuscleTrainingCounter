@@ -233,15 +233,15 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
         minusCountFlag = false
     }
     
-    func ArrayDisplay(){
+    func displayDay(){
         daySumCount = (UD.array(forKey: "NumArray_p") ?? [0.0]) as! [Double]
     }
     
-    func ArrayDisplayW(){
+    func displayWeek(){
         weekSumCount = (UD.array(forKey: "NumArray_w_p") ?? [0.0]) as! [Double]
     }
     
-    func ArrayDisplayM(){
+    func displayMonth(){
         monthSumCount = (UD.array(forKey: "NumArray_m_p") ?? [0.0]) as! [Double]
     }
 }
