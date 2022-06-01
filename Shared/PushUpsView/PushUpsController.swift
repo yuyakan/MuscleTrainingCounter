@@ -69,6 +69,8 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
         counter = 0
     }
     
+    
+    
     let UD = UserDefaults.standard
     var valueToSave: [Double] = []
     var temp: Double = 0.0

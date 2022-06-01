@@ -43,7 +43,7 @@ struct SitUpsView: View {
                         .padding()
                 }
                 Spacer()
-                Text("\(sitUpsControlller.counter)")
+                Text(sitUpsControlller.counter)
                     .font(.largeTitle)
                     .padding()
                 Spacer()
@@ -91,7 +91,6 @@ struct SitUpsView: View {
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
                             sitUpsControlller.saveDate()
-                            sitUpsControlller.counter = 0
                             saveFlag = false
                             status = 0
                         }) {

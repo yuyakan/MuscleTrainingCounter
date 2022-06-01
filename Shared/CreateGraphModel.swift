@@ -1,98 +1,20 @@
 //
-//  ViewController.swift
+//  CreateGraphModel.swift
 //  MuscleTrainingCounter
 //
-//  Created by 上別縄祐也 on 2022/03/06.
+//  Created by 上別縄祐也 on 2022/05/30.
 //
 
-import UIKit
-import CoreMotion
-import SwiftUI
-import AVFoundation
+import Foundation
 
-class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
-    @Published var counter = 0
-    @Published var daySumCount: [Double] = [0.0]
-    @Published var weekSumCount: [Double] = [0.0]
-    @Published var monthSumCount: [Double] = [0.0]
-    
-    let airpods = CMHeadphoneMotionManager()
-    
-    var sumPlusRotationRate : Double = 0.0
-    var sumMinusRotationRate : Double = 0.0
-    var sumPlusAcceleration : Double = 0.0
-    var sumMinusAcceleration : Double = 0.0
-    var plusCountFlag = false
-    var minusCountFlag = true
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        airpods.delegate = self
-    }
-
-    override func viewWillAppear(_ plusCountFlag: Bool){
-        super.viewWillAppear(plusCountFlag)
-        UIApplication.shared.isIdleTimerDisabled = true
-    }
-    
-    func startCalc(){
-        print("start")
-        airpods.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
-            guard let motion = motion else { return }
-            self?.getDataRotate(motion)
-        })
-    }
-    
-    func getDataRotate(_ data: CMDeviceMotion){
-        let x = data.rotationRate.x
-        let y = data.userAcceleration.y
-        if ((x > 0.0 || y > 0.0) && plusCountFlag == true){
-            sumPlusRotationRate += x
-            sumPlusAcceleration += y
-            print(sumPlusRotationRate)
-        }else if((x < 0.0 || y < 0.0) && minusCountFlag == true){
-            sumMinusRotationRate += x
-            sumMinusAcceleration += y
-        }
-        if (sumPlusRotationRate > 20.0 || sumPlusAcceleration > 0.7){
-            minusCountFlag = true
-            sumMinusRotationRate = 0.0
-            sumPlusRotationRate = 0.0
-        }
-        if ((sumMinusRotationRate < -20 || sumMinusAcceleration < -2.0) && minusCountFlag == true){
-            counter += 1
-            plusCountFlag = true
-            minusCountFlag = false
-            sumPlusRotationRate = 0.0
-            sumMinusRotationRate = 0.0
-            sumPlusAcceleration = 0.0
-            sumMinusAcceleration = 0.0
-        }
-    }
-    
-    func stopCalc(){
-        print("stop")
-        airpods.stopDeviceMotionUpdates()
-    }
-    
-    func plus(){
-        counter += 1
-    }
-    
-    func minus(){
-        counter -= 1
-    }
-    
-    func reset(){
-        counter = 0
-    }
-    
-    let UD = UserDefaults.standard
-    var valueToSave: [Double] = []
-    var temp: Double = 0.0
-    let dayFormatter = DateFormatter()
-    let monthFormatter = DateFormatter()
+class CreateGraphModel {
+    private let UD = UserDefaults.standard
     func saveDate(){
+        var valueToSave: [Double] = []
+        var temp: Double = 0.0
+        let dayFormatter = DateFormatter()
+        let monthFormatter = DateFormatter()
+        
         dayFormatter.dateFormat = "yyyy/MM/dd"
         monthFormatter.dateFormat = "yyyy/MM"
         
@@ -249,24 +171,6 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
         }
         
         counter = 0
-        sumPlusRotationRate = 0
-        sumMinusRotationRate = 0
-        plusCountFlag = true
-        minusCountFlag = false
     }
     
-    func displayDay(){
-        daySumCount = (UD.array(forKey: "NumArray") ?? [0.0]) as! [Double]
-    }
-    
-    func displayWeek(){
-        weekSumCount = (UD.array(forKey: "NumArray_w") ?? [0.0]) as! [Double]
-    }
-    
-    func displayMonth(){
-        monthSumCount = (UD.array(forKey: "NumArray_m") ?? [0.0]) as! [Double]
-    }
 }
-
-
-
