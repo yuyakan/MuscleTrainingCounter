@@ -93,7 +93,6 @@ struct PushUpsView: View {
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
                             pushUpsControlller.saveDate()
-                            pushUpsControlller.counter = 0
                             saveFlag = false
                             status = 0
                         }) {

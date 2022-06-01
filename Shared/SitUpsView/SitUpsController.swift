@@ -38,10 +38,6 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
         super.viewDidLoad()
         
         airpods.delegate = self
-        sitUpsCounterModel.$counter.map{ counter in
-            "\(counter)"
-        }.assign(to: \.counter, on: self)
-            .store(in: &subscriptions)
     }
 
     override func viewWillAppear(_ plusCountFlag: Bool){

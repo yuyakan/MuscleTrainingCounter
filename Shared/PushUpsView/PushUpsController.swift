@@ -9,47 +9,52 @@ import UIKit
 import CoreMotion
 import SwiftUI
 import AVFoundation
+import Combine
 
 class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
-    @Published var counter = 0
+    private var pushUpsCounterModel = PushUpsCounterModel()
+    private var subscriptions = Set<AnyCancellable>()
+    
+    @Published var counter = "0"
     @Published var daySumCount: [Double] = [0.0]
     @Published var weekSumCount: [Double] = [0.0]
     @Published var monthSumCount: [Double] = [0.0]
     
     let airpods = CMHeadphoneMotionManager()
     
-    var sumPlusAcceleration : Double = 0
-    var sumMinusAcceleration : Double = 0
-    var plusCountFlag = true
-    var minusCountFlag = false
+    init(){
+        super.init(nibName: nil, bundle: nil)
+        pushUpsCounterModel.$counter.map{ counter in
+            "\(counter)"
+        }.assign(to: \.counter, on: self)
+            .store(in: &subscriptions)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        airpods.delegate = self
+    }
+
+    override func viewWillAppear(_ plusCountFlag: Bool){
+        super.viewWillAppear(plusCountFlag)
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
     
     func startCalc(){
         print("start")
         airpods.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
             guard let motion = motion else { return }
-            self?.getDataAccel(motion)
+            self?.pushUpsCounterModel.countCalculation(data: motion)
         })
     }
     
     func getDataAccel(_ data: CMDeviceMotion){
-        let y = data.userAcceleration.y
-        if (y > 0.0 && plusCountFlag == true){
-            sumPlusAcceleration += y
-        }else if(y < 0.0 && minusCountFlag == true){
-            sumMinusAcceleration += y
-        }
-        if (sumPlusAcceleration  > 1.0){
-            minusCountFlag = true
-            sumPlusAcceleration = 0.0
-            sumMinusAcceleration = 0.0
-        }
-        if (sumMinusAcceleration < -0.8 && minusCountFlag == true){
-            counter += 1
-            plusCountFlag = true
-            minusCountFlag = false
-            sumPlusAcceleration = 0.0
-            sumMinusAcceleration = 0.0
-        }
+        
     }
     
     func stopCalc(){
@@ -58,15 +63,15 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
     }
     
     func plus(){
-        counter += 1
+        pushUpsCounterModel.counter += 1
     }
     
     func minus(){
-        counter -= 1
+        pushUpsCounterModel.counter -= 1
     }
     
     func reset(){
-        counter = 0
+        pushUpsCounterModel.counter = 0
     }
     
     
@@ -161,7 +166,7 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
              }else{
                  UD.set(valueToSave, forKey: "NumArray_p")
              }
-             valueToSave.append(Double(counter))
+             valueToSave.append(Double(pushUpsCounterModel.counter))
              UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
              
          }
@@ -169,10 +174,10 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
              if UD.array(forKey: "NumArray_p") != nil {
                  valueToSave = UD.array(forKey: "NumArray_p")! as! [Double]
                  temp = valueToSave.removeLast()
-                 valueToSave.append(Double(counter) + temp)
+                 valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
              }else{
                  UD.set(valueToSave, forKey: "NumArray_p")
-                 valueToSave.append(Double(counter))
+                 valueToSave.append(Double(pushUpsCounterModel.counter))
              }
              UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
          }
@@ -190,7 +195,7 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
             }else{
                 UD.set(valueToSave, forKey: "NumArray_w_p")
             }
-            valueToSave.append(Double(counter))
+            valueToSave.append(Double(pushUpsCounterModel.counter))
             UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
             
         }
@@ -198,10 +203,10 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
             if UD.array(forKey: "NumArray_w_p") != nil {
                 valueToSave = UD.array(forKey: "NumArray_w_p")! as! [Double]
                 temp = valueToSave.removeLast()
-                valueToSave.append(Double(counter) + temp)
+                valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
             }else{
                 UD.set(valueToSave, forKey: "NumArray_w_p")
-                valueToSave.append(Double(counter))
+                valueToSave.append(Double(pushUpsCounterModel.counter))
             }
             UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
         }
@@ -213,7 +218,7 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
             }else{
                 UD.set(valueToSave, forKey: "NumArray_m_p")
             }
-            valueToSave.append(Double(counter))
+            valueToSave.append(Double(pushUpsCounterModel.counter))
             UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
             
         }
@@ -221,18 +226,14 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
             if UD.array(forKey: "NumArray_m_p") != nil {
                 valueToSave = UD.array(forKey: "NumArray_m_p")! as! [Double]
                 temp = valueToSave.removeLast()
-                valueToSave.append(Double(counter) + temp)
+                valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
             }else{
                 UD.set(valueToSave, forKey: "NumArray_m_p")
-                valueToSave.append(Double(counter))
+                valueToSave.append(Double(pushUpsCounterModel.counter))
             }
             UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
         }
-        counter = 0
-        sumPlusAcceleration = 0
-        sumMinusAcceleration = 0
-        plusCountFlag = true
-        minusCountFlag = false
+        pushUpsCounterModel.counter = 0
     }
     
     func displayDay(){
