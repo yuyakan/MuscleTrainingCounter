@@ -57,5 +57,8 @@ func setup(){
     } else {
         print("初回起動")
         UserDefaults.standard.set(true, forKey: "visit")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m")
     }
 }

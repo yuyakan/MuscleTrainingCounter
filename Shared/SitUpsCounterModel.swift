@@ -44,4 +44,50 @@ final class SitUpsCounterModel {
             counter += 1
         }
     }
+    
+    
+    
+    
+    let UD = UserDefaults.standard
+    let dayFormatter = DateFormatter()
+    
+    init(){
+        dayFormatter.dateFormat = "yyyy/MM/dd"
+    }
+    
+    
+    func comparePastNow(now: String, past: String) -> Bool {
+        var countFlag = false
+        if now != past {
+            countFlag = true
+        }
+        else {
+            countFlag = false
+        }
+        return countFlag
+    }
+    
+    
+    func getWeekStart(date: Date) -> Date {
+        let thisWeekDay = Calendar.current.dateComponents([.weekday], from: date).weekday! - 1
+        let now_ = Calendar.current.date(byAdding: .day, value: -thisWeekDay, to: date)!
+        
+        return now_
+    }
+    
+    
+    func graphCountSave(countFlag: inout Bool, numArray: String, span: Int, type: Int) {
+        var valueToSave: [Double] = []
+        valueToSave = UD.array(forKey: "\(numArray)")! as! [Double]
+        if countFlag == true {
+            countFlag = false
+            valueToSave.remove(at: 1)
+            valueToSave.append(Double(counter))
+        }
+        else {
+            let temp = valueToSave.removeLast()
+            valueToSave.append(Double(counter) + temp)
+        }
+        UserDefaults.standard.set(valueToSave, forKey: "\(numArray)")
+    }
 }

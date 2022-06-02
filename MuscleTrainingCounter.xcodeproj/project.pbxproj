@@ -23,6 +23,8 @@
 		4B8AC8242844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */; };
 		4B8AC8262846EF69003E9783 /* PushUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */; };
 		4B8AC8272846EF69003E9783 /* PushUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */; };
+		4BB2D10A2848628A00E87ED7 /* SpanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1092848628A00E87ED7 /* SpanType.swift */; };
+		4BB2D10B2848628A00E87ED7 /* SpanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1092848628A00E87ED7 /* SpanType.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E7B27D3B180000A5A4F /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7A27D3B180000A5A4F /* Tests_iOSLaunchTests.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
@@ -71,6 +73,7 @@
 		4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsController.swift; sourceTree = "<group>"; };
 		4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsCounterModel.swift; sourceTree = "<group>"; };
 		4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsCounterModel.swift; sourceTree = "<group>"; };
+		4BB2D1092848628A00E87ED7 /* SpanType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanType.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 				4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */,
 				4B93F9132832B7BB0076288F /* Tutorial */,
 				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
+				4BB2D1092848628A00E87ED7 /* SpanType.swift */,
 				4BD50E6127D3B17E000A5A4F /* ContentView.swift */,
 				4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */,
 				4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */,
@@ -481,6 +485,7 @@
 				4B8AC8262846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D327D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
 				4B508F8027D670C2007B1EA8 /* PushUpsController.swift in Sources */,
+				4BB2D10A2848628A00E87ED7 /* SpanType.swift in Sources */,
 				4B8AC8232844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
 				4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
@@ -501,6 +506,7 @@
 				4B8AC8272846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D427D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
 				4B508F8127D670C2007B1EA8 /* PushUpsController.swift in Sources */,
+				4BB2D10B2848628A00E87ED7 /* SpanType.swift in Sources */,
 				4B8AC8242844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
 				4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
