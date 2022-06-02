@@ -76,7 +76,7 @@ final class SitUpsCounterModel {
     }
     
     
-    func graphCountSave(countFlag: inout Bool, numArray: String, span: Int, type: Int) {
+    func graphCountSave(countFlag: inout Bool, numArray: String) {
         var valueToSave: [Double] = []
         valueToSave = UD.array(forKey: "\(numArray)")! as! [Double]
         if countFlag == true {

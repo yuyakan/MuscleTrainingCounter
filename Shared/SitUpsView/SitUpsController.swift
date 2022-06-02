@@ -87,8 +87,6 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
         var weekCountFlag = Bool()
         var monthCountFlag = Bool()
         
-        var daySpan = 0
-        var weekSpan = 0
 
         if UD.object(forKey: "today") == nil {
             dayCountFlag = true
@@ -103,17 +101,12 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
              
              let now = dayFormatter.string(from: date)
              let past = dayFormatter.string(from: pastDate)
-             
-             let span = date.timeIntervalSince(pastDate)
-             daySpan = Int(span/60/60/24)
 
              let thisWeekStart = sitUpsCounterModel.getWeekStart(date: date)
              let thisWeek = dayFormatter.string(from: thisWeekStart)
              
              let pastWeekStart = sitUpsCounterModel.getWeekStart(date: pastDate)
              let pastWeek = dayFormatter.string(from: pastWeekStart)
-             
-             weekSpan = Int(thisWeekStart.timeIntervalSince(pastWeekStart)/60/60/24/7)
              
              let thisMonth = monthFormatter.string(from: date)
              let pastMonth = monthFormatter.string(from: pastDate)
@@ -125,12 +118,11 @@ class SitUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obse
              UD.set(date, forKey: "today")
          }
         
-         /* 日付が変わった場合はtrueの処理 */
-        sitUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray", span: daySpan, type: spanType.day.rawValue)
+        sitUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray")
         
-        sitUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w", span: weekSpan, type: spanType.week.rawValue)
+        sitUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w")
         
-        sitUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m", span: 0, type: spanType.month.rawValue)
+        sitUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m")
         
         sitUpsCounterModel.counter = 0
     }

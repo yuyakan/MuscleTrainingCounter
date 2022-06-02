@@ -48,17 +48,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-func setup(){
-    let isVisit = UserDefaults.standard.bool(forKey: "visit")
-    if isVisit {
-        print("二回目以降")
-        UserDefaults.standard.set(false, forKey: "visit")
-    } else {
-        print("初回起動")
-        UserDefaults.standard.set(true, forKey: "visit")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m")
-    }
-}

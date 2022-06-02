@@ -75,166 +75,62 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
     }
     
     
-    
     let UD = UserDefaults.standard
-    var valueToSave: [Double] = []
-    var temp: Double = 0.0
-    let dayFormatter = DateFormatter()
-    let monthFormatter = DateFormatter()
     func saveDate(){
+        let dayFormatter = DateFormatter()
+        let monthFormatter = DateFormatter()
+        self.counter = "0"
+        
         dayFormatter.dateFormat = "yyyy/MM/dd"
         monthFormatter.dateFormat = "yyyy/MM"
         
-        let date = Date(timeIntervalSinceNow: 60 * 60 * 9)
+        let date = Date()
         
         var dayCountFlag = Bool()
         var weekCountFlag = Bool()
         var monthCountFlag = Bool()
-        
-        var daySpan = 0
-        var weekSpan = 0
 
-        if UD.object(forKey: "today_p") != nil {
-            let past_day = UD.object(forKey: "today_p") as! Date
-            let now = dayFormatter.string(from: date)
-            let past = dayFormatter.string(from: past_day)
-            let span = date.timeIntervalSince(past_day)
-            daySpan = Int(span/60/60/24)
+        if UD.object(forKey: "today_p") == nil {
+            dayCountFlag = true
+            weekCountFlag = true
+            monthCountFlag = true
             
-            let now_m = monthFormatter.string(from: date)
-            let past_m = monthFormatter.string(from: past_day)
-            
-            let thisWeekDay = Calendar.current.dateComponents([.weekday], from: date).weekday!
-            let n = thisWeekDay - 1
-            let now_ = Calendar.current.date(byAdding: .day, value: -n, to: date)!
-            let now_w = dayFormatter.string(from: now_)
-            let thisWeekDay_p = Calendar.current.dateComponents([.weekday], from: past_day).weekday!
-            let n_p = thisWeekDay_p - 1
-            let past_ = Calendar.current.date(byAdding: .day, value: -n_p, to: past_day)!
-            let past_w = dayFormatter.string(from: past_)
-            let span_w = now_.timeIntervalSince(past_)
-            weekSpan = Int(span_w/60/60/24/7)
-
-             //日にちが変わっていた場合
-            if now != past {
-                dayCountFlag = true
-            }
-            else {
-                dayCountFlag = false
-            }
-            
-            if now_w != past_w {
-                weekCountFlag = true
-                UD.set([0.0], forKey: "NumArray_p")
-            }
-            else {
-                weekCountFlag = false
-            }
-
-            if now_m != past_m {
-               monthCountFlag = true
-                UD.set([0.0], forKey: "NumArray_w_p")
-            }
-            else {
-               monthCountFlag = false
-            }
             UD.set(date, forKey: "today_p")
          }
-         //初回実行のみelse
          else {
-             dayCountFlag = true
-             weekCountFlag = true
-             monthCountFlag = true
              
-             UD.set(date, forKey: "today_p")
-             UD.set([0.0], forKey: "NumArray_p")
-             UD.set([0.0], forKey: "NumArray_w_p")
-             UD.set([0.0], forKey: "NumArray_m_p")
-         }
+             let pastDate = UD.object(forKey: "today_p") as! Date
+             
+             let now = dayFormatter.string(from: date)
+             let past = dayFormatter.string(from: pastDate)
 
-         /* 日付が変わった場合はtrueの処理 */
-         if dayCountFlag == true {
-              dayCountFlag = false
-             if UD.array(forKey: "NumArray_p") != nil {
-                 valueToSave = UD.array(forKey: "NumArray_p")! as! [Double]
-                 if daySpan > 1 {
-                     for i in 2...daySpan{
-                         print(i)
-                         valueToSave.append(0.0)
-                     }
-                 }
-             }else{
-                 UD.set(valueToSave, forKey: "NumArray_p")
-             }
-             valueToSave.append(Double(pushUpsCounterModel.counter))
-             UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
+             let thisWeekStart = pushUpsCounterModel.getWeekStart(date: date)
+             let thisWeek = dayFormatter.string(from: thisWeekStart)
              
-         }
-         else {
-             if UD.array(forKey: "NumArray_p") != nil {
-                 valueToSave = UD.array(forKey: "NumArray_p")! as! [Double]
-                 temp = valueToSave.removeLast()
-                 valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
-             }else{
-                 UD.set(valueToSave, forKey: "NumArray_p")
-                 valueToSave.append(Double(pushUpsCounterModel.counter))
-             }
-             UserDefaults.standard.set(valueToSave, forKey: "NumArray_p")
+             let pastWeekStart = pushUpsCounterModel.getWeekStart(date: pastDate)
+             let pastWeek = dayFormatter.string(from: pastWeekStart)
+             
+             
+             let thisMonth = monthFormatter.string(from: date)
+             let pastMonth = monthFormatter.string(from: pastDate)
+             
+             dayCountFlag = pushUpsCounterModel.comparePastNow(now: now, past: past)
+             weekCountFlag = pushUpsCounterModel.comparePastNow(now: thisWeek, past: pastWeek)
+             monthCountFlag = pushUpsCounterModel.comparePastNow(now: thisMonth, past: pastMonth)
+     
+             UD.set(date, forKey: "today_p")
          }
         
-        if weekCountFlag == true {
-             weekCountFlag = false
-            if UD.array(forKey: "NumArray_w_p") != nil {
-                valueToSave = UD.array(forKey: "NumArray_w_p")! as! [Double]
-                if weekSpan > 1 {
-                    for i in 2...weekSpan{
-                        print(i)
-                        valueToSave.append(0.0)
-                    }
-                }
-            }else{
-                UD.set(valueToSave, forKey: "NumArray_w_p")
-            }
-            valueToSave.append(Double(pushUpsCounterModel.counter))
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
-            
-        }
-        else {
-            if UD.array(forKey: "NumArray_w_p") != nil {
-                valueToSave = UD.array(forKey: "NumArray_w_p")! as! [Double]
-                temp = valueToSave.removeLast()
-                valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
-            }else{
-                UD.set(valueToSave, forKey: "NumArray_w_p")
-                valueToSave.append(Double(pushUpsCounterModel.counter))
-            }
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_w_p")
-        }
+
+        pushUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_p")
         
-        if monthCountFlag == true {
-             monthCountFlag = false
-            if UD.array(forKey: "NumArray_m_p") != nil {
-                valueToSave = UD.array(forKey: "NumArray_m_p")! as! [Double]
-            }else{
-                UD.set(valueToSave, forKey: "NumArray_m_p")
-            }
-            valueToSave.append(Double(pushUpsCounterModel.counter))
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
-            
-        }
-        else {
-            if UD.array(forKey: "NumArray_m_p") != nil {
-                valueToSave = UD.array(forKey: "NumArray_m_p")! as! [Double]
-                temp = valueToSave.removeLast()
-                valueToSave.append(Double(pushUpsCounterModel.counter) + temp)
-            }else{
-                UD.set(valueToSave, forKey: "NumArray_m_p")
-                valueToSave.append(Double(pushUpsCounterModel.counter))
-            }
-            UserDefaults.standard.set(valueToSave, forKey: "NumArray_m_p")
-        }
+        pushUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_p")
+        
+        pushUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_p")
+        
         pushUpsCounterModel.counter = 0
     }
+    
     
     func displayDay(){
         daySumCount = (UD.array(forKey: "NumArray_p") ?? [0.0]) as! [Double]
