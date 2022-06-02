@@ -17,14 +17,18 @@
 		4B2FE2D727D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */; };
 		4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
 		4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */; };
-		4B508F8027D670C2007B1EA8 /* PushUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */; };
-		4B508F8127D670C2007B1EA8 /* PushUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */; };
+		4B508F8027D670C2007B1EA8 /* PushUpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsViewController.swift */; };
+		4B508F8127D670C2007B1EA8 /* PushUpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B508F7F27D670C1007B1EA8 /* PushUpsViewController.swift */; };
 		4B8AC8232844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */; };
 		4B8AC8242844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */; };
 		4B8AC8262846EF69003E9783 /* PushUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */; };
 		4B8AC8272846EF69003E9783 /* PushUpsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */; };
 		4BB2D10D2848965900E87ED7 /* SetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D10C2848965900E87ED7 /* SetUp.swift */; };
 		4BB2D10E2848965900E87ED7 /* SetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D10C2848965900E87ED7 /* SetUp.swift */; };
+		4BB2D11028489B0000E87ED7 /* SumGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */; };
+		4BB2D11128489B0000E87ED7 /* SumGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */; };
+		4BB2D1132848A8F700E87ED7 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1122848A8F700E87ED7 /* DotView.swift */; };
+		4BB2D1142848A8F700E87ED7 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1122848A8F700E87ED7 /* DotView.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E7B27D3B180000A5A4F /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7A27D3B180000A5A4F /* Tests_iOSLaunchTests.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
@@ -35,8 +39,8 @@
 		4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E6127D3B17E000A5A4F /* ContentView.swift */; };
 		4BD50E8C27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
 		4BD50E8D27D3B180000A5A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD50E6227D3B180000A5A4F /* Assets.xcassets */; };
-		4BD50E9D27D3B2D3000A5A4F /* SitUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */; };
-		4BD50E9E27D3B2D3000A5A4F /* SitUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */; };
+		4BD50E9D27D3B2D3000A5A4F /* SitUpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsViewController.swift */; };
+		4BD50E9E27D3B2D3000A5A4F /* SitUpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9C27D3B2D3000A5A4F /* SitUpsViewController.swift */; };
 		4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
 		4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */; };
 		4BD50EA327D4A505000A5A4F /* SumGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SumGraphView.swift */; };
@@ -70,10 +74,12 @@
 		4B2FE2D227D8B86C007B77E6 /* AirpodsSettingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirpodsSettingTutorialView.swift; sourceTree = "<group>"; };
 		4B2FE2D527D8BD4D007B77E6 /* CompleteTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTutorialView.swift; sourceTree = "<group>"; };
 		4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsView.swift; sourceTree = "<group>"; };
-		4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsController.swift; sourceTree = "<group>"; };
+		4B508F7F27D670C1007B1EA8 /* PushUpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsViewController.swift; sourceTree = "<group>"; };
 		4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsCounterModel.swift; sourceTree = "<group>"; };
 		4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpsCounterModel.swift; sourceTree = "<group>"; };
 		4BB2D10C2848965900E87ED7 /* SetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUp.swift; sourceTree = "<group>"; };
+		4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumGraphViewModel.swift; sourceTree = "<group>"; };
+		4BB2D1122848A8F700E87ED7 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +92,7 @@
 		4BD50E8027D3B180000A5A4F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsController.swift; sourceTree = "<group>"; };
+		4BD50E9C27D3B2D3000A5A4F /* SitUpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsViewController.swift; sourceTree = "<group>"; };
 		4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitUpsView.swift; sourceTree = "<group>"; };
 		4BD50EA227D4A505000A5A4F /* SumGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumGraphView.swift; sourceTree = "<group>"; };
 		4BE3A47027F835A400C32B42 /* MuscleTrainingCounter--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MuscleTrainingCounter--iOS--Info.plist"; sourceTree = "<group>"; };
@@ -144,7 +150,7 @@
 		4B8AC7E72844A218003E9783 /* SitUpsView */ = {
 			isa = PBXGroup;
 			children = (
-				4BD50E9C27D3B2D3000A5A4F /* SitUpsController.swift */,
+				4BD50E9C27D3B2D3000A5A4F /* SitUpsViewController.swift */,
 				4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */,
 			);
 			path = SitUpsView;
@@ -153,7 +159,7 @@
 		4B8AC7E82844A24D003E9783 /* PushUpsView */ = {
 			isa = PBXGroup;
 			children = (
-				4B508F7F27D670C1007B1EA8 /* PushUpsController.swift */,
+				4B508F7F27D670C1007B1EA8 /* PushUpsViewController.swift */,
 				4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */,
 			);
 			path = PushUpsView;
@@ -191,11 +197,13 @@
 				4B93F9132832B7BB0076288F /* Tutorial */,
 				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
 				4BD50E6127D3B17E000A5A4F /* ContentView.swift */,
+				4BB2D1122848A8F700E87ED7 /* DotView.swift */,
 				4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */,
 				4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */,
 				4B8AC7E72844A218003E9783 /* SitUpsView */,
 				4B8AC7E82844A24D003E9783 /* PushUpsView */,
 				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
+				4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */,
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -480,15 +488,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD50E9D27D3B2D3000A5A4F /* SitUpsController.swift in Sources */,
+				4BD50E9D27D3B2D3000A5A4F /* SitUpsViewController.swift in Sources */,
 				4BB2D10D2848965900E87ED7 /* SetUp.swift in Sources */,
 				4BD50E8A27D3B180000A5A4F /* ContentView.swift in Sources */,
 				4B8AC8262846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D327D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
-				4B508F8027D670C2007B1EA8 /* PushUpsController.swift in Sources */,
+				4B508F8027D670C2007B1EA8 /* PushUpsViewController.swift in Sources */,
+				4BB2D11028489B0000E87ED7 /* SumGraphViewModel.swift in Sources */,
 				4B8AC8232844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
 				4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
+				4BB2D1132848A8F700E87ED7 /* DotView.swift in Sources */,
 				4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */,
 				4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8827D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
@@ -501,15 +511,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD50E9E27D3B2D3000A5A4F /* SitUpsController.swift in Sources */,
+				4BD50E9E27D3B2D3000A5A4F /* SitUpsViewController.swift in Sources */,
 				4BB2D10E2848965900E87ED7 /* SetUp.swift in Sources */,
 				4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */,
 				4B8AC8272846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D427D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
-				4B508F8127D670C2007B1EA8 /* PushUpsController.swift in Sources */,
+				4B508F8127D670C2007B1EA8 /* PushUpsViewController.swift in Sources */,
+				4BB2D11128489B0000E87ED7 /* SumGraphViewModel.swift in Sources */,
 				4B8AC8242844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
 				4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
+				4BB2D1142848A8F700E87ED7 /* DotView.swift in Sources */,
 				4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */,
 				4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
 				4BD50E8927D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,

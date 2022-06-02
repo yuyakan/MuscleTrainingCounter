@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PushUpsView: View {
-    @ObservedObject var pushUpsControlller = PushUpsController()
+    @ObservedObject var pushUpsControlller = PushUpsViewController()
     @State var saveFlag = false
     @State var revise = false
     @State var stopFlag = false

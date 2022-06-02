@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SitUpsView: View {
-    @ObservedObject var sitUpsControlller = SitUpsController()
+    @ObservedObject var sitUpsControlller = SitUpsViewController()
     @State var saveFlag = false
     @State var revise = false
     @State var stopFlag = false
@@ -168,27 +168,5 @@ struct SitUpsView: View {
                 }
             }
         }
-    }
-}
-
-struct SitUpsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SitUpsView()
-    }
-}
-
-struct DotView: View {
-    @State var delay: Double = 0
-    @State var scale: CGFloat = 0.5
-    var body: some View {
-        Circle()
-            .frame(width: 10, height: 10)
-            .scaleEffect(scale)
-            .animation(Animation.easeInOut(duration: 0.6).repeatForever().delay(delay), value: scale)
-            .onAppear {
-                withAnimation {
-                    self.scale = 1
-                }
-            }
     }
 }

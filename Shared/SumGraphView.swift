@@ -9,8 +9,7 @@ import SwiftUI
 import SwiftUICharts
 
 struct SumGraphView: View {
-    @ObservedObject var sitUpsControlller = SitUpsController()
-    @ObservedObject var pushUpsControlller = PushUpsController()
+    @ObservedObject var sumGraphViewModel = SumGraphViewModel()
     @State var pickerSelection = 0
     @State var pickerSelection2 = 0
     var body: some View {
@@ -34,48 +33,48 @@ struct SumGraphView: View {
             }
             if pickerSelection == 0{
                 if pickerSelection2 == 0{
-                    LineView(data: sitUpsControlller.daySumCount, title: "Sit-ups", legend: "Times / 1day")
+                    LineView(data: sumGraphViewModel.sitUpsDaySumCount, title: "Sit-ups", legend: "Times / 1day")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.displayDay()
+                            sumGraphViewModel.displaySitUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
-                    LineView(data: sitUpsControlller.weekSumCount, title: "Sit-ups", legend: "Times / 1week")
+                    LineView(data: sumGraphViewModel.sitUpsWeekSumCount, title: "Sit-ups", legend: "Times / 1week")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.displayWeek()
+                            sumGraphViewModel.displaySitUpsWeek()
                         })
                 }else {
-                    LineView(data: sitUpsControlller.monthSumCount, title: "Sit-ups", legend: "Times / 1month")
+                    LineView(data: sumGraphViewModel.sitUpsMonthSumCount, title: "Sit-ups", legend: "Times / 1month")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            sitUpsControlller.displayMonth()
+                            sumGraphViewModel.displaySitUpsMonth()
                         })
                 }
             }else {
                 if pickerSelection2 == 0{
-                    LineView(data: pushUpsControlller.daySumCount, title: "Push-ups", legend: "Times / 1day")
+                    LineView(data: sumGraphViewModel.pushUpsDaySumCount, title: "Push-ups", legend: "Times / 1day")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.displayDay()
+                            sumGraphViewModel.displayPushUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
-                    LineView(data: pushUpsControlller.weekSumCount, title: "Push-ups", legend: "Times / 1week")
+                    LineView(data: sumGraphViewModel.pushUpsWeekSumCount, title: "Push-ups", legend: "Times / 1week")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.displayWeek()
+                            sumGraphViewModel.displayPushUpsWeek()
                         })
                 }else {
-                    LineView(data: pushUpsControlller.monthSumCount, title: "Push-ups", legend: "Times / 1month")
+                    LineView(data: sumGraphViewModel.pushUpsMonthSumCount, title: "Push-ups", legend: "Times / 1month")
                         .padding()
                         .padding(.vertical, height * 0.18)
                         .onAppear(perform: {
-                            pushUpsControlller.displayMonth()
+                            sumGraphViewModel.displayPushUpsMonth()
                         })
                 }
             }
@@ -83,29 +82,29 @@ struct SumGraphView: View {
                 Spacer()
                 if pickerSelection == 0{
                     if pickerSelection2 == 0{
-                        Text("Total　：　\(Int(sitUpsControlller.daySumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }else if pickerSelection2 == 1{
-                        Text("Total　：　\(Int(sitUpsControlller.weekSumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }else{
-                        Text("Total　：　\(Int(sitUpsControlller.monthSumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }
                 }else{
                     if pickerSelection2 == 0{
-                        Text("Total　：　\(Int(pushUpsControlller.daySumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }else if pickerSelection2 == 1{
-                        Text("Total　：　\(Int(pushUpsControlller.weekSumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }else{
-                        Text("Total　：　\(Int(pushUpsControlller.monthSumCount.reduce(0, +)))")
+                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.05)
                     }

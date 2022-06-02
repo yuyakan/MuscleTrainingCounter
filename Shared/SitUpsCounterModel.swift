@@ -46,16 +46,6 @@ final class SitUpsCounterModel {
     }
     
     
-    
-    
-    let UD = UserDefaults.standard
-    let dayFormatter = DateFormatter()
-    
-    init(){
-        dayFormatter.dateFormat = "yyyy/MM/dd"
-    }
-    
-    
     func comparePastNow(now: String, past: String) -> Bool {
         var countFlag = false
         if now != past {
@@ -67,7 +57,6 @@ final class SitUpsCounterModel {
         return countFlag
     }
     
-    
     func getWeekStart(date: Date) -> Date {
         let thisWeekDay = Calendar.current.dateComponents([.weekday], from: date).weekday! - 1
         let now_ = Calendar.current.date(byAdding: .day, value: -thisWeekDay, to: date)!
@@ -75,10 +64,9 @@ final class SitUpsCounterModel {
         return now_
     }
     
-    
     func graphCountSave(countFlag: inout Bool, numArray: String) {
         var valueToSave: [Double] = []
-        valueToSave = UD.array(forKey: "\(numArray)")! as! [Double]
+        valueToSave = UserDefaults.standard.array(forKey: "\(numArray)")! as! [Double]
         if countFlag == true {
             countFlag = false
             valueToSave.remove(at: 1)

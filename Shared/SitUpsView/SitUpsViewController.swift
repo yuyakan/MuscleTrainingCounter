@@ -1,8 +1,8 @@
 //
-//  PushController.swift
+//  ViewController.swift
 //  MuscleTrainingCounter
 //
-//  Created by 上別縄祐也 on 2022/03/08.
+//  Created by 上別縄祐也 on 2022/03/06.
 //
 
 import UIKit
@@ -11,20 +11,17 @@ import SwiftUI
 import AVFoundation
 import Combine
 
-class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
-    private var pushUpsCounterModel = PushUpsCounterModel()
+class SitUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate, ObservableObject{
+    private let sitUpsCounterModel = SitUpsCounterModel()
     private var subscriptions = Set<AnyCancellable>()
     
     @Published var counter = "0"
-    @Published var daySumCount: [Double] = [0.0]
-    @Published var weekSumCount: [Double] = [0.0]
-    @Published var monthSumCount: [Double] = [0.0]
     
     let airpods = CMHeadphoneMotionManager()
     
     init(){
         super.init(nibName: nil, bundle: nil)
-        pushUpsCounterModel.$counter.map{ counter in
+        sitUpsCounterModel.$counter.map{ counter in
             "\(counter)"
         }.assign(to: \.counter, on: self)
             .store(in: &subscriptions)
@@ -45,16 +42,14 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
         UIApplication.shared.isIdleTimerDisabled = true
     }
     
+    
+    
     func startCalc(){
         print("start")
         airpods.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
             guard let motion = motion else { return }
-            self?.pushUpsCounterModel.countCalculation(data: motion)
+            self?.sitUpsCounterModel.countCalculation(data: motion)
         })
-    }
-    
-    func getDataAccel(_ data: CMDeviceMotion){
-        
     }
     
     func stopCalc(){
@@ -63,17 +58,18 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
     }
     
     func plus(){
-        pushUpsCounterModel.counter += 1
+        sitUpsCounterModel.counter += 1
+        print(sitUpsCounterModel.counter)
+        print(self.counter)
     }
     
     func minus(){
-        pushUpsCounterModel.counter -= 1
+        sitUpsCounterModel.counter -= 1
     }
     
     func reset(){
-        pushUpsCounterModel.counter = 0
+        sitUpsCounterModel.counter = 0
     }
-    
     
     let UD = UserDefaults.standard
     func saveDate(){
@@ -89,58 +85,47 @@ class PushUpsController: UIViewController, CMHeadphoneMotionManagerDelegate, Obs
         var dayCountFlag = Bool()
         var weekCountFlag = Bool()
         var monthCountFlag = Bool()
+        
 
-        if UD.object(forKey: "today_p") == nil {
+        if UD.object(forKey: "today") == nil {
             dayCountFlag = true
             weekCountFlag = true
             monthCountFlag = true
             
-            UD.set(date, forKey: "today_p")
+            UD.set(date, forKey: "today")
          }
          else {
              
-             let pastDate = UD.object(forKey: "today_p") as! Date
+             let pastDate = UD.object(forKey: "today") as! Date
              
              let now = dayFormatter.string(from: date)
              let past = dayFormatter.string(from: pastDate)
 
-             let thisWeekStart = pushUpsCounterModel.getWeekStart(date: date)
+             let thisWeekStart = sitUpsCounterModel.getWeekStart(date: date)
              let thisWeek = dayFormatter.string(from: thisWeekStart)
              
-             let pastWeekStart = pushUpsCounterModel.getWeekStart(date: pastDate)
+             let pastWeekStart = sitUpsCounterModel.getWeekStart(date: pastDate)
              let pastWeek = dayFormatter.string(from: pastWeekStart)
-             
              
              let thisMonth = monthFormatter.string(from: date)
              let pastMonth = monthFormatter.string(from: pastDate)
              
-             dayCountFlag = pushUpsCounterModel.comparePastNow(now: now, past: past)
-             weekCountFlag = pushUpsCounterModel.comparePastNow(now: thisWeek, past: pastWeek)
-             monthCountFlag = pushUpsCounterModel.comparePastNow(now: thisMonth, past: pastMonth)
+             dayCountFlag = sitUpsCounterModel.comparePastNow(now: now, past: past)
+             weekCountFlag = sitUpsCounterModel.comparePastNow(now: thisWeek, past: pastWeek)
+             monthCountFlag = sitUpsCounterModel.comparePastNow(now: thisMonth, past: pastMonth)
      
-             UD.set(date, forKey: "today_p")
+             UD.set(date, forKey: "today")
          }
         
-
-        pushUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_p")
+        sitUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray")
         
-        pushUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_p")
+        sitUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w")
         
-        pushUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_p")
+        sitUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m")
         
-        pushUpsCounterModel.counter = 0
-    }
-    
-    
-    func displayDay(){
-        daySumCount = (UD.array(forKey: "NumArray_p") ?? [0.0]) as! [Double]
-    }
-    
-    func displayWeek(){
-        weekSumCount = (UD.array(forKey: "NumArray_w_p") ?? [0.0]) as! [Double]
-    }
-    
-    func displayMonth(){
-        monthSumCount = (UD.array(forKey: "NumArray_m_p") ?? [0.0]) as! [Double]
+        sitUpsCounterModel.counter = 0
     }
 }
+
+
+
