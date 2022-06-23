@@ -55,12 +55,11 @@ class SitUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate, 
     func stopCalc(){
         print("stop")
         airpods.stopDeviceMotionUpdates()
+        sitUpsCounterModel.stopCaluculation()
     }
     
     func plus(){
         sitUpsCounterModel.counter += 1
-        print(sitUpsCounterModel.counter)
-        print(self.counter)
     }
     
     func minus(){

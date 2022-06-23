@@ -50,13 +50,10 @@ class PushUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate,
         })
     }
     
-    func getDataAccel(_ data: CMDeviceMotion){
-        
-    }
-    
     func stopCalc(){
         print("stop")
         airpods.stopDeviceMotionUpdates()
+        pushUpsCounterModel.stopCaluculation()
     }
     
     func plus(){

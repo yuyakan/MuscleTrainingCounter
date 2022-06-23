@@ -10,32 +10,55 @@ import CoreMotion
 final class SitUpsCounterModel {
     @Published var counter = 0
     
+    var sumPlusRotationRate : Double = 0.0
+    var sumMinusRotationRate : Double = 0.0
+    var sumPlusAcceleration : Double = 0.0
+    var sumMinusAcceleration : Double = 0.0
+    
+    var accelPlusCountFlag = false
+    var accelMinusCountFlag = true
+    
+    var rotatePlusCountFlag = true
+    var rotateMinusCountFlag = false
+    
     func countCalculation(data: CMDeviceMotion) {
         let x = data.rotationRate.x
         let y = data.userAcceleration.y
-        var sumPlusRotationRate : Double = 0.0
-        var sumMinusRotationRate : Double = 0.0
-        var sumPlusAcceleration : Double = 0.0
-        var sumMinusAcceleration : Double = 0.0
-        var plusCountFlag = false
-        var minusCountFlag = true
         
-        if ((x > 0.0 || y > 0.0) && plusCountFlag == true){
+        if ( x > 0.0 && rotatePlusCountFlag == true){
             sumPlusRotationRate += x
-            sumPlusAcceleration += y
-            print(sumPlusRotationRate)
-        }else if((x < 0.0 || y < 0.0) && minusCountFlag == true){
+        }else if(x < 0.0 && rotateMinusCountFlag == true){
             sumMinusRotationRate += x
+        }
+        
+        if (y > 0.0 && accelPlusCountFlag == true){
+            sumPlusAcceleration += y
+        }else if(y < 0.0 && accelMinusCountFlag == true){
             sumMinusAcceleration += y
         }
-        if (sumPlusRotationRate > 20.0 || sumPlusAcceleration > 0.7){
-            minusCountFlag = true
+        
+        
+        if ((sumPlusRotationRate > 15.0)){
+            rotateMinusCountFlag = true
+            rotatePlusCountFlag = false
+            
             sumMinusRotationRate = 0.0
             sumPlusRotationRate = 0.0
         }
-        if ((sumMinusRotationRate < -20 || sumMinusAcceleration < -2.0) && minusCountFlag == true){
-            plusCountFlag = true
-            minusCountFlag = false
+        if (sumMinusAcceleration < -1.5){
+            accelMinusCountFlag = false
+            accelPlusCountFlag = true
+            
+            sumMinusAcceleration = 0.0
+            sumPlusAcceleration = 0.0
+        }
+        
+        if ((sumMinusRotationRate < -15) || (sumPlusAcceleration > 0.7)){
+            accelPlusCountFlag = false
+            accelMinusCountFlag = true
+            rotatePlusCountFlag = true
+            rotateMinusCountFlag = false
+            
             sumPlusRotationRate = 0.0
             sumMinusRotationRate = 0.0
             sumPlusAcceleration = 0.0
@@ -45,6 +68,16 @@ final class SitUpsCounterModel {
         }
     }
     
+    func stopCaluculation(){
+        sumPlusRotationRate = 0.0
+        sumMinusRotationRate = 0.0
+        sumPlusAcceleration = 0.0
+        sumMinusAcceleration = 0.0
+        accelPlusCountFlag = false
+        accelMinusCountFlag = true
+        rotatePlusCountFlag = true
+        rotateMinusCountFlag = false
+    }
     
     func comparePastNow(now: String, past: String) -> Bool {
         var countFlag = false

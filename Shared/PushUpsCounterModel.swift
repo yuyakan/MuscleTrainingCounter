@@ -11,19 +11,19 @@ import CoreMotion
 final class PushUpsCounterModel {
     @Published var counter = 0
     
+    var sumPlusAcceleration : Double = 0
+    var sumMinusAcceleration : Double = 0
+    var plusCountFlag = true
+    var minusCountFlag = false
+    
     func countCalculation(data: CMDeviceMotion) {
-        var sumPlusAcceleration : Double = 0
-        var sumMinusAcceleration : Double = 0
-        var plusCountFlag = true
-        var minusCountFlag = false
-        
         let y = data.userAcceleration.y
         if (y > 0.0 && plusCountFlag == true){
             sumPlusAcceleration += y
         }else if(y < 0.0 && minusCountFlag == true){
             sumMinusAcceleration += y
         }
-        if (sumPlusAcceleration  > 1.0){
+        if (sumPlusAcceleration  > 1.2){
             minusCountFlag = true
             sumPlusAcceleration = 0.0
             sumMinusAcceleration = 0.0
@@ -34,9 +34,16 @@ final class PushUpsCounterModel {
             minusCountFlag = false
             sumPlusAcceleration = 0.0
             sumMinusAcceleration = 0.0
+            print(counter)
         }
     }
     
+    func stopCaluculation() {
+        sumPlusAcceleration = 0
+        sumMinusAcceleration = 0
+        plusCountFlag = true
+        minusCountFlag = false
+    }
     
     func comparePastNow(now: String, past: String) -> Bool {
         var countFlag = false
