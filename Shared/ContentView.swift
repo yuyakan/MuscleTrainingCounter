@@ -39,6 +39,8 @@ struct ContentView: View {
                 })
             BannerAd(unitID: "ca-app-pub-3940256099942544/2934735716")//テスト
                 .frame(height: 50)
+//            BannerAd(unitID: "ca-app-pub-3155724310732667/8870765614")//本番
+//                .frame(height: 50)
         }
     }
 }

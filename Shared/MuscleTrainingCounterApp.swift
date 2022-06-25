@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleMobileAds
+import AppTrackingTransparency
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -15,11 +16,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
+
 @main
 struct MuscleTrainingCounterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     init(){
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                     ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                            switch status {
+                            case .authorized:
+                                print("OK")
+                            case .denied, .restricted, .notDetermined:
+                                print("だめでした。")
+                            @unknown default:
+                                fatalError()
+                            }
+                        })
+                     }
     }
     var body: some Scene {
         WindowGroup {
