@@ -100,7 +100,7 @@ final class PushUpsCounterModel {
                     valueToSave.remove(at: 1)
                     valueToSave.append(0)
                 }
-            } else {
+            } else if elapsedNumber > 1 {
                 for i in 1 ..< elapsedNumber {
                     print(i)
                     valueToSave.remove(at: 1)
