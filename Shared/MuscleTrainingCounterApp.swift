@@ -22,18 +22,18 @@ struct MuscleTrainingCounterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     init(){
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                     ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                            switch status {
-                            case .authorized:
-                                print("OK")
-                            case .denied, .restricted, .notDetermined:
-                                print("だめでした。")
-                            @unknown default:
-                                fatalError()
-                            }
-                        })
-                     }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+//                     ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+//                            switch status {
+//                            case .authorized:
+//                                print("OK")
+//                            case .denied, .restricted, .notDetermined:
+//                                print("No")
+//                            @unknown default:
+//                                fatalError()
+//                            }
+//                        })
+//                     }
     }
     var body: some Scene {
         WindowGroup {

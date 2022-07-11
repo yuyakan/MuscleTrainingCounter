@@ -27,6 +27,7 @@ struct TutorialView: View {
             .shadow(color: .gray, radius: 8, x: 0, y: 0)
             Button(action: {
                 visit = false
+                UserDefaults.standard.set(true, forKey: "visit")
             }, label: {
                 Text("Start")
                     .font(.title)

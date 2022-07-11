@@ -34,22 +34,22 @@ struct SumGraphView: View {
             if pickerSelection == 0{
                 if pickerSelection2 == 0{
                     LineView(data: sumGraphViewModel.sitUpsDaySumCount, title: "Sit-ups", legend: "Times / 1day")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
                     LineView(data: sumGraphViewModel.sitUpsWeekSumCount, title: "Sit-ups", legend: "Times / 1week")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsWeek()
                         })
                 }else {
                     LineView(data: sumGraphViewModel.sitUpsMonthSumCount, title: "Sit-ups", legend: "Times / 1month")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsMonth()
                         })
@@ -57,22 +57,22 @@ struct SumGraphView: View {
             }else {
                 if pickerSelection2 == 0{
                     LineView(data: sumGraphViewModel.pushUpsDaySumCount, title: "Push-ups", legend: "Times / 1day")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
                     LineView(data: sumGraphViewModel.pushUpsWeekSumCount, title: "Push-ups", legend: "Times / 1week")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsWeek()
                         })
                 }else {
                     LineView(data: sumGraphViewModel.pushUpsMonthSumCount, title: "Push-ups", legend: "Times / 1month")
-                        .padding()
-                        .padding(.vertical, height * 0.18)
+                        .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                        .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsMonth()
                         })
@@ -84,29 +84,29 @@ struct SumGraphView: View {
                     if pickerSelection2 == 0{
                         Text("Total　：　\(Int(sumGraphViewModel.sitUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }else if pickerSelection2 == 1{
                         Text("Total　：　\(Int(sumGraphViewModel.sitUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }else{
                         Text("Total　：　\(Int(sumGraphViewModel.sitUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }
                 }else{
                     if pickerSelection2 == 0{
                         Text("Total　：　\(Int(sumGraphViewModel.pushUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }else if pickerSelection2 == 1{
                         Text("Total　：　\(Int(sumGraphViewModel.pushUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }else{
                         Text("Total　：　\(Int(sumGraphViewModel.pushUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
-                            .padding(.bottom, height * 0.05)
+                            .padding(.bottom, height * 0.022)
                     }
                 }
             }
