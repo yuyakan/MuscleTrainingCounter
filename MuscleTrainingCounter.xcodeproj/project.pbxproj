@@ -50,6 +50,8 @@
 		4BD50EA427D4A505000A5A4F /* SumGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50EA227D4A505000A5A4F /* SumGraphView.swift */; };
 		4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
 		4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
+		4BF15B3A2B1C5B1B00D8D897 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */; };
+		4BF15B3B2B1C5B1B00D8D897 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */; };
 		A9902CA531F9FEF854B33B01 /* Pods_MuscleTrainingCounter__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022ED2780B100313600DE2B /* Pods_MuscleTrainingCounter__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,15 @@
 		4BD50EA227D4A505000A5A4F /* SumGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumGraphView.swift; sourceTree = "<group>"; };
 		4BE3A47027F835A400C32B42 /* MuscleTrainingCounter--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MuscleTrainingCounter--iOS--Info.plist"; sourceTree = "<group>"; };
 		4BE3A47127F8383100C32B42 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		4BF15B3C2B1C5B1B00D8D897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B3E2B1C6C7200D8D897 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B3F2B1C6C7E00D8D897 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4BF15B402B1C6CA400D8D897 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B412B1C6CAA00D8D897 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B422B1C6CB000D8D897 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B432B1C6CB800D8D897 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B442B1C6CBE00D8D897 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF15B452B1C6CD600D8D897 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B1C399156F0EB9D3D413E00E /* Pods-MuscleTrainingCounter (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (macOS).release.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (macOS)/Pods-MuscleTrainingCounter (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		B22B4207655C4258948D173A /* Pods-MuscleTrainingCounter (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleTrainingCounter (iOS).release.xcconfig"; path = "Target Support Files/Pods-MuscleTrainingCounter (iOS)/Pods-MuscleTrainingCounter (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		B71E29E4FAC4455645A78B8D /* Pods_MuscleTrainingCounter__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleTrainingCounter__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,8 +285,8 @@
 				4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */,
 				4B8AC7E72844A218003E9783 /* SitUpsView */,
 				4B8AC7E82844A24D003E9783 /* PushUpsView */,
-				4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */,
-				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
+				4BF15B462B1C6FD800D8D897 /* GraphView */,
+				4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */,
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -318,6 +329,15 @@
 				4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		4BF15B462B1C6FD800D8D897 /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */,
+				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
+			);
+			path = GraphView;
 			sourceTree = "<group>";
 		};
 		EF3C869B33191C03FDC9BFA4 /* Pods */ = {
@@ -455,7 +475,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4B700F292862F91E00B941CC = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -487,6 +507,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
+				"zh-Hans",
+				es,
+				de,
+				fr,
+				ru,
+				ko,
+				"pt-BR",
 			);
 			mainGroup = 4BD50E5A27D3B17D000A5A4F;
 			packageReferences = (
@@ -526,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD50E8C27D3B180000A5A4F /* Assets.xcassets in Resources */,
+				4BF15B3A2B1C5B1B00D8D897 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD50E8D27D3B180000A5A4F /* Assets.xcassets in Resources */,
+				4BF15B3B2B1C5B1B00D8D897 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +759,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BF15B3C2B1C5B1B00D8D897 /* en */,
+				4BF15B3E2B1C6C7200D8D897 /* ja */,
+				4BF15B3F2B1C6C7E00D8D897 /* zh-Hans */,
+				4BF15B402B1C6CA400D8D897 /* es */,
+				4BF15B412B1C6CAA00D8D897 /* de */,
+				4BF15B422B1C6CB000D8D897 /* fr */,
+				4BF15B432B1C6CB800D8D897 /* ru */,
+				4BF15B442B1C6CBE00D8D897 /* ko */,
+				4BF15B452B1C6CD600D8D897 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4B700F332862F91F00B941CC /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -810,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -840,9 +890,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -869,6 +921,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -899,9 +952,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -936,7 +991,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -970,7 +1025,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -997,6 +1052,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1027,6 +1083,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1093,6 +1150,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.6;
@@ -1112,6 +1170,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2NGCBTHK5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.6;

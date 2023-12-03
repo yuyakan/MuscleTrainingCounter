@@ -17,20 +17,20 @@ struct ContentView: View {
                 SitUpsView().tabItem{
                     Group{
                         Image("small_fukkin_gray")
-                        Text("Sit-ups")
+                        Text(LocalizedStringKey("Sit-ups"))
                     }
                 }.tag(0)
                 SumGraphView()
                     .tabItem{
                     Group{
                         Image(systemName: "chart.bar")
-                        Text("Charts")
+                        Text(LocalizedStringKey("Charts"))
                     }
                 }.tag(1)
                 PushUpsView().tabItem{
                     Group{
                         Image("small_udetate_gray")
-                        Text("Push-ups")
+                        Text(LocalizedStringKey("Push-ups"))
                     }
                 }
             }.padding(.bottom)

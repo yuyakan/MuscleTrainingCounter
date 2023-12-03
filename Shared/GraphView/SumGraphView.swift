@@ -18,13 +18,13 @@ struct SumGraphView: View {
         ZStack{
             VStack{
                 Picker(selection: $pickerSelection, label: Text("Stats")){
-                    Text("Sit-ups").tag(0)
-                    Text("Push-ups").tag(1)
+                    Text(LocalizedStringKey("Sit-ups")).tag(0)
+                    Text(LocalizedStringKey("Push-ups")).tag(1)
                 }.pickerStyle(SegmentedPickerStyle()).padding([.top, .horizontal]).padding(.vertical)
                 Picker(selection: $pickerSelection2, label: Text("Stats")){
-                    Text("1day").tag(0)
-                    Text("1week").tag(1)
-                    Text("1month").tag(2)
+                    Text(LocalizedStringKey("1day")).tag(0)
+                    Text(LocalizedStringKey("1week")).tag(1)
+                    Text(LocalizedStringKey("1month")).tag(2)
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal)
                 Spacer()
@@ -33,21 +33,21 @@ struct SumGraphView: View {
             }
             if pickerSelection == 0{
                 if pickerSelection2 == 0{
-                    LineView(data: sumGraphViewModel.sitUpsDaySumCount, title: "Sit-ups", legend: "Times / 1day")
+                    LineView(data: sumGraphViewModel.sitUpsDaySumCount, title: String(localized: "Sit-ups"), legend: String(localized:"Times") + "/" + String(localized: "1day"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
-                    LineView(data: sumGraphViewModel.sitUpsWeekSumCount, title: "Sit-ups", legend: "Times / 1week")
+                    LineView(data: sumGraphViewModel.sitUpsWeekSumCount, title: String(localized: "Sit-ups"), legend: String(localized:"Times") + "/" + String(localized: "1week"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsWeek()
                         })
                 }else {
-                    LineView(data: sumGraphViewModel.sitUpsMonthSumCount, title: "Sit-ups", legend: "Times / 1month")
+                    LineView(data: sumGraphViewModel.sitUpsMonthSumCount, title: String(localized: "Sit-ups"), legend: String(localized:"Times") + "/" + String(localized: "1month"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
@@ -56,21 +56,21 @@ struct SumGraphView: View {
                 }
             }else {
                 if pickerSelection2 == 0{
-                    LineView(data: sumGraphViewModel.pushUpsDaySumCount, title: "Push-ups", legend: "Times / 1day")
+                    LineView(data: sumGraphViewModel.pushUpsDaySumCount, title: String(localized: "Push-ups"), legend: String(localized:"Times") + "/" + String(localized: "1day"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsDay()
                         })
                 }else if pickerSelection2 == 1 {
-                    LineView(data: sumGraphViewModel.pushUpsWeekSumCount, title: "Push-ups", legend: "Times / 1week")
+                    LineView(data: sumGraphViewModel.pushUpsWeekSumCount, title: String(localized: "Push-ups"), legend: String(localized:"Times") + "/" + String(localized: "1week"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsWeek()
                         })
                 }else {
-                    LineView(data: sumGraphViewModel.pushUpsMonthSumCount, title: "Push-ups", legend: "Times / 1month")
+                    LineView(data: sumGraphViewModel.pushUpsMonthSumCount, title: String(localized: "Push-ups"), legend: String(localized:"Times") + "/" + String(localized: "1month"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
                         .padding(.top, height * 0.18)
                         .onAppear(perform: {
@@ -82,29 +82,29 @@ struct SumGraphView: View {
                 Spacer()
                 if pickerSelection == 0{
                     if pickerSelection2 == 0{
-                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsDaySumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.sitUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }else if pickerSelection2 == 1{
-                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsWeekSumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.sitUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }else{
-                        Text("Total　：　\(Int(sumGraphViewModel.sitUpsMonthSumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.sitUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }
                 }else{
                     if pickerSelection2 == 0{
-                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsDaySumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.pushUpsDaySumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }else if pickerSelection2 == 1{
-                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsWeekSumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.pushUpsWeekSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }else{
-                        Text("Total　：　\(Int(sumGraphViewModel.pushUpsMonthSumCount.reduce(0, +)))")
+                        Text(String(localized: "Total") + "　：　\(Int(sumGraphViewModel.pushUpsMonthSumCount.reduce(0, +)))")
                             .font(.largeTitle)
                             .padding(.bottom, height * 0.022)
                     }

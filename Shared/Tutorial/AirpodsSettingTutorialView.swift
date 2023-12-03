@@ -25,7 +25,7 @@ struct AirpodsSettingTutorialView: View {
                         .frame(width: 100, height: 150)
                         .padding()
                 }.padding()
-                Text("Please connect to Airpods!")
+                Text(LocalizedStringKey("Please connect to Airpods!"))
                     .font(.title)
                     .foregroundColor(Color.white)
                     .frame(width: 350)
