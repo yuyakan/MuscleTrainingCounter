@@ -214,6 +214,7 @@
 		4B8AC7E72844A218003E9783 /* SitUpsView */ = {
 			isa = PBXGroup;
 			children = (
+				4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */,
 				4BD50E9C27D3B2D3000A5A4F /* SitUpsViewController.swift */,
 				4BD50E9F27D4A002000A5A4F /* SitUpsView.swift */,
 			);
@@ -223,6 +224,7 @@
 		4B8AC7E82844A24D003E9783 /* PushUpsView */ = {
 			isa = PBXGroup;
 			children = (
+				4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */,
 				4B508F7F27D670C1007B1EA8 /* PushUpsViewController.swift */,
 				4B508F7C27D66C83007B1EA8 /* PushUpsView.swift */,
 			);
@@ -276,16 +278,14 @@
 			isa = PBXGroup;
 			children = (
 				4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */,
-				4BB2D10C2848965900E87ED7 /* SetUp.swift */,
-				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
 				4BD50E6127D3B17E000A5A4F /* ContentView.swift */,
-				4B93F9132832B7BB0076288F /* Tutorial */,
+				4BB2D10C2848965900E87ED7 /* SetUp.swift */,
 				4BB2D1122848A8F700E87ED7 /* DotView.swift */,
-				4B8AC8222844D2F8003E9783 /* SitUpsCounterModel.swift */,
-				4B8AC8252846EF69003E9783 /* PushUpsCounterModel.swift */,
+				4B93F9132832B7BB0076288F /* Tutorial */,
 				4B8AC7E72844A218003E9783 /* SitUpsView */,
 				4B8AC7E82844A24D003E9783 /* PushUpsView */,
 				4BF15B462B1C6FD800D8D897 /* GraphView */,
+				4BF15B472B1C7A5C00D8D897 /* Ad */,
 				4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */,
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 			);
@@ -338,6 +338,14 @@
 				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
 			);
 			path = GraphView;
+			sourceTree = "<group>";
+		};
+		4BF15B472B1C7A5C00D8D897 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
+			);
+			path = Ad;
 			sourceTree = "<group>";
 		};
 		EF3C869B33191C03FDC9BFA4 /* Pods */ = {
