@@ -1,2 +1,6 @@
 # MuscleTrainingCounter
-Airpodsを装着して腹筋、腕立てを行うことで、自動でカウントしてくれるアプリです。
+## Overview
+This is an app that automatically counts when you do sit-ups and push-ups while wearing Airpods.
+
+## App Store
+https://apps.apple.com/jp/app/muscle-training-counter/id1614147330
