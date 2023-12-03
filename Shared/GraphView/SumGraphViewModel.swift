@@ -16,6 +16,10 @@ class SumGraphViewModel: ObservableObject{
     @Published var pushUpsWeekSumCount: [Double] = [0.0, 0.0, 0.0, 0.0]
     @Published var pushUpsMonthSumCount: [Double] = [0.0, 0.0, 0.0, 0.0]
     
+    @Published var day: [String] = ["", "", "", "", "", "", ""]
+    @Published var week: [String] = ["", "", "", "", ""]
+    @Published var month: [String] = ["", "", "", "", "", ""]
+    
     let UD = UserDefaults.standard
     
     func displaySitUpsDay(){
@@ -40,5 +44,31 @@ class SumGraphViewModel: ObservableObject{
     
     func displayPushUpsMonth(){
         pushUpsMonthSumCount = (UD.array(forKey: "NumArray_m_p") ?? [0.0]) as! [Double]
+    }
+    
+    func calcDay() {
+        day = []
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: Locale.current.identifier)
+        let weekday = calendar.component(.weekday, from: Date())
+        for i in 0..<7 {
+            day.append(calendar.shortWeekdaySymbols[(weekday+6-i) % 7])
+        }
+        day.reverse()
+    }
+    
+    func calcWeek() {
+        week = ["", "", "", String(localized: "this week")]
+    }
+    
+    
+    func calcMonth() {
+        month = []
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: Locale.current.identifier)
+        let m = calendar.component(.month, from: Date())
+        for i in 0..<6 {
+            month.append(calendar.shortMonthSymbols[(m-1-i)%12])
+        }
     }
 }

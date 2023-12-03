@@ -114,11 +114,11 @@ class SitUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate, 
              UD.set(date, forKey: "today")
          }
         
-        sitUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray", elapsedNumber: elapsedDays)
+        sitUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray", elapsedNumber: elapsedDays, saveLength: 7)
         
-        sitUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w", elapsedNumber: elapsedWeeks)
+        sitUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w", elapsedNumber: elapsedWeeks, saveLength: 4)
         
-        sitUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m", elapsedNumber: elapsedMonthes)
+        sitUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m", elapsedNumber: elapsedMonthes, saveLength: 6)
         
         sitUpsCounterModel.counter = 0
     }
