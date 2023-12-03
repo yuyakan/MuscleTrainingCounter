@@ -112,11 +112,11 @@ class PushUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate,
              UD.set(date, forKey: "today_p")
          }
         
-        pushUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_p", elapsedNumber: elapsedDays)
+        pushUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_p", elapsedNumber: elapsedDays, saveLength: 7)
         
-        pushUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_p", elapsedNumber: elapsedWeeks)
+        pushUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_p", elapsedNumber: elapsedWeeks, saveLength: 4)
         
-        pushUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_p", elapsedNumber: elapsedMonthes)
+        pushUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_p", elapsedNumber: elapsedMonthes, saveLength: 6)
         
         pushUpsCounterModel.counter = 0
     }

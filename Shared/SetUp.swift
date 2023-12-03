@@ -14,12 +14,12 @@ func setup(){
     } else {
         print("初回起動")
         
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m")
         
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_p")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w_p")
-        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m_p")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_p")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_w_p")
+        UserDefaults.standard.set([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], forKey: "NumArray_m_p")
     }
 }

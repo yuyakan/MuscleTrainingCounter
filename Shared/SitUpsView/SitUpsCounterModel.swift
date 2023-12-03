@@ -84,7 +84,7 @@ final class SitUpsCounterModel {
     
     func comparePastNow(now: Date, past: Date, elapsedNumber: inout Int) -> Bool {
         var countFlag = false
-        let calendar = Calendar(identifier: .gregorian)
+        let calendar = Calendar.current
         
         let year = calendar.component(.year, from: now)
         let month = calendar.component(.month, from: now)
@@ -125,32 +125,32 @@ final class SitUpsCounterModel {
         return now_
     }
     
-    func graphCountSave(countFlag: inout Bool, numArray: String, elapsedNumber: Int) {
+    func graphCountSave(countFlag: inout Bool, numArray: String, elapsedNumber: Int, saveLength: Int) {
         var valueToSave: [Double] = []
         valueToSave = UserDefaults.standard.array(forKey: "\(numArray)")! as! [Double]
         if countFlag == true {
             countFlag = false
             
-            if elapsedNumber > 8 {
-                for i in 0 ..< 7 {
+            if elapsedNumber >= saveLength {
+                for i in 0 ..< saveLength {
                     print(i)
                     valueToSave.remove(at: 1)
-                    valueToSave.append(0)
+                    valueToSave.insert(0, at: saveLength)
                 }
-            } else if (elapsedNumber > 1) {
+            } else if (elapsedNumber > 0) {
                 for i in 1 ..< elapsedNumber {
                     print(i)
                     valueToSave.remove(at: 1)
-                    valueToSave.append(0)
+                    valueToSave.insert(0, at: saveLength)
                 }
             }
             
             valueToSave.remove(at: 1)
-            valueToSave.append(Double(counter))
+            valueToSave.insert(Double(counter), at: saveLength)
         }
         else {
-            let temp = valueToSave.removeLast()
-            valueToSave.append(Double(counter) + temp)
+            let temp = valueToSave.remove(at: saveLength)
+            valueToSave.insert(Double(counter) + temp, at: saveLength)
         }
         UserDefaults.standard.set(valueToSave, forKey: "\(numArray)")
     }

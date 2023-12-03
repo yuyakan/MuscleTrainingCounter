@@ -15,6 +15,7 @@ struct SumGraphView: View {
     var body: some View {
         let bounds = UIScreen.main.bounds
         let height = bounds.height
+        let width = bounds.width
         ZStack{
             VStack{
                 Picker(selection: $pickerSelection, label: Text("Stats")){
@@ -39,6 +40,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsDay()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<7, id: \.self) { index in
+                                Text(sumGraphViewModel.day[index])
+                                    .frame(width: width * 0.087)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.15)
+                        .padding(.trailing, width * 0.09)
+                    }
                 }else if pickerSelection2 == 1 {
                     LineView(data: sumGraphViewModel.sitUpsWeekSumCount, title: String(localized: "Sit-ups"), legend: String(localized:"Times") + "/" + String(localized: "1week"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
@@ -46,6 +60,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsWeek()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<4, id: \.self) { index in
+                                Text(sumGraphViewModel.week[index])
+                                    .frame(width: width * 0.15,alignment: .center)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.11)
+                        .padding(.trailing, width * 0.11)
+                    }
                 }else {
                     LineView(data: sumGraphViewModel.sitUpsMonthSumCount, title: String(localized: "Sit-ups"), legend: String(localized:"Times") + "/" + String(localized: "1month"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
@@ -53,6 +80,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displaySitUpsMonth()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<6, id: \.self) { index in
+                                Text(sumGraphViewModel.month[index])
+                                    .frame(width: width * 0.1)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.12)
+                        .padding(.trailing, width * 0.10)
+                    }
                 }
             }else {
                 if pickerSelection2 == 0{
@@ -62,6 +102,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsDay()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<7, id: \.self) { index in
+                                Text(sumGraphViewModel.day[index])
+                                    .frame(width: width * 0.087)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.15)
+                        .padding(.trailing, width * 0.09)
+                    }
                 }else if pickerSelection2 == 1 {
                     LineView(data: sumGraphViewModel.pushUpsWeekSumCount, title: String(localized: "Push-ups"), legend: String(localized:"Times") + "/" + String(localized: "1week"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
@@ -69,6 +122,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsWeek()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<4, id: \.self) { index in
+                                Text(sumGraphViewModel.week[index])
+                                    .frame(width: width * 0.15,alignment: .center)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.11)
+                        .padding(.trailing, width * 0.11)
+                    }
                 }else {
                     LineView(data: sumGraphViewModel.pushUpsMonthSumCount, title: String(localized: "Push-ups"), legend: String(localized:"Times") + "/" + String(localized: "1month"))
                         .scaleEffect(CGSize(width: 0.9, height: 0.9))
@@ -76,6 +142,19 @@ struct SumGraphView: View {
                         .onAppear(perform: {
                             sumGraphViewModel.displayPushUpsMonth()
                         })
+                    VStack {
+                        Text("").frame(height: width * 0.8)
+                        HStack {
+                            Spacer()
+                            ForEach(0..<6, id: \.self) { index in
+                                Text(sumGraphViewModel.month[index])
+                                    .frame(width: width * 0.1)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading, width * 0.12)
+                        .padding(.trailing, width * 0.10)
+                    }
                 }
             }
             VStack{
@@ -110,6 +189,10 @@ struct SumGraphView: View {
                     }
                 }
             }
+        }.onAppear() {
+            sumGraphViewModel.calcDay()
+            sumGraphViewModel.calcWeek()
+            sumGraphViewModel.calcMonth()
         }
     }
 }
