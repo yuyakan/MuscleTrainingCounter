@@ -29,9 +29,9 @@ struct TutorialView: View {
                 visit = false
                 UserDefaults.standard.set(true, forKey: "visit")
             }, label: {
-                Text("Start")
+                Image(systemName: "play.fill")
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.white)
                     .frame(width: height * 0.1, height: height * 0.1)
                     .background(Color("light_blue"))
                     .clipShape(Circle())

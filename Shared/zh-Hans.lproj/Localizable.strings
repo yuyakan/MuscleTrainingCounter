@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  MuscleTrainingCounter
+
+  Created by 上別縄祐也 on 2023/12/03.
+  
+*/
+"Sit-ups" = "仰卧起坐";
+"Charts" = "图表";
+"Push-ups" = "俯卧撑";
+
+"Please connect to Airpods!" = "Please connect to Airpods!";
+"Start when you are ready!" = "准备好后开始";
+"Measuring" = "测量";
+"Stop measurement" = "停止测量";
+
+"1day" = "天";
+"1week" = "星期";
+"1month" = "月";
+"Times" = "次数";
+"Total" = "全部的";

@@ -14,9 +14,6 @@ struct PushUpsView: View {
     @State var stopFlag = false
     @State var status = 0
     var body: some View {
-        let bounds = UIScreen.main.bounds
-        let height = bounds.height
-        let width = bounds.width
         ZStack{
             Image("udetate_gray")
                 .resizable()
@@ -25,12 +22,12 @@ struct PushUpsView: View {
             VStack{
                 Spacer()
                 if status == 0 {
-                    Text("Push-ups")
+                    Text(LocalizedStringKey("Push-ups"))
                         .font(.largeTitle)
                         .padding()
                 }else if status == 1{
                     HStack {
-                        Text("Measuring")
+                        Text(LocalizedStringKey("Measuring"))
                             .font(.largeTitle)
                             .padding()
                         DotView() // 1.
@@ -38,7 +35,7 @@ struct PushUpsView: View {
                         DotView(delay: 0.4) // 3.
                             }
                 }else if status == 2{
-                    Text("Stop measurement")
+                    Text(LocalizedStringKey("Stop measurement"))
                         .font(.largeTitle)
                         .padding()
                 }
@@ -56,14 +53,14 @@ struct PushUpsView: View {
                             stopFlag = true
                             status = 1
                         }, label: {
-                            Text("▶︎")
-                                .font(.largeTitle)
+                            Image(systemName: "play.fill")
+                                .padding()
+                                .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("restartColor"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("startColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.trailing)
                         })
                             .disabled(stopFlag)
                             .opacity(stopFlag ? 0.3:1)
@@ -75,14 +72,14 @@ struct PushUpsView: View {
                             stopFlag = true
                             status = 1
                         }, label: {
-                            Text("Start")
+                            Image(systemName: "play.fill")
+                                .padding()
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("light_blue"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("startColor"))
                                 .clipShape(Circle())
-                                .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.trailing)
+                                .shadow(color: stopFlag ? .white : .gray, radius: 4, x: 0, y: 0)
                         })
                             .disabled(stopFlag)
                             .opacity(stopFlag ? 0.1:1)
@@ -96,14 +93,14 @@ struct PushUpsView: View {
                             saveFlag = false
                             status = 0
                         }) {
-                            Text("Save")
+                            Image(systemName: "list.bullet.clipboard.fill")
+                                .padding(.horizontal)
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
+                                .frame(width: 160.0, height: 120.0)
                                 .background(Color("saveColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.leading)
                         }.padding()
                     }else{
                         Button(action: {
@@ -113,14 +110,14 @@ struct PushUpsView: View {
                             stopFlag = false
                             status = 2
                         }, label: {
-                            Text("Stop")
+                            Image(systemName: "stop.fill")
+                                .padding(.horizontal)
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("restartColor"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("stopColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.leading)
                         }).padding()
                         
                     }
@@ -131,13 +128,6 @@ struct PushUpsView: View {
                     }.labelsHidden()
                         .padding()
                     Spacer()
-                    TextField("count", value: $pushUpsControlller.counter, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.title2)
-                        .frame(width: width * 0.3)
-                        .padding(.horizontal)
-                        .opacity(revise ? 1:0)
-                        .disabled(!revise)
                 }.padding(.leading)
                 if revise {
                     HStack{
@@ -159,7 +149,7 @@ struct PushUpsView: View {
                         Button(action: {
                             pushUpsControlller.reset()
                         }, label: {
-                            Text("Reset")
+                            Image(systemName: "gobackward")
                                 .font(.title)
                                 .padding(.trailing)
                         }).padding([.trailing, .bottom])

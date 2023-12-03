@@ -19,7 +19,7 @@ struct CompleteTutorialView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: height * 0.2)
-                Text("Start when you are ready!")
+                Text(LocalizedStringKey("Start when you are ready!"))
                     .font(.title)
                 Image("udetate_white")
                     .resizable()
