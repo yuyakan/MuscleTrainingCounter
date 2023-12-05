@@ -160,12 +160,12 @@ struct SitUpsView: View {
                     }.padding()
                 }
                 if !revise {
-                    Text(" ").padding()
+                    Text(" ").padding(.bottom)
                 }
             }
-        }.onAppear() {
-            interstitial.loadInterstitial()
+            .onAppear() {
+                interstitial.loadInterstitial()
+            }
         }
-        .disabled(!interstitial.interstitialAdLoaded)
     }
 }
