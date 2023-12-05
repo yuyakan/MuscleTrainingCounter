@@ -162,7 +162,7 @@ struct PushUpsView: View {
                     }.padding()
                 }
                 if !revise {
-                    Text(" ").padding()
+                    Text(" ").padding(.bottom)
                 }
             }
         }.onAppear() {
