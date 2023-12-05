@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PushUpsView: View {
+    @ObservedObject var interstitial = Interstitial()
     @ObservedObject var pushUpsControlller = PushUpsViewController()
     @State var saveFlag = false
     @State var revise = false
@@ -96,6 +97,7 @@ struct PushUpsView: View {
                             pushUpsControlller.saveDate()
                             saveFlag = false
                             status = 0
+                            interstitial.presentInterstitial()
                         }) {
                             Image(systemName: "list.bullet.clipboard.fill")
                                 .padding(.horizontal)
@@ -163,6 +165,9 @@ struct PushUpsView: View {
                     Text(" ").padding()
                 }
             }
+        }.onAppear() {
+            interstitial.loadInterstitial()
         }
+        .disabled(!interstitial.interstitialAdLoaded)
     }
 }

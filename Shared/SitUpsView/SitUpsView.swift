@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SitUpsView: View {
+    @ObservedObject var interstitial = Interstitial()
     @ObservedObject var sitUpsControlller = SitUpsViewController()
     @State var saveFlag = false
     @State var revise = false
@@ -94,6 +95,7 @@ struct SitUpsView: View {
                             sitUpsControlller.saveDate()
                             saveFlag = false
                             status = 0
+                            interstitial.presentInterstitial()
                         }) {
                             Image(systemName: "list.bullet.clipboard.fill")
                                 .padding(.horizontal)
@@ -161,6 +163,9 @@ struct SitUpsView: View {
                     Text(" ").padding()
                 }
             }
+        }.onAppear() {
+            interstitial.loadInterstitial()
         }
+        .disabled(!interstitial.interstitialAdLoaded)
     }
 }

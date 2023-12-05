@@ -39,6 +39,8 @@
 		4BBF1AF12B1E51760083B2CA /* SpanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AEF2B1E51760083B2CA /* SpanType.swift */; };
 		4BBF1AF32B1E53DD0083B2CA /* TrainingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */; };
 		4BBF1AF42B1E53DD0083B2CA /* TrainingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */; };
+		4BBF1AF62B1F4D1E0083B2CA /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF52B1F4D1E0083B2CA /* InterstitialAd.swift */; };
+		4BBF1AF72B1F4D1E0083B2CA /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF52B1F4D1E0083B2CA /* InterstitialAd.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
 		4BD50E8727D3B180000A5A4F /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */; };
@@ -121,6 +123,7 @@
 		4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4BBF1AEF2B1E51760083B2CA /* SpanType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanType.swift; sourceTree = "<group>"; };
 		4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingType.swift; sourceTree = "<group>"; };
+		4BBF1AF52B1F4D1E0083B2CA /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -356,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				4BE3A47127F8383100C32B42 /* BannerAd.swift */,
+				4BBF1AF52B1F4D1E0083B2CA /* InterstitialAd.swift */,
 			);
 			path = Ad;
 			sourceTree = "<group>";
@@ -701,6 +705,7 @@
 				4BD50EA027D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BB2D1132848A8F700E87ED7 /* DotView.swift in Sources */,
+				4BBF1AF62B1F4D1E0083B2CA /* InterstitialAd.swift in Sources */,
 				4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */,
 				4BBF1AF32B1E53DD0083B2CA /* TrainingType.swift in Sources */,
 				4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
@@ -727,6 +732,7 @@
 				4BD50EA127D4A002000A5A4F /* SitUpsView.swift in Sources */,
 				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BB2D1142848A8F700E87ED7 /* DotView.swift in Sources */,
+				4BBF1AF72B1F4D1E0083B2CA /* InterstitialAd.swift in Sources */,
 				4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */,
 				4BBF1AF42B1E53DD0083B2CA /* TrainingType.swift in Sources */,
 				4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
