@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct SitUpsView: View {
+    @ObservedObject var interstitial = Interstitial()
     @ObservedObject var sitUpsControlller = SitUpsViewController()
     @State var saveFlag = false
     @State var revise = false
     @State var stopFlag = false
     @State var status = 0
     var body: some View {
-        let bounds = UIScreen.main.bounds
-        let height = bounds.height
-        let width = bounds.width
         ZStack{
             Image("fukkin_gray")
                 .resizable()
@@ -25,26 +23,30 @@ struct SitUpsView: View {
             VStack{
                 Spacer()
                 if status == 0 {
-                    Text("Sit-ups")
-                        .font(.largeTitle)
+                    Text(LocalizedStringKey("Sit-ups"))
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .fontWeight(.bold)
                         .padding()
                 }else if status == 1{
                     HStack {
-                        Text("Measuring")
-                            .font(.largeTitle)
+                        Text(LocalizedStringKey("Measuring"))
+                            .font(.system(.largeTitle, design: .monospaced))
+                            .fontWeight(.bold)
                             .padding()
                         DotView()
                         DotView(delay: 0.2)
                         DotView(delay: 0.4)
                             }
                 }else if status == 2{
-                    Text("Stop measurement")
-                        .font(.largeTitle)
+                    Text(LocalizedStringKey("Stop measurement"))
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .fontWeight(.bold)
                         .padding()
                 }
                 Spacer()
                 Text(sitUpsControlller.counter)
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .padding()
                 Spacer()
                 HStack{
@@ -56,14 +58,14 @@ struct SitUpsView: View {
                             status = 1
                             stopFlag = true
                         }, label: {
-                            Text("▶︎")
-                                .font(.largeTitle)
+                            Image(systemName: "play.fill")
+                                .padding()
+                                .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("restartColor"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("startColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.trailing)
                         })
                             .padding()
                     }else {
@@ -73,17 +75,17 @@ struct SitUpsView: View {
                             status = 1
                             stopFlag = true
                         }, label: {
-                            Text("Start")
+                            Image(systemName: "play.fill")
+                                .padding()
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("light_blue"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("startColor"))
                                 .clipShape(Circle())
-                                .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.trailing)
+                                .shadow(color: stopFlag ? .white : .gray, radius: 4, x: 0, y: 0)
                         })
                             .disabled(stopFlag)
-                            .opacity(stopFlag ? 0.1:1)
+                            .opacity(stopFlag ? 0.3:1)
                             .padding()
                     }
                     Spacer()
@@ -93,15 +95,16 @@ struct SitUpsView: View {
                             sitUpsControlller.saveDate()
                             saveFlag = false
                             status = 0
+                            interstitial.presentInterstitial()
                         }) {
-                            Text("Save")
+                            Image(systemName: "list.bullet.clipboard.fill")
+                                .padding(.horizontal)
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
+                                .frame(width: 160.0, height: 120.0)
                                 .background(Color("saveColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.leading)
                         }.padding()
                     }else{
                         Button(action: {
@@ -111,14 +114,14 @@ struct SitUpsView: View {
                             status = 2
                             stopFlag = false
                         }, label: {
-                            Text("Stop")
+                            Image(systemName: "stop.fill")
+                                .padding(.horizontal)
                                 .font(.title)
                                 .foregroundColor(Color.white)
-                                .frame(width: height * 0.13, height: height * 0.13)
-                                .background(Color("restartColor"))
+                                .frame(width: 160.0, height: 120.0)
+                                .background(Color("stopColor"))
                                 .clipShape(Circle())
                                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                                .padding(.leading)
                         }).padding()
                         
                     }
@@ -129,13 +132,6 @@ struct SitUpsView: View {
                     }.labelsHidden()
                         .padding()
                     Spacer()
-                    TextField("count", value: $sitUpsControlller.counter, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.title2)
-                        .frame(width: width * 0.3)
-                        .padding(.horizontal)
-                        .opacity(revise ? 1:0)
-                        .disabled(!revise)
                 }.padding(.leading)
                 if revise {
                     HStack{
@@ -157,15 +153,18 @@ struct SitUpsView: View {
                         Button(action: {
                             sitUpsControlller.reset()
                         }, label: {
-                            Text("Reset")
+                            Image(systemName: "gobackward")
                                 .font(.title)
                                 .padding(.trailing)
                         }).padding([.trailing, .bottom])
                     }.padding()
                 }
                 if !revise {
-                    Text(" ").padding()
+                    Text(" ").padding(.bottom)
                 }
+            }
+            .onAppear() {
+                interstitial.loadInterstitial()
             }
         }
     }
