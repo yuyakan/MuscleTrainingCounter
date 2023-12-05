@@ -23,12 +23,14 @@ struct PushUpsView: View {
                 Spacer()
                 if status == 0 {
                     Text(LocalizedStringKey("Push-ups"))
-                        .font(.largeTitle)
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .fontWeight(.bold)
                         .padding()
                 }else if status == 1{
                     HStack {
                         Text(LocalizedStringKey("Measuring"))
-                            .font(.largeTitle)
+                            .font(.system(.largeTitle, design: .monospaced))
+                            .fontWeight(.bold)
                             .padding()
                         DotView() // 1.
                         DotView(delay: 0.2) // 2.
@@ -36,12 +38,14 @@ struct PushUpsView: View {
                             }
                 }else if status == 2{
                     Text(LocalizedStringKey("Stop measurement"))
-                        .font(.largeTitle)
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .fontWeight(.bold)
                         .padding()
                 }
                 Spacer()
                 Text("\(pushUpsControlller.counter)")
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .padding()
                 Spacer()
                 HStack{

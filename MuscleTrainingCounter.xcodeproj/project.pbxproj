@@ -33,6 +33,12 @@
 		4BB2D11128489B0000E87ED7 /* SumGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */; };
 		4BB2D1132848A8F700E87ED7 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1122848A8F700E87ED7 /* DotView.swift */; };
 		4BB2D1142848A8F700E87ED7 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2D1122848A8F700E87ED7 /* DotView.swift */; };
+		4BBF1AED2B1E4E780083B2CA /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */; };
+		4BBF1AEE2B1E4E780083B2CA /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */; };
+		4BBF1AF02B1E51760083B2CA /* SpanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AEF2B1E51760083B2CA /* SpanType.swift */; };
+		4BBF1AF12B1E51760083B2CA /* SpanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AEF2B1E51760083B2CA /* SpanType.swift */; };
+		4BBF1AF32B1E53DD0083B2CA /* TrainingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */; };
+		4BBF1AF42B1E53DD0083B2CA /* TrainingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */; };
 		4BD50E7927D3B180000A5A4F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E7827D3B180000A5A4F /* Tests_iOS.swift */; };
 		4BD50E8527D3B180000A5A4F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8427D3B180000A5A4F /* Tests_macOS.swift */; };
 		4BD50E8727D3B180000A5A4F /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50E8627D3B180000A5A4F /* Tests_macOSLaunchTests.swift */; };
@@ -112,6 +118,9 @@
 		4BB2D10C2848965900E87ED7 /* SetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUp.swift; sourceTree = "<group>"; };
 		4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumGraphViewModel.swift; sourceTree = "<group>"; };
 		4BB2D1122848A8F700E87ED7 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		4BBF1AEF2B1E51760083B2CA /* SpanType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanType.swift; sourceTree = "<group>"; };
+		4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingType.swift; sourceTree = "<group>"; };
 		4BD50E6027D3B17E000A5A4F /* MuscleTrainingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTrainingCounterApp.swift; sourceTree = "<group>"; };
 		4BD50E6127D3B17E000A5A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BD50E6227D3B180000A5A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -336,6 +345,9 @@
 			children = (
 				4BB2D10F28489B0000E87ED7 /* SumGraphViewModel.swift */,
 				4BD50EA227D4A505000A5A4F /* SumGraphView.swift */,
+				4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */,
+				4BBF1AEF2B1E51760083B2CA /* SpanType.swift */,
+				4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */,
 			);
 			path = GraphView;
 			sourceTree = "<group>";
@@ -682,6 +694,7 @@
 				4BD50E8A27D3B180000A5A4F /* ContentView.swift in Sources */,
 				4B8AC8262846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D327D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
+				4BBF1AF02B1E51760083B2CA /* SpanType.swift in Sources */,
 				4B508F8027D670C2007B1EA8 /* PushUpsViewController.swift in Sources */,
 				4BB2D11028489B0000E87ED7 /* SumGraphViewModel.swift in Sources */,
 				4B8AC8232844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
@@ -689,7 +702,9 @@
 				4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BB2D1132848A8F700E87ED7 /* DotView.swift in Sources */,
 				4BE3A47227F8383100C32B42 /* BannerAd.swift in Sources */,
+				4BBF1AF32B1E53DD0083B2CA /* TrainingType.swift in Sources */,
 				4B508F7D27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
+				4BBF1AED2B1E4E780083B2CA /* GraphView.swift in Sources */,
 				4BD50E8827D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
 				4BD50EA327D4A505000A5A4F /* SumGraphView.swift in Sources */,
 				4B2FE2D627D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */,
@@ -705,6 +720,7 @@
 				4BD50E8B27D3B180000A5A4F /* ContentView.swift in Sources */,
 				4B8AC8272846EF69003E9783 /* PushUpsCounterModel.swift in Sources */,
 				4B2FE2D427D8B86C007B77E6 /* AirpodsSettingTutorialView.swift in Sources */,
+				4BBF1AF12B1E51760083B2CA /* SpanType.swift in Sources */,
 				4B508F8127D670C2007B1EA8 /* PushUpsViewController.swift in Sources */,
 				4BB2D11128489B0000E87ED7 /* SumGraphViewModel.swift in Sources */,
 				4B8AC8242844D2F8003E9783 /* SitUpsCounterModel.swift in Sources */,
@@ -712,7 +728,9 @@
 				4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */,
 				4BB2D1142848A8F700E87ED7 /* DotView.swift in Sources */,
 				4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */,
+				4BBF1AF42B1E53DD0083B2CA /* TrainingType.swift in Sources */,
 				4B508F7E27D66C83007B1EA8 /* PushUpsView.swift in Sources */,
+				4BBF1AEE2B1E4E780083B2CA /* GraphView.swift in Sources */,
 				4BD50E8927D3B180000A5A4F /* MuscleTrainingCounterApp.swift in Sources */,
 				4BD50EA427D4A505000A5A4F /* SumGraphView.swift in Sources */,
 				4B2FE2D727D8BD4D007B77E6 /* CompleteTutorialView.swift in Sources */,
@@ -999,7 +1017,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1033,7 +1051,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
