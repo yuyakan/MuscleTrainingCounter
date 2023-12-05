@@ -168,6 +168,5 @@ struct PushUpsView: View {
         }.onAppear() {
             interstitial.loadInterstitial()
         }
-        .disabled(!interstitial.interstitialAdLoaded)
     }
 }
