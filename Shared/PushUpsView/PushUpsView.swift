@@ -91,7 +91,7 @@ struct PushUpsView: View {
                             .padding()
                     }
                     Spacer()
-                    if(saveFlag){
+                    if(saveFlag && (pushUpsControlller.counter != "0")){
                         Button(action: {
                             Thread.sleep(forTimeInterval: 0.1)
                             pushUpsControlller.saveDate()
@@ -110,11 +110,17 @@ struct PushUpsView: View {
                         }.padding()
                     }else{
                         Button(action: {
-                            Thread.sleep(forTimeInterval: 0.1)
-                            pushUpsControlller.stopCalc()
-                            saveFlag = true
-                            stopFlag = false
-                            status = 2
+                            if (pushUpsControlller.counter == "0") {
+                                saveFlag = false
+                                stopFlag = false
+                                status = 0
+                            } else {
+                                Thread.sleep(forTimeInterval: 0.1)
+                                pushUpsControlller.stopCalc()
+                                saveFlag = true
+                                status = 2
+                                stopFlag = false
+                            }
                         }, label: {
                             Image(systemName: "stop.fill")
                                 .padding(.horizontal)
@@ -123,8 +129,11 @@ struct PushUpsView: View {
                                 .frame(width: 160.0, height: 120.0)
                                 .background(Color("stopColor"))
                                 .clipShape(Circle())
-                                .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                        }).padding()
+                                .shadow(color: status != 1 ? .white : .gray, radius: 4, x: 0, y: 0)
+                        })
+                            .disabled(status != 1)
+                            .opacity(status != 1 ? 0.3:1)
+                            .padding()
                         
                     }
                     Spacer()
@@ -146,6 +155,7 @@ struct PushUpsView: View {
                         }).padding([.leading, .bottom])
                         Spacer()
                         Button(action: {
+                            saveFlag = true
                             pushUpsControlller.plus()
                         }, label: {
                             Text("＋")
