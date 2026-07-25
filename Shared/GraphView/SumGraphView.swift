@@ -53,18 +53,17 @@ struct SumGraphView: View {
         }
     }
 
-    // MARK: - 縦向き：ゆったり縦積み
+    // MARK: - 縦向き：全体を統一間隔で並べ、上下に均等な余白
     private var portraitLayout: some View {
         VStack(spacing: Theme.Spacing.lg) {
             Spacer()
             trainingTitle
             spanPicker
             graph
+            trainingIconBar
             Spacer()
-            trainingPicker
-                .padding(.horizontal, Theme.Spacing.lg)
-                .padding(.bottom, Theme.Spacing.lg)
         }
+        .padding(.bottom, Theme.Spacing.lg)
     }
 
     // MARK: - 横向き：左に種目サイドバー、中央にグラフのダッシュボード風
@@ -110,25 +109,39 @@ struct SumGraphView: View {
     private var trainingSidebar: some View {
         VStack(spacing: Theme.Spacing.md) {
             ForEach(0..<trainingTitles.count, id: \.self) { index in
-                Button {
-                    pickerSelection = index
-                } label: {
-                    Image(trainingIcons[index])
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 34, height: 34)
-                        .padding(Theme.Spacing.sm)
-                        .background(
-                            Circle().fill(pickerSelection == index
-                                          ? Theme.Colors.primary.opacity(0.15)
-                                          : Color.clear)
-                        )
-                        .opacity(pickerSelection == index ? 1 : 0.4)
-                }
-                .buttonStyle(PressableButtonStyle())
+                trainingIconButton(index)
             }
         }
         .padding(.vertical, Theme.Spacing.sm)
+    }
+
+    // 縦向き下部の種目アイコン横バー
+    private var trainingIconBar: some View {
+        HStack(spacing: Theme.Spacing.lg) {
+            ForEach(0..<trainingTitles.count, id: \.self) { index in
+                trainingIconButton(index)
+            }
+        }
+    }
+
+    // 種目アイコンの丸ボタン（選択中はブランドカラーで強調）
+    private func trainingIconButton(_ index: Int) -> some View {
+        Button {
+            pickerSelection = index
+        } label: {
+            Image(trainingIcons[index])
+                .resizable()
+                .scaledToFit()
+                .frame(width: 34, height: 34)
+                .padding(Theme.Spacing.sm)
+                .background(
+                    Circle().fill(pickerSelection == index
+                                  ? Theme.Colors.primary.opacity(0.15)
+                                  : Color.clear)
+                )
+                .opacity(pickerSelection == index ? 1 : 0.4)
+        }
+        .buttonStyle(PressableButtonStyle())
     }
 
     // MARK: - 部品
@@ -152,15 +165,6 @@ struct SumGraphView: View {
         // 種目・期間の組み合わせごとに GraphView を作り直す（init で値を確定させるため id を付与）
         GraphView(sumGraghViewModel: sumGraphViewModel, spanType: selectedSpanType, traingType: selectedTrainingType)
             .id("\(pickerSelection)-\(pickerSelection2)")
-    }
-
-    private var trainingPicker: some View {
-        Picker(selection: $pickerSelection, label: Text("Stats")){
-            Text(LocalizedStringKey("Sit-ups")).tag(0)
-            Text(LocalizedStringKey("Push-ups")).tag(1)
-            Text(LocalizedStringKey("BackExtension")).tag(2)
-            Text(LocalizedStringKey("Squats")).tag(3)
-        }.pickerStyle(SegmentedPickerStyle())
     }
 }
 

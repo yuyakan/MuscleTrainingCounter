@@ -15,35 +15,20 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $tabIndex){
             SitUpsView().tabItem{
-                Group{
-                    Image("tab_sit")
-                    Text(LocalizedStringKey("Sit-ups"))
-                }
+                Image("tab_sit")
             }.tag(0)
             PushUpsView().tabItem{
-                Group{
-                    Image("tab_push")
-                    Text(LocalizedStringKey("Push-ups"))
-                }
+                Image("tab_push")
             }.tag(1)
             SumGraphView()
                 .tabItem{
-                Group{
                     Image(systemName: "chart.bar")
-                    Text(LocalizedStringKey("Charts"))
-                }
-            }.tag(2)
+                }.tag(2)
             BackExtensionView().tabItem{
-                Group{
-                    Image("tab_back")
-                    Text(LocalizedStringKey("BackExtension"))
-                }
+                Image("tab_back")
             }.tag(3)
             SquatsView().tabItem{
-                Group{
-                    Image("tab_squat")
-                    Text(LocalizedStringKey("Squats"))
-                }
+                Image("tab_squat")
             }.tag(4)
         }
         // 縦向きはタブバーを少し浮かせ、横向き（画面が低い）は下げて余白を詰める

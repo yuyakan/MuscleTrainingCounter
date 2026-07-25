@@ -28,7 +28,7 @@ struct WorkoutScreen<Header: View, Counter: View, Controls: View, Revise: View>:
             Image(backgroundImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .opacity(0.06)
+                .opacity(0.12)
                 .padding(Theme.Spacing.xl)
 
             if isCompactHeight {

@@ -138,17 +138,16 @@ struct GraphView: View {
         }
     }
     
-    // 縦向き：グラフ + Target + Total を縦積みで返す（従来のまま）
+    // 縦向き：グラフ + Target + Total を縦積みで返す。
+    // グラフ高は画面の余白に応じて伸縮し、上限240〜400ptで頭打ち（小さい端末は240相当、大きい端末は広がる）。
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: Theme.Spacing.md) {
             chart
                 .frame(maxWidth: 500)
-                .frame(height: 240)
+                .frame(minHeight: 240, maxHeight: 400)
                 .padding(.horizontal, Theme.Spacing.lg)
             targetRow
-                .padding(.top, 2)
             totalLabel
-                .padding(.top, Theme.Spacing.md)
         }
         .onAppear { displaySpan() }
     }

@@ -29,7 +29,15 @@ class SumGraphViewModel: ObservableObject{
     @Published var month: [String] = ["", "", "", "", "", ""]
     
     let UD = UserDefaults.standard
-    
+
+    init() {
+        // 生成時に曜日・週・月ラベルを埋めておく。
+        // 空のままだと GraphView 初期化時に軸カテゴリが空文字にまとまり、棒が1本になってしまう。
+        calcDay()
+        calcWeek()
+        calcMonth()
+    }
+
     func displaySitUpsDay(){
         sitUpsDaySumCount = (UD.array(forKey: "NumArray") ?? [0.0]) as! [Double]
     }

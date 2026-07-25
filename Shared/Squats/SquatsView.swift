@@ -112,7 +112,10 @@ struct SquatsView: View {
     private var reviseSection: some View {
         HStack(spacing: Theme.Spacing.lg) {
             reviseButton(system: "minus") { squatsViewController.minus() }
-            reviseButton(system: "plus") { squatsViewController.plus() }
+            reviseButton(system: "plus") {
+                saveFlag = true
+                squatsViewController.plus()
+            }
             reviseButton(system: "gobackward") { squatsViewController.reset() }
         }
     }

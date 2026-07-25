@@ -112,7 +112,10 @@ struct BackExtensionView: View {
     private var reviseSection: some View {
         HStack(spacing: Theme.Spacing.lg) {
             reviseButton(system: "minus") { backExtensionViewController.minus() }
-            reviseButton(system: "plus") { backExtensionViewController.plus() }
+            reviseButton(system: "plus") {
+                saveFlag = true
+                backExtensionViewController.plus()
+            }
             reviseButton(system: "gobackward") { backExtensionViewController.reset() }
         }
     }
