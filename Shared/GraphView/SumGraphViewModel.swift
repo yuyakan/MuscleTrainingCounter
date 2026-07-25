@@ -15,7 +15,15 @@ class SumGraphViewModel: ObservableObject{
     @Published var pushUpsDaySumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     @Published var pushUpsWeekSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     @Published var pushUpsMonthSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    
+
+    @Published var backExtensionDaySumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    @Published var backExtensionWeekSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    @Published var backExtensionMonthSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    @Published var squatsDaySumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    @Published var squatsWeekSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    @Published var squatsMonthSumCount: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
     @Published var day: [String] = ["", "", "", "", "", "", ""]
     @Published var week: [String] = ["", "", "", ""]
     @Published var month: [String] = ["", "", "", "", "", ""]
@@ -45,7 +53,31 @@ class SumGraphViewModel: ObservableObject{
     func displayPushUpsMonth(){
         pushUpsMonthSumCount = (UD.array(forKey: "NumArray_m_p") ?? [0.0]) as! [Double]
     }
-    
+
+    func displayBackExtensionDay(){
+        backExtensionDaySumCount = (UD.array(forKey: "NumArray_b") ?? [0.0]) as! [Double]
+    }
+
+    func displayBackExtensionWeek(){
+        backExtensionWeekSumCount = (UD.array(forKey: "NumArray_w_b") ?? [0.0]) as! [Double]
+    }
+
+    func displayBackExtensionMonth(){
+        backExtensionMonthSumCount = (UD.array(forKey: "NumArray_m_b") ?? [0.0]) as! [Double]
+    }
+
+    func displaySquatsDay(){
+        squatsDaySumCount = (UD.array(forKey: "NumArray_s") ?? [0.0]) as! [Double]
+    }
+
+    func displaySquatsWeek(){
+        squatsWeekSumCount = (UD.array(forKey: "NumArray_w_s") ?? [0.0]) as! [Double]
+    }
+
+    func displaySquatsMonth(){
+        squatsMonthSumCount = (UD.array(forKey: "NumArray_m_s") ?? [0.0]) as! [Double]
+    }
+
     func calcDay() {
         day = []
         var calendar = Calendar.current
@@ -94,5 +126,29 @@ class SumGraphViewModel: ObservableObject{
     
     func displayPushUpsMonthTarget() -> Int {
         UD.integer(forKey: "targetPushMonthCount")
+    }
+
+    func displayBackExtensionDayTarget() -> Int {
+        UD.integer(forKey: "targetBackDayCount")
+    }
+
+    func displayBackExtensionWeekTarget() -> Int {
+        UD.integer(forKey: "targetBackWeekCount")
+    }
+
+    func displayBackExtensionMonthTarget() -> Int {
+        UD.integer(forKey: "targetBackMonthCount")
+    }
+
+    func displaySquatsDayTarget() -> Int {
+        UD.integer(forKey: "targetSquatDayCount")
+    }
+
+    func displaySquatsWeekTarget() -> Int {
+        UD.integer(forKey: "targetSquatWeekCount")
+    }
+
+    func displaySquatsMonthTarget() -> Int {
+        UD.integer(forKey: "targetSquatMonthCount")
     }
 }

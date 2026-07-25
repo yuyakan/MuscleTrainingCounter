@@ -8,17 +8,17 @@
 import SwiftUI
 import GoogleMobileAds
 
-struct BannerView: UIViewControllerRepresentable {
+struct AdBannerView: UIViewControllerRepresentable {
     func makeUIViewController(context _: Context) -> UIViewController {
-        let viewController = GADBannerViewController()
+        let viewController = BannerAdViewController()
         return viewController
     }
 
     func updateUIViewController(_: UIViewController, context _: Context) {}
 }
 
-class GADBannerViewController: UIViewController, GADBannerViewDelegate {
-    var bannerView: GADBannerView!
+class BannerAdViewController: UIViewController, BannerViewDelegate {
+    var bannerView: BannerView!
     let adUnitID = "ca-app-pub-3940256099942544/2934735716" //テスト
 
     override func viewDidLoad() {
@@ -39,23 +39,19 @@ class GADBannerViewController: UIViewController, GADBannerViewDelegate {
     }
 
     private func loadBanner() {
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        let bannerWidth = view.frame.size.width
+        bannerView = BannerView(adSize: currentOrientationAnchoredAdaptiveBanner(width: bannerWidth))
         bannerView.adUnitID = adUnitID
 
         bannerView.delegate = self
         bannerView.rootViewController = self
 
-        let bannerWidth = view.frame.size.width
-        bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(bannerWidth)
-
-        let request = GADRequest()
-        request.scene = view.window?.windowScene
-        bannerView.load(request)
+        bannerView.load(Request())
 
         setAdView(bannerView)
     }
 
-    func setAdView(_ view: GADBannerView) {
+    func setAdView(_ view: BannerView) {
         bannerView = view
         self.view.addSubview(bannerView)
         bannerView.translatesAutoresizingMaskIntoConstraints = false

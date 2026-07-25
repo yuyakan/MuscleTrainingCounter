@@ -77,6 +77,64 @@ struct GraphView: View {
                 break
             }
             break
+
+        case .back:
+            switch spanType {
+            case .day:
+                span = sumGraghViewModel.day
+                spanSumCount = sumGraghViewModel.backExtensionDaySumCount
+                displaySpan = sumGraghViewModel.displayBackExtensionDay
+                spansNum = 7
+                dayCount = 1
+                targetCount = sumGraghViewModel.displayBackExtensionDayTarget()
+                break
+            case .week:
+                span = sumGraghViewModel.week
+                spanSumCount = sumGraghViewModel.backExtensionWeekSumCount
+                displaySpan = sumGraghViewModel.displayBackExtensionWeek
+                spansNum = 4
+                dayCount = 7
+                targetCount = sumGraghViewModel.displayBackExtensionWeekTarget()
+                break
+            case .month:
+                span = sumGraghViewModel.month
+                spanSumCount = sumGraghViewModel.backExtensionMonthSumCount
+                displaySpan = sumGraghViewModel.displayBackExtensionMonth
+                spansNum = 6
+                dayCount = 30
+                targetCount = sumGraghViewModel.displayBackExtensionMonthTarget()
+                break
+            }
+            break
+
+        case .squat:
+            switch spanType {
+            case .day:
+                span = sumGraghViewModel.day
+                spanSumCount = sumGraghViewModel.squatsDaySumCount
+                displaySpan = sumGraghViewModel.displaySquatsDay
+                spansNum = 7
+                dayCount = 1
+                targetCount = sumGraghViewModel.displaySquatsDayTarget()
+                break
+            case .week:
+                span = sumGraghViewModel.week
+                spanSumCount = sumGraghViewModel.squatsWeekSumCount
+                displaySpan = sumGraghViewModel.displaySquatsWeek
+                spansNum = 4
+                dayCount = 7
+                targetCount = sumGraghViewModel.displaySquatsWeekTarget()
+                break
+            case .month:
+                span = sumGraghViewModel.month
+                spanSumCount = sumGraghViewModel.squatsMonthSumCount
+                displaySpan = sumGraghViewModel.displaySquatsMonth
+                spansNum = 6
+                dayCount = 30
+                targetCount = sumGraghViewModel.displaySquatsMonthTarget()
+                break
+            }
+            break
         }
     }
     
@@ -88,12 +146,12 @@ struct GraphView: View {
         Chart {
             ForEach(1...spansNum, id: \.self) { index in
                 BarMark(
-                    x: .value("day", span[index-1]),
-                    y: .value("count", spanSumCount[index])
+                    x: .value("day", index-1 < span.count ? span[index-1] : ""),
+                    y: .value("count", index < spanSumCount.count ? spanSumCount[index] : 0.0)
                 )
                 .foregroundStyle(Color("startColor"))
                 .cornerRadius(6)
-                
+
                 RuleMark(y: .value("target", targetCount))
                     .foregroundStyle(.orange)
                 .lineStyle(StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round, dash: [5,5,5,5], dashPhase: 0))

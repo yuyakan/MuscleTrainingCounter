@@ -10,4 +10,6 @@ import Foundation
 enum TrainingType {
     case push
     case sit
+    case back
+    case squat
 }

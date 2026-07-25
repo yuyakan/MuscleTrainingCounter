@@ -21,7 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MuscleTrainingCounterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     init(){
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        MobileAds.shared.start(completionHandler: nil)
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
 //                     ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
 //                            switch status {

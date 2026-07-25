@@ -1,16 +1,33 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/AppPear/ChartView",
-        "state": {
-          "branch": null,
-          "revision": "9115a992c91fa19cbb4f2241084240d38654a1fc",
-          "version": "1.5.5"
-        }
+  "originHash" : "9f31d9255fae66685c754ff3e365bdb79668b234836fcd11d881252682d3afbe",
+  "pins" : [
+    {
+      "identity" : "chartview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppPear/ChartView",
+      "state" : {
+        "revision" : "9115a992c91fa19cbb4f2241084240d38654a1fc",
+        "version" : "1.5.5"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swift-package-manager-google-mobile-ads",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+      "state" : {
+        "revision" : "868149fc50d1452078e83540e636cf519bac3e6a",
+        "version" : "13.7.0"
+      }
+    },
+    {
+      "identity" : "swift-package-manager-google-user-messaging-platform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+      "state" : {
+        "revision" : "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
+        "version" : "3.1.0"
+      }
+    }
+  ],
+  "version" : 3
 }

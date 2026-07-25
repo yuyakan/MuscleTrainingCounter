@@ -16,28 +16,40 @@ struct ContentView: View {
             TabView(selection: $tabIndex){
                 SitUpsView().tabItem{
                     Group{
-                        Image("small_fukkin_gray")
+                        Image("tab_sit")
                         Text(LocalizedStringKey("Sit-ups"))
                     }
                 }.tag(0)
+                PushUpsView().tabItem{
+                    Group{
+                        Image("tab_push")
+                        Text(LocalizedStringKey("Push-ups"))
+                    }
+                }.tag(1)
                 SumGraphView()
                     .tabItem{
                     Group{
                         Image(systemName: "chart.bar")
                         Text(LocalizedStringKey("Charts"))
                     }
-                }.tag(1)
-                PushUpsView().tabItem{
+                }.tag(2)
+                BackExtensionView().tabItem{
                     Group{
-                        Image("small_udetate_gray")
-                        Text(LocalizedStringKey("Push-ups"))
+                        Image("tab_back")
+                        Text(LocalizedStringKey("BackExtension"))
                     }
-                }
+                }.tag(3)
+                SquatsView().tabItem{
+                    Group{
+                        Image("tab_squat")
+                        Text(LocalizedStringKey("Squats"))
+                    }
+                }.tag(4)
             }.padding(.bottom)
                 .fullScreenCover(isPresented: $isVisit, content: {
                     TutorialView(visit: $isVisit)
                 })
-            BannerView().frame(height: 60)
+            AdBannerView().frame(height: 60)
         }
     }
 }
