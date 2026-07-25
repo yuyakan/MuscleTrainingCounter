@@ -4,6 +4,8 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3155724310732667~7494050869</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>あなたに関連性の高い広告を表示するために使用します。</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

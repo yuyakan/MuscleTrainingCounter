@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
-import AppTrackingTransparency
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -21,19 +19,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MuscleTrainingCounterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     init(){
-        MobileAds.shared.start(completionHandler: nil)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-//                     ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-//                            switch status {
-//                            case .authorized:
-//                                print("OK")
-//                            case .denied, .restricted, .notDetermined:
-//                                print("No")
-//                            @unknown default:
-//                                fatalError()
-//                            }
-//                        })
-//                     }
+#if os(iOS)
+        // UMP（同意管理）→ ATT（トラッキング許可）→ AdMob 開始の統合フロー
+        ConsentManager.shared.startConsentFlow()
+#endif
     }
     var body: some Scene {
         WindowGroup {
