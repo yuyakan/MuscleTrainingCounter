@@ -7,6 +7,7 @@
 
 import Foundation
 import GoogleMobileAds
+import StoreKit
 
 class Interstitial: NSObject, FullScreenContentDelegate, ObservableObject {
     @Published var interstitialAdLoaded: Bool = false
@@ -37,6 +38,8 @@ class Interstitial: NSObject, FullScreenContentDelegate, ObservableObject {
         let saveCount = UserDefaults.standard.integer(forKey: "saveCount")
         if saveCount < 1 {
             UserDefaults.standard.set(saveCount+1, forKey: "saveCount")
+            // 広告を出さない回（奇数回目の保存）はレビューをリクエスト。ただし初回はスキップ。
+            requestReviewIfNeeded()
             return
         } else {
             UserDefaults.standard.set(0, forKey: "saveCount")
@@ -54,6 +57,19 @@ class Interstitial: NSObject, FullScreenContentDelegate, ObservableObject {
             self.loadInterstitial()
         }
     }
+    // レビューダイアログのリクエスト（初回の保存はスキップし、以降の奇数回でリクエスト。実際の表示頻度はOSが制御）
+    private func requestReviewIfNeeded() {
+        let didFirstSave = UserDefaults.standard.bool(forKey: "didFirstSave")
+        if !didFirstSave {
+            UserDefaults.standard.set(true, forKey: "didFirstSave")
+            return
+        }
+        if let scene = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+
     // 失敗通知
     func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("インタースティシャル広告の表示に失敗しました")
