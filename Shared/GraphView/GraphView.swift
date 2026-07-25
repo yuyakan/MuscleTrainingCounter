@@ -16,7 +16,7 @@ struct GraphView: View {
     let dayCount: Int
     let spanSumCount: [Double]
     let displaySpan: () -> ()
-    
+
     init(sumGraghViewModel: SumGraphViewModel, spanType: SpanType, traingType: TrainingType) {
         self.sumGraphViewModel = sumGraghViewModel
         switch traingType {
@@ -138,44 +138,62 @@ struct GraphView: View {
         }
     }
     
-    var body:some View {
-        let bounds = UIScreen.main.bounds
-        let height = bounds.height
-        let width = bounds.width
-        
+    // 縦向き：グラフ + Target + Total を縦積みで返す（従来のまま）
+    var body: some View {
+        VStack(spacing: 0) {
+            chart
+                .frame(maxWidth: 500)
+                .frame(height: 240)
+                .padding(.horizontal, Theme.Spacing.lg)
+            targetRow
+                .padding(.top, 2)
+            totalLabel
+                .padding(.top, Theme.Spacing.md)
+        }
+        .onAppear { displaySpan() }
+    }
+
+    // MARK: - 個別部品（横向きの2カラム配置で再利用）
+
+    /// 棒グラフ本体。高さは呼び出し側の frame に追従する。
+    var chart: some View {
         Chart {
             ForEach(1...spansNum, id: \.self) { index in
                 BarMark(
                     x: .value("day", index-1 < span.count ? span[index-1] : ""),
                     y: .value("count", index < spanSumCount.count ? spanSumCount[index] : 0.0)
                 )
-                .foregroundStyle(Color("startColor"))
+                .foregroundStyle(Theme.Colors.primary)
                 .cornerRadius(6)
 
                 RuleMark(y: .value("target", targetCount))
                     .foregroundStyle(.orange)
-                .lineStyle(StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round, dash: [5,5,5,5], dashPhase: 0))
+                    .lineStyle(StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round, dash: [5,5,5,5], dashPhase: 0))
             }
         }
-        .frame(width: width * 0.8, height: height * 0.33)
-        .onAppear(perform: {
-            displaySpan()
-        })
-        HStack(spacing: 0) {
-            Spacer()
+        .onAppear { displaySpan() }
+    }
+
+    /// 目標入力行。
+    var targetRow: some View {
+        HStack(spacing: Theme.Spacing.xs) {
             Text(String(localized: "Target") + ": ")
-                .font(.system(.subheadline, design: .monospaced))
+                .font(.system(.subheadline, design: .rounded))
+                .foregroundColor(Theme.Colors.textSecondary)
             TextField("10", value: $targetCount, format: .number)
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 50)
             Text("/ " + String(localized: "1day"))
-                .font(.system(.subheadline, design: .monospaced))
-                .padding(.trailing, width * 0.11)
+                .font(.system(.subheadline, design: .rounded))
+                .foregroundColor(Theme.Colors.textSecondary)
         }
-        .padding(.top, 2)
+    }
+
+    /// 合計ラベル。
+    var totalLabel: some View {
         Text(String(localized: "Total") + "：\(Int(spanSumCount.reduce(0, +)))")
-            .font(.system(.title, design: .monospaced))
+            .font(.system(.title, design: .rounded))
             .fontWeight(.bold)
-            .padding(.top, 20)
+            .foregroundColor(Theme.Colors.text)
     }
 }

@@ -11,172 +11,133 @@ struct PushUpsView: View {
     @ObservedObject var interstitial = Interstitial()
     @ObservedObject var pushUpsControlller = PushUpsViewController()
     @State var saveFlag = false
-    @State var revise = false
     @State var stopFlag = false
     @State var status = 0
+
+    // 保存ボタンを出す条件（計測停止後 & カウントあり）
+    private var canSave: Bool { saveFlag && pushUpsControlller.counter != "0" }
+
     var body: some View {
-        ZStack{
-            Image("udetate_gray")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .opacity(0.3)
-            VStack{
-                Spacer()
-                if status == 0 {
-                    Text(LocalizedStringKey("Push-ups"))
-                        .font(.system(.largeTitle, design: .monospaced))
-                        .fontWeight(.bold)
-                        .padding()
-                }else if status == 1{
-                    HStack {
-                        Text(LocalizedStringKey("Measuring"))
-                            .font(.system(.largeTitle, design: .monospaced))
-                            .fontWeight(.bold)
-                            .padding()
-                        DotView() // 1.
-                        DotView(delay: 0.2) // 2.
-                        DotView(delay: 0.4) // 3.
-                            }
-                }else if status == 2{
-                    Text(LocalizedStringKey("Stop measurement"))
-                        .font(.system(.largeTitle, design: .monospaced))
-                        .fontWeight(.bold)
-                        .padding()
-                }
-                Spacer()
-                Text("\(pushUpsControlller.counter)")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-                Spacer()
-                HStack{
-                    Spacer()
-                    if saveFlag {
-                        Button(action: {
-                            pushUpsControlller.startCalc()
-                            saveFlag = false
-                            stopFlag = true
-                            status = 1
-                        }, label: {
-                            Image(systemName: "play.fill")
-                                .padding()
-                                .font(.title)
-                                .foregroundColor(Color.white)
-                                .frame(width: 160.0, height: 120.0)
-                                .background(Color("startColor"))
-                                .clipShape(Circle())
-                                .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                        })
-                            .disabled(stopFlag)
-                            .opacity(stopFlag ? 0.3:1)
-                            .padding()
-                    } else {
-                        Button(action: {
-                            pushUpsControlller.startCalc()
-                            saveFlag = false
-                            stopFlag = true
-                            status = 1
-                        }, label: {
-                            Image(systemName: "play.fill")
-                                .padding()
-                                .font(.title)
-                                .foregroundColor(Color.white)
-                                .frame(width: 160.0, height: 120.0)
-                                .background(Color("startColor"))
-                                .clipShape(Circle())
-                                .shadow(color: stopFlag ? .white : .gray, radius: 4, x: 0, y: 0)
-                        })
-                            .disabled(stopFlag)
-                            .opacity(stopFlag ? 0.1:1)
-                            .padding()
-                    }
-                    Spacer()
-                    if(saveFlag && (pushUpsControlller.counter != "0")){
-                        Button(action: {
-                            Thread.sleep(forTimeInterval: 0.1)
-                            pushUpsControlller.saveDate()
-                            saveFlag = false
-                            status = 0
-                            interstitial.presentInterstitial()
-                        }) {
-                            Image(systemName: "list.bullet.clipboard.fill")
-                                .padding(.horizontal)
-                                .font(.title)
-                                .foregroundColor(Color.white)
-                                .frame(width: 160.0, height: 120.0)
-                                .background(Color("saveColor"))
-                                .clipShape(Circle())
-                                .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                        }.padding()
-                    }else{
-                        Button(action: {
-                            if (pushUpsControlller.counter == "0") {
-                                saveFlag = false
-                                stopFlag = false
-                                status = 0
-                            } else {
-                                Thread.sleep(forTimeInterval: 0.1)
-                                pushUpsControlller.stopCalc()
-                                saveFlag = true
-                                status = 2
-                                stopFlag = false
-                            }
-                        }, label: {
-                            Image(systemName: "stop.fill")
-                                .padding(.horizontal)
-                                .font(.title)
-                                .foregroundColor(Color.white)
-                                .frame(width: 160.0, height: 120.0)
-                                .background(Color("stopColor"))
-                                .clipShape(Circle())
-                                .shadow(color: status != 1 ? .white : .gray, radius: 4, x: 0, y: 0)
-                        })
-                            .disabled(status != 1)
-                            .opacity(status != 1 ? 0.3:1)
-                            .padding()
-                        
-                    }
-                    Spacer()
-                }.padding(.horizontal)
-                HStack{
-                    Toggle(isOn: $revise) {
-                    }.labelsHidden()
-                        .padding()
-                    Spacer()
-                }.padding(.leading)
-                if revise {
-                    HStack{
-                        Button(action: {
-                            pushUpsControlller.minus()
-                        }, label: {
-                            Text("ー")
-                                .font(.title)
-                                .padding(.leading)
-                        }).padding([.leading, .bottom])
-                        Spacer()
-                        Button(action: {
-                            saveFlag = true
-                            pushUpsControlller.plus()
-                        }, label: {
-                            Text("＋")
-                                .font(.title)
-                        }).padding(.bottom)
-                        Spacer()
-                        Button(action: {
-                            pushUpsControlller.reset()
-                        }, label: {
-                            Image(systemName: "gobackward")
-                                .font(.title)
-                                .padding(.trailing)
-                        }).padding([.trailing, .bottom])
-                    }.padding()
-                }
-                if !revise {
-                    Text(" ").padding(.bottom)
-                }
-            }
-        }.onAppear() {
+        WorkoutScreen(
+            backgroundImage: "udetate_gray",
+            header: { statusHeader },
+            counter: { counterDisplay },
+            controls: { controlButtons },
+            revise: { reviseSection }
+        )
+        .onAppear {
             interstitial.loadInterstitial()
         }
+    }
+
+    // MARK: - 見出し（状態に応じて変化）
+    private var statusHeader: some View {
+        Group {
+            if status == 1 {
+                HStack(spacing: Theme.Spacing.xs) {
+                    Text(LocalizedStringKey("Measuring"))
+                        .font(Theme.Typography.title())
+                        .foregroundColor(Theme.Colors.text)
+                    DotView()
+                    DotView(delay: 0.2)
+                    DotView(delay: 0.4)
+                }
+            } else if status == 2 {
+                Text(LocalizedStringKey("Stop measurement"))
+                    .font(Theme.Typography.title())
+                    .foregroundColor(Theme.Colors.text)
+            } else {
+                Text(LocalizedStringKey("Push-ups"))
+                    .font(Theme.Typography.title())
+                    .foregroundColor(Theme.Colors.text)
+            }
+        }
+    }
+
+    // MARK: - カウンター表示
+    private var counterDisplay: some View {
+        VStack(spacing: Theme.Spacing.xs) {
+            Text(pushUpsControlller.counter)
+                .font(Theme.Typography.counter())
+                .foregroundColor(Theme.Colors.text)
+                .contentTransition(.numericText())
+                .animation(.snappy, value: pushUpsControlller.counter)
+            Text(LocalizedStringKey("Times"))
+                .font(Theme.Typography.caption)
+                .foregroundColor(Theme.Colors.textSecondary)
+        }
+    }
+
+    // MARK: - 操作ボタン（start / stop・save）
+    private var controlButtons: some View {
+        HStack(spacing: 72) {
+            // Start
+            ActionButton(
+                systemName: "play.fill",
+                tint: Theme.Colors.primary,
+                isEnabled: !stopFlag
+            ) {
+                pushUpsControlller.startCalc()
+                saveFlag = false
+                stopFlag = true
+                status = 1
+            }
+
+            // Stop / Save（状態で切り替え）
+            if canSave {
+                ActionButton(
+                    systemName: "list.bullet.clipboard.fill",
+                    tint: Theme.Colors.save
+                ) {
+                    Thread.sleep(forTimeInterval: 0.1)
+                    pushUpsControlller.saveDate()
+                    saveFlag = false
+                    status = 0
+                    interstitial.presentInterstitial()
+                }
+            } else {
+                ActionButton(
+                    systemName: "stop.fill",
+                    tint: Theme.Colors.stop,
+                    isEnabled: status == 1
+                ) {
+                    if pushUpsControlller.counter == "0" {
+                        saveFlag = false
+                        stopFlag = false
+                        status = 0
+                    } else {
+                        Thread.sleep(forTimeInterval: 0.1)
+                        pushUpsControlller.stopCalc()
+                        saveFlag = true
+                        status = 2
+                        stopFlag = false
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: - 補正セクション（− / ＋ / リセットを常時表示）
+    private var reviseSection: some View {
+        HStack(spacing: Theme.Spacing.lg) {
+            reviseButton(system: "minus") { pushUpsControlller.minus() }
+            reviseButton(system: "plus") {
+                saveFlag = true
+                pushUpsControlller.plus()
+            }
+            reviseButton(system: "gobackward") { pushUpsControlller.reset() }
+        }
+    }
+
+    private func reviseButton(system: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: system)
+                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .foregroundColor(Theme.Colors.text)
+                .frame(width: 52, height: 52)
+                .background(Theme.Colors.surface)
+                .clipShape(Circle())
+        }
+        .buttonStyle(PressableButtonStyle())
     }
 }

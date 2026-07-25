@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0010B5C36CDF05C5D218DD5B /* BackExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91208F814DE058E9C7077D2F /* BackExtensionView.swift */; };
+		0AA9D44F74E8C80BA9AC21EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1CE1B949E36E598DD2DDC /* Theme.swift */; };
 		16D993B88D6EEFE415B0816B /* BackExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91208F814DE058E9C7077D2F /* BackExtensionView.swift */; };
 		191F880A9A2307C9FF42C62F /* SquatsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DF1D36013024BE13ACEDC /* SquatsCounterModel.swift */; };
 		2755D18E4ADF809F2F2A141B /* SquatsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DF1D36013024BE13ACEDC /* SquatsCounterModel.swift */; };
 		294A9777F5788FED94A539DD /* BackExtensionCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E62C7E12F01B7BFAC272 /* BackExtensionCounterModel.swift */; };
 		2D533051B2D66BFF0A3C48B5 /* BackExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E1C580CA6175EE4071C7 /* BackExtensionViewController.swift */; };
+		3E7EEF1A37EC561F804BCCD6 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466523851ED2CA8C9C964B3 /* ActionButton.swift */; };
+		48310C178ACB4151F0B77186 /* WorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */; };
 		4B1280FA27D5F129000890E2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1280F927D5F129000890E2 /* SwiftUICharts */; };
 		4B2FE2D027D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
 		4B2FE2D127D8A432007B77E6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */; };
@@ -65,9 +68,12 @@
 		4BE3A47327F8383100C32B42 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3A47127F8383100C32B42 /* BannerAd.swift */; };
 		4BF15B3A2B1C5B1B00D8D897 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */; };
 		4BF15B3B2B1C5B1B00D8D897 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BF15B3D2B1C5B1B00D8D897 /* Localizable.strings */; };
+		5D807EC576E751904FB59F59 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1CE1B949E36E598DD2DDC /* Theme.swift */; };
 		9F82A69D754BA5EF1780CE29 /* SquatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */; };
 		B8DEA79F76EA8EF4DCB1DACB /* BackExtensionCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E62C7E12F01B7BFAC272 /* BackExtensionCounterModel.swift */; };
+		BC22A29539BE0A8D6A510383 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466523851ED2CA8C9C964B3 /* ActionButton.swift */; };
 		C21BBA774AAE21C7641DCD62 /* SquatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */; };
+		CDE4DAC320719890EF68DD5C /* WorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */; };
 		D14BF437C7DB1871356440F6 /* BackExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E1C580CA6175EE4071C7 /* BackExtensionViewController.swift */; };
 		E08E186548D6D6C3977B2CFF /* SquatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27732B62D7E1F5C6FC01F0 /* SquatsViewController.swift */; };
 		F4EB3AAA9CF06F1284AE9ED4 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 155A8AFC704C5AEF1EE8856F /* GoogleMobileAds */; };
@@ -113,6 +119,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutScreen.swift; sourceTree = "<group>"; };
+		11F1CE1B949E36E598DD2DDC /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		3B27732B62D7E1F5C6FC01F0 /* SquatsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsViewController.swift; sourceTree = "<group>"; };
 		43D1E1C580CA6175EE4071C7 /* BackExtensionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackExtensionViewController.swift; sourceTree = "<group>"; };
 		4B2FE2CF27D8A432007B77E6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 		860DF1D36013024BE13ACEDC /* SquatsCounterModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsCounterModel.swift; sourceTree = "<group>"; };
 		91208F814DE058E9C7077D2F /* BackExtensionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackExtensionView.swift; sourceTree = "<group>"; };
 		C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsView.swift; sourceTree = "<group>"; };
+		E466523851ED2CA8C9C964B3 /* ActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +339,7 @@
 				4BD50E6227D3B180000A5A4F /* Assets.xcassets */,
 				183B7224D889955DB92AAC23 /* BackExtension */,
 				20112BB8DECECC7BABFB5BAB /* Squats */,
+				63683FD2414771447A20C05A /* DesignSystem */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -392,6 +402,17 @@
 				4BBF1AF52B1F4D1E0083B2CA /* InterstitialAd.swift */,
 			);
 			path = Ad;
+			sourceTree = "<group>";
+		};
+		63683FD2414771447A20C05A /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				11F1CE1B949E36E598DD2DDC /* Theme.swift */,
+				E466523851ED2CA8C9C964B3 /* ActionButton.swift */,
+				0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */,
+			);
+			name = DesignSystem;
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -673,6 +694,9 @@
 				2755D18E4ADF809F2F2A141B /* SquatsCounterModel.swift in Sources */,
 				9F82A69D754BA5EF1780CE29 /* SquatsView.swift in Sources */,
 				E08E186548D6D6C3977B2CFF /* SquatsViewController.swift in Sources */,
+				5D807EC576E751904FB59F59 /* Theme.swift in Sources */,
+				3E7EEF1A37EC561F804BCCD6 /* ActionButton.swift in Sources */,
+				CDE4DAC320719890EF68DD5C /* WorkoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +730,9 @@
 				191F880A9A2307C9FF42C62F /* SquatsCounterModel.swift in Sources */,
 				C21BBA774AAE21C7641DCD62 /* SquatsView.swift in Sources */,
 				F9D88B7ED22057DBA196BD3B /* SquatsViewController.swift in Sources */,
+				0AA9D44F74E8C80BA9AC21EE /* Theme.swift in Sources */,
+				BC22A29539BE0A8D6A510383 /* ActionButton.swift in Sources */,
+				48310C178ACB4151F0B77186 /* WorkoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
