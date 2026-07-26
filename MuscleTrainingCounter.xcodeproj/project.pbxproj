@@ -264,7 +264,6 @@
 				91208F814DE058E9C7077D2F /* BackExtensionView.swift */,
 				43D1E1C580CA6175EE4071C7 /* BackExtensionViewController.swift */,
 			);
-			name = BackExtension;
 			path = BackExtension;
 			sourceTree = "<group>";
 		};
@@ -275,7 +274,6 @@
 				C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */,
 				3B27732B62D7E1F5C6FC01F0 /* SquatsViewController.swift */,
 			);
-			name = Squats;
 			path = Squats;
 			sourceTree = "<group>";
 		};
@@ -447,7 +445,6 @@
 				E466523851ED2CA8C9C964B3 /* ActionButton.swift */,
 				0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */,
 			);
-			name = DesignSystem;
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
@@ -627,8 +624,8 @@
 			mainGroup = 4BD50E5A27D3B17D000A5A4F;
 			packageReferences = (
 				4B1280F827D5F129000890E2 /* XCRemoteSwiftPackageReference "ChartView" */,
-				141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */,
-				D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */,
+				141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */,
 			);
 			productRefGroup = 4BD50E6827D3B180000A5A4F /* Products */;
 			projectDirPath = "";
@@ -1105,7 +1102,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kanbe1365.MuscleTrainingCounter;
 				PRODUCT_NAME = MuscleTrainingCounter;
 				SDKROOT = iphoneos;
@@ -1139,7 +1136,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kanbe1365.MuscleTrainingCounter;
 				PRODUCT_NAME = MuscleTrainingCounter;
 				SDKROOT = iphoneos;
@@ -1360,7 +1357,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */ = {
+		141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
@@ -1376,7 +1373,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */ = {
+		D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git";
 			requirement = {
@@ -1389,7 +1386,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		155A8AFC704C5AEF1EE8856F /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */;
+			package = 141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
 		4B1280F927D5F129000890E2 /* SwiftUICharts */ = {
@@ -1399,7 +1396,7 @@
 		};
 		CE587473E29DA81B225C33FA /* GoogleUserMessagingPlatform */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */;
+			package = D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */;
 			productName = GoogleUserMessagingPlatform;
 		};
 /* End XCSwiftPackageProductDependency section */
