@@ -53,16 +53,17 @@ struct SumGraphView: View {
         }
     }
 
-    // MARK: - 縦向き：全体を統一間隔で並べ、上下に均等な余白
+    // MARK: - 縦向き：全体を統一間隔で並べ、上下の余白は上限付き（iPad で中央に凝縮しすぎないように）
     private var portraitLayout: some View {
         VStack(spacing: Theme.Spacing.lg) {
-            Spacer()
+            Spacer().frame(maxHeight: 40)
             trainingTitle
             spanPicker
             graph
             trainingIconBar
-            Spacer()
+            Spacer().frame(maxHeight: 40)
         }
+        .padding(.top, Theme.Spacing.md)
         .padding(.bottom, Theme.Spacing.lg)
     }
 

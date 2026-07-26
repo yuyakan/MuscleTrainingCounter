@@ -42,13 +42,16 @@ struct WorkoutScreen<Header: View, Counter: View, Controls: View, Revise: View>:
     // MARK: - 縦向き：ゆったり縦積み
     private var portraitLayout: some View {
         VStack(spacing: Theme.Spacing.lg) {
-            Spacer()
+            // Spacer に上限を設け、iPad など大画面で余白が広がりすぎないようにする。
+            // 上限が効くのは高さに余裕のある端末（iPad 等）だけで、iPhone では通常どおり伸縮する。
+            Spacer().frame(maxHeight: 48)
             header()
-            Spacer()
+            Spacer().frame(maxHeight: 100)
             counter()
-            Spacer()
+            Spacer().frame(maxHeight: 120)
             controls()
             revise()
+            Spacer().frame(maxHeight: 48)
         }
         .padding(.horizontal, Theme.Spacing.lg)
         .padding(.bottom, Theme.Spacing.lg)
