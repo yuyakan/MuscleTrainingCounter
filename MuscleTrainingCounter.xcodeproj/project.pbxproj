@@ -179,6 +179,7 @@
 		8088E62C7E12F01B7BFAC272 /* BackExtensionCounterModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackExtensionCounterModel.swift; sourceTree = "<group>"; };
 		860DF1D36013024BE13ACEDC /* SquatsCounterModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsCounterModel.swift; sourceTree = "<group>"; };
 		91208F814DE058E9C7077D2F /* BackExtensionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackExtensionView.swift; sourceTree = "<group>"; };
+		B213A6ACB6998839B4A9EC03 /* fr */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsView.swift; sourceTree = "<group>"; };
 		CD4332FAE3E5961A99FB700E /* fr */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D00F2896C5981038906410E2 /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -834,6 +835,7 @@
 				4BF15B432B1C6CB800D8D897 /* ru */,
 				4BF15B442B1C6CBE00D8D897 /* ko */,
 				4BF15B452B1C6CD600D8D897 /* pt-BR */,
+				B213A6ACB6998839B4A9EC03 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

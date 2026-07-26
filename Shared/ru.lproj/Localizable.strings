@@ -1,28 +1,22 @@
-/* 
+/*
   Localizable.strings
   MuscleTrainingCounter
-
-  Created by 上別縄祐也 on 2023/12/03.
-  
 */
-"Sit-ups" = "Приседания";
-"Charts" = "Графики";
+
+"Sit-ups" = "Пресс";
+"Charts" = "Статистика";
 "Push-ups" = "Отжимания";
-"BackExtension" = "позвоночник";
-"Squats" = "приседать";
-
-"Please connect to Airpods!" = "Пожалуйста, подключитесь к Airpods!";
+"BackExtension" = "Гиперэкстензия";
+"Squats" = "Приседания";
+"Please connect to Airpods!" = "Пожалуйста, подключите AirPods!";
 "Start when you are ready!" = "Начинайте, когда будете готовы!";
-"Measuring" = "Измерение";
-"Stop measurement" = "Остановить измерение";
-
-"1day" = "день";
-"1week" = "неделя";
-"1month" = "месяц";
-"Times" = "раз";
-"Total" = "Общий";
-
-"this week" = "1неделя";
-
+"Measuring" = "Идёт измерение";
+"Stop measurement" = "Стоп";
+"1day" = "День";
+"1week" = "Неделя";
+"1month" = "Месяц";
+"Times" = "Повт.";
+"Total" = "Итого";
+"this week" = "Эта неделя";
 "Target" = "Цель";
 "Adjust" = "Правка";

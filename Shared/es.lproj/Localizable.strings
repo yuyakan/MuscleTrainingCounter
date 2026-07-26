@@ -1,28 +1,22 @@
-/* 
+/*
   Localizable.strings
   MuscleTrainingCounter
-
-  Created by 上別縄祐也 on 2023/12/03.
-  
 */
+
 "Sit-ups" = "Abdominales";
-"Charts" = "Gráficos";
-"Push-ups" = "Lagartijas";
-"BackExtension" = "Espalda";
+"Charts" = "Estadísticas";
+"Push-ups" = "Flexiones";
+"BackExtension" = "Extensiones de espalda";
 "Squats" = "Sentadillas";
-
-"Please connect to Airpods!" = "¡Conéctate a los Airpods!";
+"Please connect to Airpods!" = "¡Conecta tus AirPods!";
 "Start when you are ready!" = "¡Empieza cuando estés listo!";
-"Measuring" = "Detener la medición";
-"Stop measurement" = "Stop measurement";
-
-"1day" = "día";
-"1week" = "semana";
-"1month" = "mes";
-"Times" = "numero de veces";
+"Measuring" = "Midiendo";
+"Stop measurement" = "Detener";
+"1day" = "Día";
+"1week" = "Semana";
+"1month" = "Mes";
+"Times" = "Reps";
 "Total" = "Total";
-
-"this week" = "1semana";
-
+"this week" = "Esta semana";
 "Target" = "Objetivo";
 "Adjust" = "Ajustar";
