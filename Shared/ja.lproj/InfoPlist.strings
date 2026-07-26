@@ -1,0 +1,2 @@
+/* App Tracking Transparency の許可ダイアログに表示する説明文 */
+"NSUserTrackingUsageDescription" = "あなたに関連性の高い広告を表示するために使用します。";
