@@ -71,52 +71,9 @@ class BackExtensionViewController: UIViewController, CMHeadphoneMotionManagerDel
     
     let UD = UserDefaults.standard
     func saveDate(){
+        // 今日の日付キーへ回数を加算する（日・週・月は日次データから集計）。
+        WorkoutLogStore.shared.addCount(backExtensionCounterModel.counter, to: .back)
         self.counter = "0"
-        
-        let date = Date()
-        
-        var dayCountFlag = Bool()
-        var weekCountFlag = Bool()
-        var monthCountFlag = Bool()
-        
-        var elapsedDays = 0
-        var elapsedWeeks = 0
-        var elapsedMonthes = 0
-        
-        if UD.object(forKey: "today_b") == nil {
-            dayCountFlag = true
-            weekCountFlag = true
-            monthCountFlag = true
-            
-            UD.set(date, forKey: "today_b")
-         }
-         else {
-             
-             let now = Date()
-             let past = UD.object(forKey: "today_b") as! Date
-             
-             let thisWeek = backExtensionCounterModel.getWeekStart(date: date)
-             let pastWeek = backExtensionCounterModel.getWeekStart(date: past)
-             
-             let thisMonth = Calendar.current.component(.month, from: now)
-             let pastMonth = Calendar.current.component(.month, from: past)
-             
-             let thisYear = Calendar.current.component(.year, from: now)
-             let pastYear = Calendar.current.component(.year, from: past)
-             
-             dayCountFlag = backExtensionCounterModel.comparePastNow(now: now, past: past, elapsedNumber: &elapsedDays)
-             weekCountFlag = backExtensionCounterModel.comparePastNow(now: thisWeek, past: pastWeek, elapsedNumber: &elapsedWeeks)
-             monthCountFlag = backExtensionCounterModel.comparePastNowMonth(thisMonth: thisMonth, pastMonth: pastMonth, thisYear: thisYear, pastYear: pastYear, elapsedNumber: &elapsedMonthes)
-     
-             UD.set(date, forKey: "today_b")
-         }
-        
-        backExtensionCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_b", elapsedNumber: elapsedDays, saveLength: 7)
-
-        backExtensionCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_b", elapsedNumber: elapsedWeeks, saveLength: 4)
-
-        backExtensionCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_b", elapsedNumber: elapsedMonthes, saveLength: 6)
-        
         backExtensionCounterModel.counter = 0
     }
 }

@@ -46,11 +46,9 @@ struct SumGraphView: View {
             }
         }
         .tint(Theme.Colors.primary)
-        .onAppear() {
-            sumGraphViewModel.calcDay()
-            sumGraphViewModel.calcWeek()
-            sumGraphViewModel.calcMonth()
-        }
+        // 種目・期間を切り替えたらページ位置を最新に戻す。
+        .onChange(of: pickerSelection) { _ in sumGraphViewModel.pageOffset = 0 }
+        .onChange(of: pickerSelection2) { _ in sumGraphViewModel.pageOffset = 0 }
     }
 
     // MARK: - 縦向き：全体を統一間隔で並べ、上下の余白は上限付き（iPad で中央に凝縮しすぎないように）
@@ -60,6 +58,7 @@ struct SumGraphView: View {
             trainingTitle
             spanPicker
             graph
+            pageNavigationBar
             trainingIconBar
             Spacer().frame(maxHeight: 40)
         }
@@ -91,10 +90,18 @@ struct SumGraphView: View {
                 // グラフ（主役・縦いっぱい）
                 graphView.chart
                     .frame(maxHeight: .infinity)
-                    .id("\(pickerSelection)-\(pickerSelection2)")
+                    .id("\(pickerSelection)-\(pickerSelection2)-\(sumGraphViewModel.pageOffset)")
+                    .gesture(
+                        DragGesture(minimumDistance: 30)
+                            .onEnded { value in
+                                if value.translation.width < -40 { goOlder() }
+                                else if value.translation.width > 40 { goNewer() }
+                            }
+                    )
 
-                // 下部バー：期間切替 + 目標
+                // 下部バー：ページナビ + 期間切替 + 目標
                 HStack(spacing: Theme.Spacing.lg) {
+                    pageNavigationBar
                     spanPicker
                     Spacer()
                     graphView.targetRow
@@ -163,9 +170,61 @@ struct SumGraphView: View {
     }
 
     private var graph: some View {
-        // 種目・期間の組み合わせごとに GraphView を作り直す（init で値を確定させるため id を付与）
+        // 種目・期間・ページ位置の組み合わせごとに GraphView を作り直す（init で値を確定させるため id を付与）
         GraphView(sumGraghViewModel: sumGraphViewModel, spanType: selectedSpanType, traingType: selectedTrainingType)
-            .id("\(pickerSelection)-\(pickerSelection2)")
+            .id("\(pickerSelection)-\(pickerSelection2)-\(sumGraphViewModel.pageOffset)")
+            .gesture(
+                DragGesture(minimumDistance: 30)
+                    .onEnded { value in
+                        if value.translation.width < -40 {
+                            goOlder()          // 右→左スワイプで過去へ
+                        } else if value.translation.width > 40 {
+                            goNewer()          // 左→右スワイプで最新へ
+                        }
+                    }
+            )
+    }
+
+    // 現在表示中の集計（ページナビの状態判定・期間タイトルに使う）
+    private var currentSeries: WorkoutSeries {
+        sumGraphViewModel.series(type: selectedTrainingType, span: selectedSpanType)
+    }
+
+    private func goOlder() {
+        if currentSeries.hasOlderData {
+            sumGraphViewModel.pageOffset -= 1
+        }
+    }
+
+    private func goNewer() {
+        if sumGraphViewModel.pageOffset < 0 {
+            sumGraphViewModel.pageOffset += 1
+        }
+    }
+
+    // ページ送りナビ（‹ 期間ラベル ›）
+    private var pageNavigationBar: some View {
+        HStack(spacing: Theme.Spacing.lg) {
+            Button(action: goOlder) {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+            }
+            .disabled(!currentSeries.hasOlderData)
+            .opacity(currentSeries.hasOlderData ? 1 : 0.3)
+
+            Text(currentSeries.rangeTitle)
+                .font(Theme.Typography.caption)
+                .foregroundColor(Theme.Colors.textSecondary)
+                .frame(minWidth: 140)
+
+            Button(action: goNewer) {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 18, weight: .semibold))
+            }
+            .disabled(sumGraphViewModel.pageOffset >= 0)
+            .opacity(sumGraphViewModel.pageOffset < 0 ? 1 : 0.3)
+        }
+        .foregroundColor(Theme.Colors.primary)
     }
 }
 

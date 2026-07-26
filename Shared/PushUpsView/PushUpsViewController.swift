@@ -70,54 +70,9 @@ class PushUpsViewController: UIViewController, CMHeadphoneMotionManagerDelegate,
     
     
     func saveDate(){
-        let UD = UserDefaults.standard
+        // 今日の日付キーへ回数を加算する（日・週・月は日次データから集計）。
+        WorkoutLogStore.shared.addCount(pushUpsCounterModel.counter, to: .push)
         self.counter = "0"
-        
-        let date = Date()
-        
-        var dayCountFlag = Bool()
-        var weekCountFlag = Bool()
-        var monthCountFlag = Bool()
-        
-        var elapsedDays = 0
-        var elapsedWeeks = 0
-        var elapsedMonthes = 0
-
-        if UD.object(forKey: "today_p") == nil {
-            dayCountFlag = true
-            weekCountFlag = true
-            monthCountFlag = true
-            
-            UD.set(date, forKey: "today_p")
-         }
-         else {
-             
-             
-             let now = Date()
-             let past = UD.object(forKey: "today_p") as! Date
-             
-             let thisWeek = pushUpsCounterModel.getWeekStart(date: date)
-             let pastWeek = pushUpsCounterModel.getWeekStart(date: past)
-             
-             let thisMonth = Calendar.current.component(.month, from: now)
-             let pastMonth = Calendar.current.component(.month, from: past)
-             
-             let thisYear = Calendar.current.component(.year, from: now)
-             let pastYear = Calendar.current.component(.year, from: past)
-             
-             dayCountFlag = pushUpsCounterModel.comparePastNow(now: now, past: past, elapsedNumber: &elapsedDays)
-             weekCountFlag = pushUpsCounterModel.comparePastNow(now: thisWeek, past: pastWeek, elapsedNumber: &elapsedWeeks)
-             monthCountFlag = pushUpsCounterModel.comparePastNowMonth(thisMonth: thisMonth, pastMonth: pastMonth, thisYear: thisYear, pastYear: pastYear, elapsedNumber: &elapsedMonthes)
-             
-             UD.set(date, forKey: "today_p")
-         }
-        
-        pushUpsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_p", elapsedNumber: elapsedDays, saveLength: 7)
-        
-        pushUpsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_p", elapsedNumber: elapsedWeeks, saveLength: 4)
-        
-        pushUpsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_p", elapsedNumber: elapsedMonthes, saveLength: 6)
-        
         pushUpsCounterModel.counter = 0
     }
 }

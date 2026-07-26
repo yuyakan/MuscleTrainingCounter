@@ -45,40 +45,20 @@ final class PushUpsCounterModel {
         minusCountFlag = false
     }
     
+    // now と past の「日数差」を正しく求める（暦をまたいでも正確）。
+    // 週の判定でも使うため、呼び出し側で必要に応じて 7 で割って週数に変換する。
     func comparePastNow(now: Date, past: Date, elapsedNumber: inout Int) -> Bool {
-        var countFlag = false
         let calendar = Calendar.current
-        
-        let year = calendar.component(.year, from: now)
-        let month = calendar.component(.month, from: now)
-        let day = calendar.component(.day, from: now)
-        
-        let pastYear = calendar.component(.year, from: past)
-        let pastMonth = calendar.component(.month, from: past)
-        let pastDay = calendar.component(.day, from: past)
-        
-        elapsedNumber = (year * 365 + month * 30 + day) - (pastYear * 365 + pastMonth * 30 + pastDay)
-        
-        if elapsedNumber > 0 {
-            countFlag = true
-        }
-        else {
-            countFlag = false
-        }
-        return countFlag
+        let startNow = calendar.startOfDay(for: now)
+        let startPast = calendar.startOfDay(for: past)
+        elapsedNumber = calendar.dateComponents([.day], from: startPast, to: startNow).day ?? 0
+        return elapsedNumber > 0
     }
     
     func comparePastNowMonth(thisMonth: Int, pastMonth: Int, thisYear: Int, pastYear: Int, elapsedNumber: inout Int) -> Bool {
-        var countFlag = false
-        
-        if thisMonth != pastMonth || thisYear != pastYear {
-            countFlag = true
-            elapsedNumber = (thisMonth - pastYear) + (thisYear - thisMonth) * 12
-        }
-        else {
-            countFlag = false
-        }
-        return countFlag
+        // 経過月数 = 年差×12 + 月差。月または年が変わっていれば期間が変わったとみなす。
+        elapsedNumber = (thisYear - pastYear) * 12 + (thisMonth - pastMonth)
+        return elapsedNumber > 0
     }
     
     func getWeekStart(date: Date) -> Date {

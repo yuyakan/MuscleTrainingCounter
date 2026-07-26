@@ -14,6 +14,7 @@
 		2755D18E4ADF809F2F2A141B /* SquatsCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DF1D36013024BE13ACEDC /* SquatsCounterModel.swift */; };
 		294A9777F5788FED94A539DD /* BackExtensionCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E62C7E12F01B7BFAC272 /* BackExtensionCounterModel.swift */; };
 		2D533051B2D66BFF0A3C48B5 /* BackExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E1C580CA6175EE4071C7 /* BackExtensionViewController.swift */; };
+		39B236727FA3BC037EF584B4 /* WorkoutLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F1ED6769BC61117CFF55 /* WorkoutLogStore.swift */; };
 		3E7EEF1A37EC561F804BCCD6 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466523851ED2CA8C9C964B3 /* ActionButton.swift */; };
 		48310C178ACB4151F0B77186 /* WorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561EC0F7E6CC3CB13F6375D /* WorkoutScreen.swift */; };
 		4B1280FA27D5F129000890E2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1280F927D5F129000890E2 /* SwiftUICharts */; };
@@ -73,6 +74,7 @@
 		94AC33640D88090BFE80D349 /* GoogleUserMessagingPlatform in Frameworks */ = {isa = PBXBuildFile; productRef = CE587473E29DA81B225C33FA /* GoogleUserMessagingPlatform */; };
 		9F82A69D754BA5EF1780CE29 /* SquatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */; };
 		B8DEA79F76EA8EF4DCB1DACB /* BackExtensionCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E62C7E12F01B7BFAC272 /* BackExtensionCounterModel.swift */; };
+		B9C0CD7F21C6752E55E7A4BF /* WorkoutLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F1ED6769BC61117CFF55 /* WorkoutLogStore.swift */; };
 		BC22A29539BE0A8D6A510383 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466523851ED2CA8C9C964B3 /* ActionButton.swift */; };
 		C21BBA774AAE21C7641DCD62 /* SquatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0A39310A85D0516F6CCD2 /* SquatsView.swift */; };
 		C4676A225B5C48E0DE9E4E8D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 184435E00383BA3DC8FACA0F /* InfoPlist.strings */; };
@@ -134,6 +136,7 @@
 		32610D5AD87391B3EA85EA90 /* pt-PT */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		381B048D12C29D0B6A95BA36 /* hi */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B27732B62D7E1F5C6FC01F0 /* SquatsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquatsViewController.swift; sourceTree = "<group>"; };
+		3BF7F1ED6769BC61117CFF55 /* WorkoutLogStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLogStore.swift; sourceTree = "<group>"; };
 		3CFBC71F121A74223299D8F2 /* zh-Hant */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		41D679E1F9434D20E8C27FA6 /* tr */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4316AE3EB1C1D60F124C36A3 /* th */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 				4BBF1AEC2B1E4E780083B2CA /* GraphView.swift */,
 				4BBF1AEF2B1E51760083B2CA /* SpanType.swift */,
 				4BBF1AF22B1E53DD0083B2CA /* TrainingType.swift */,
+				3BF7F1ED6769BC61117CFF55 /* WorkoutLogStore.swift */,
 			);
 			path = GraphView;
 			sourceTree = "<group>";
@@ -624,8 +628,8 @@
 			mainGroup = 4BD50E5A27D3B17D000A5A4F;
 			packageReferences = (
 				4B1280F827D5F129000890E2 /* XCRemoteSwiftPackageReference "ChartView" */,
-				141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
-				D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */,
+				141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */,
+				D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */,
 			);
 			productRefGroup = 4BD50E6827D3B180000A5A4F /* Products */;
 			projectDirPath = "";
@@ -744,6 +748,7 @@
 				3E7EEF1A37EC561F804BCCD6 /* ActionButton.swift in Sources */,
 				CDE4DAC320719890EF68DD5C /* WorkoutScreen.swift in Sources */,
 				6FFC7EA6D013B4158B9CE80A /* ConsentManager.swift in Sources */,
+				39B236727FA3BC037EF584B4 /* WorkoutLogStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +785,7 @@
 				0AA9D44F74E8C80BA9AC21EE /* Theme.swift in Sources */,
 				BC22A29539BE0A8D6A510383 /* ActionButton.swift in Sources */,
 				48310C178ACB4151F0B77186 /* WorkoutScreen.swift in Sources */,
+				B9C0CD7F21C6752E55E7A4BF /* WorkoutLogStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,7 +1363,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
@@ -1373,7 +1379,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */ = {
+		D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git";
 			requirement = {
@@ -1386,7 +1392,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		155A8AFC704C5AEF1EE8856F /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = 141F9B59D9ADB7B1F6D96E23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads.git" */;
 			productName = GoogleMobileAds;
 		};
 		4B1280F927D5F129000890E2 /* SwiftUICharts */ = {
@@ -1396,7 +1402,7 @@
 		};
 		CE587473E29DA81B225C33FA /* GoogleUserMessagingPlatform */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */;
+			package = D66D9F4EED42B0BF96F4462E /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform.git" */;
 			productName = GoogleUserMessagingPlatform;
 		};
 /* End XCSwiftPackageProductDependency section */

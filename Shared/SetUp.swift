@@ -47,6 +47,9 @@ func setup(){
     ensureInt(100, forKey: "targetSquatWeekCount")
     ensureInt(300, forKey: "targetBackMonthCount")
     ensureInt(300, forKey: "targetSquatMonthCount")
+
+    // 旧配列データを日付キー辞書へ一度だけ移行する（既存ユーザーの直近データを引き継ぐ）。
+    WorkoutLogStore.shared.migrateLegacyArraysIfNeeded()
 }
 
 /// キーが未設定のときだけ配列の初期値を設定する。

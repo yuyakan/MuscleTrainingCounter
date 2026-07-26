@@ -58,55 +58,9 @@ class SquatsViewController: UIViewController, CMHeadphoneMotionManagerDelegate, 
     }
     
     func saveDate(){
-        let UD = UserDefaults.standard
+        // 今日の日付キーへ回数を加算する（日・週・月は日次データから集計）。
+        WorkoutLogStore.shared.addCount(squatsCounterModel.counter, to: .squat)
         self.counter = "0"
-        
-        let date = Date()
-        
-        var dayCountFlag = Bool()
-        var weekCountFlag = Bool()
-        var monthCountFlag = Bool()
-        
-        var elapsedDays = 0
-        var elapsedWeeks = 0
-        var elapsedMonthes = 0
-
-        if UD.object(forKey: "today_s") == nil {
-            dayCountFlag = true
-            weekCountFlag = true
-            monthCountFlag = true
-            
-            UD.set(date, forKey: "today_s")
-         }
-         else {
-             
-             
-             let now = Date()
-             let past = UD.object(forKey: "today_s") as! Date
-             
-             let thisWeek = squatsCounterModel.getWeekStart(date: date)
-             let pastWeek = squatsCounterModel.getWeekStart(date: past)
-             
-             let thisMonth = Calendar.current.component(.month, from: now)
-             let pastMonth = Calendar.current.component(.month, from: past)
-             
-             let thisYear = Calendar.current.component(.year, from: now)
-             let pastYear = Calendar.current.component(.year, from: past)
-             
-             dayCountFlag = squatsCounterModel.comparePastNow(now: now, past: past, elapsedNumber: &elapsedDays)
-             weekCountFlag = squatsCounterModel.comparePastNow(now: thisWeek, past: pastWeek, elapsedNumber: &elapsedWeeks)
-             monthCountFlag = squatsCounterModel.comparePastNowMonth(thisMonth: thisMonth, pastMonth: pastMonth, thisYear: thisYear, pastYear: pastYear, elapsedNumber: &elapsedMonthes)
-     
-             UD.set(date, forKey: "today_s")
-         }
-        
-
-        squatsCounterModel.graphCountSave(countFlag: &dayCountFlag, numArray: "NumArray_s", elapsedNumber: elapsedDays, saveLength: 7)
-
-        squatsCounterModel.graphCountSave(countFlag: &weekCountFlag, numArray: "NumArray_w_s", elapsedNumber: elapsedWeeks, saveLength: 4)
-
-        squatsCounterModel.graphCountSave(countFlag: &monthCountFlag, numArray: "NumArray_m_s", elapsedNumber: elapsedMonthes, saveLength: 6)
-        
         squatsCounterModel.counter = 0
     }
 }
