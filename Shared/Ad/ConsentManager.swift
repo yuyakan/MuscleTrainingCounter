@@ -28,18 +28,14 @@ final class ConsentManager {
 
         ConsentInformation.shared.requestConsentInfoUpdate(with: parameters) { [weak self] error in
             guard let self else { return }
-            if let error {
-                print("UMP: 同意情報の更新に失敗: \(error.localizedDescription)")
+            if error != nil {
                 // 更新に失敗しても、非パーソナライズ広告のため AdMob は開始する。
                 self.requestATTThenStartAds()
                 return
             }
 
             // 必要であれば同意フォームを表示する。
-            ConsentForm.loadAndPresentIfRequired(from: nil) { formError in
-                if let formError {
-                    print("UMP: 同意フォームの表示に失敗: \(formError.localizedDescription)")
-                }
+            ConsentForm.loadAndPresentIfRequired(from: nil) { _ in
                 // UMP 完了後に ATT を要求し、AdMob を開始する。
                 self.requestATTThenStartAds()
             }
@@ -50,15 +46,7 @@ final class ConsentManager {
     private func requestATTThenStartAds() {
         // ATT ダイアログはフォアグラウンドで表示する必要があるため少し待つ。
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                    print("ATT: 許可")
-                case .denied, .restricted, .notDetermined:
-                    print("ATT: 非許可")
-                @unknown default:
-                    break
-                }
+            ATTrackingManager.requestTrackingAuthorization { _ in
                 // 許可・非許可にかかわらず AdMob を開始する（非許可時は非パーソナライズ広告）。
                 DispatchQueue.main.async {
                     MobileAds.shared.start(completionHandler: nil)
