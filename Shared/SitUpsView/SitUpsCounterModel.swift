@@ -20,52 +20,38 @@ final class SitUpsCounterModel {
     
     var rotatePlusCountFlag = true
     var rotateMinusCountFlag = false
-    
-    
+
+    // 起き上がりを検出したか。カウント確定はこのフラグが立っている時のみ許可し、
+    // 1回の腹筋（起き上がり→倒れる）で1カウントを保証する（2重カウント防止）。
+    var didSitUp = false
+
     func countCalculation(data: CMDeviceMotion) {
         let x = data.rotationRate.x
-        let y = data.userAcceleration.y
-        
-        if ( x > 0.0 && rotatePlusCountFlag == true){
-            sumPlusRotationRate += x
-        }else if(x < 0.0 && rotateMinusCountFlag == true){
-            sumMinusRotationRate += x
-        }
-        
-        if (y > 0.0 && accelPlusCountFlag == true){
-            sumPlusAcceleration += y
-        }else if(y < 0.0 && accelMinusCountFlag == true){
-            sumMinusAcceleration += y
-        }
-        
-        
-        if ((sumPlusRotationRate > 15.0)){
-            rotateMinusCountFlag = true
-            rotatePlusCountFlag = false
-            
-            sumMinusRotationRate = 0.0
-            sumPlusRotationRate = 0.0
-        }
-        if (sumMinusAcceleration < -1.5){
-            accelMinusCountFlag = false
-            accelPlusCountFlag = true
-            
-            sumMinusAcceleration = 0.0
-            sumPlusAcceleration = 0.0
-        }
-        
-        if ((sumMinusRotationRate < -15) || (sumPlusAcceleration > 0.7)){
-            accelPlusCountFlag = false
-            accelMinusCountFlag = true
-            rotatePlusCountFlag = true
-            rotateMinusCountFlag = false
-            
-            sumPlusRotationRate = 0.0
-            sumMinusRotationRate = 0.0
-            sumPlusAcceleration = 0.0
-            sumMinusAcceleration = 0.0
-            
-            counter += 1
+
+        // 頭部の回転は、起き上がりが −方向 / 倒れが +方向。
+        // didSitUp が false のとき（＝まだ倒れている）は起き上がりを、
+        // true のとき（＝起き上がり済み）は倒れを検出する。
+        if !didSitUp {
+            if x < 0.0 {
+                sumMinusRotationRate += x
+            }
+            // 起き上がりを検出 → ここで 1 回カウントする。戻る動作ではカウントしない。
+            if sumMinusRotationRate < -15.0 {
+                didSitUp = true
+                sumPlusRotationRate = 0.0
+                sumMinusRotationRate = 0.0
+                counter += 1
+            }
+        } else {
+            if x > 0.0 {
+                sumPlusRotationRate += x
+            }
+            // 倒れを検出 → カウントせず、次の起き上がりを受け付けられる状態に戻す。
+            if sumPlusRotationRate > 15.0 {
+                didSitUp = false
+                sumPlusRotationRate = 0.0
+                sumMinusRotationRate = 0.0
+            }
         }
     }
     
@@ -78,6 +64,7 @@ final class SitUpsCounterModel {
         accelMinusCountFlag = true
         rotatePlusCountFlag = true
         rotateMinusCountFlag = false
+        didSitUp = false
     }
     
     
