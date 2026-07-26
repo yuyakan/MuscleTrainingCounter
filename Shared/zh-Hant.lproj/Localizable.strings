@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "仰臥起坐";
+"Charts" = "統計";
+"Push-ups" = "伏地挺身";
+"BackExtension" = "背部伸展";
+"Squats" = "深蹲";
+"Please connect to Airpods!" = "請連接 AirPods！";
+"Start when you are ready!" = "準備好後開始！";
+"Measuring" = "測量中";
+"Stop measurement" = "停止";
+"1day" = "天";
+"1week" = "週";
+"1month" = "月";
+"Times" = "次數";
+"Total" = "總計";
+"this week" = "本週";
+"Target" = "目標";
+"Adjust" = "校正";

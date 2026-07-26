@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "Sit-ups";
+"Charts" = "Statistieken";
+"Push-ups" = "Push-ups";
+"BackExtension" = "Rugstrekkingen";
+"Squats" = "Squats";
+"Please connect to Airpods!" = "Verbind je AirPods!";
+"Start when you are ready!" = "Begin wanneer je klaar bent!";
+"Measuring" = "Meten";
+"Stop measurement" = "Stop";
+"1day" = "Dag";
+"1week" = "Week";
+"1month" = "Maand";
+"Times" = "Herh.";
+"Total" = "Totaal";
+"this week" = "Deze week";
+"Target" = "Doel";
+"Adjust" = "Aanpassen";

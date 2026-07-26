@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "सिट-अप्स";
+"Charts" = "आँकड़े";
+"Push-ups" = "पुश-अप्स";
+"BackExtension" = "बैक एक्सटेंशन";
+"Squats" = "स्क्वाट्स";
+"Please connect to Airpods!" = "कृपया अपने AirPods कनेक्ट करें!";
+"Start when you are ready!" = "तैयार होने पर शुरू करें!";
+"Measuring" = "मापा जा रहा है";
+"Stop measurement" = "रोकें";
+"1day" = "दिन";
+"1week" = "सप्ताह";
+"1month" = "महीना";
+"Times" = "बार";
+"Total" = "कुल";
+"this week" = "इस सप्ताह";
+"Target" = "लक्ष्य";
+"Adjust" = "समायोजित करें";

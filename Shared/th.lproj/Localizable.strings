@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "ซิทอัพ";
+"Charts" = "สถิติ";
+"Push-ups" = "วิดพื้น";
+"BackExtension" = "บริหารหลัง";
+"Squats" = "สควอต";
+"Please connect to Airpods!" = "โปรดเชื่อมต่อ AirPods!";
+"Start when you are ready!" = "เริ่มเมื่อคุณพร้อม!";
+"Measuring" = "กำลังวัด";
+"Stop measurement" = "หยุด";
+"1day" = "วัน";
+"1week" = "สัปดาห์";
+"1month" = "เดือน";
+"Times" = "ครั้ง";
+"Total" = "รวม";
+"this week" = "สัปดาห์นี้";
+"Target" = "เป้าหมาย";
+"Adjust" = "ปรับ";

@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "Mekik";
+"Charts" = "İstatistikler";
+"Push-ups" = "Şınav";
+"BackExtension" = "Sırt egzersizi";
+"Squats" = "Squat";
+"Please connect to Airpods!" = "Lütfen AirPods'unuzu bağlayın!";
+"Start when you are ready!" = "Hazır olduğunuzda başlayın!";
+"Measuring" = "Ölçülüyor";
+"Stop measurement" = "Durdur";
+"1day" = "Gün";
+"1week" = "Hafta";
+"1month" = "Ay";
+"Times" = "Tekrar";
+"Total" = "Toplam";
+"this week" = "Bu hafta";
+"Target" = "Hedef";
+"Adjust" = "Ayarla";

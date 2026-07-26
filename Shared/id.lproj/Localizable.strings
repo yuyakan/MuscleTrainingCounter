@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  MuscleTrainingCounter
+*/
+
+"Sit-ups" = "Sit-up";
+"Charts" = "Statistik";
+"Push-ups" = "Push-up";
+"BackExtension" = "Ekstensi punggung";
+"Squats" = "Squat";
+"Please connect to Airpods!" = "Hubungkan AirPods Anda!";
+"Start when you are ready!" = "Mulai saat Anda siap!";
+"Measuring" = "Mengukur";
+"Stop measurement" = "Berhenti";
+"1day" = "Hari";
+"1week" = "Minggu";
+"1month" = "Bulan";
+"Times" = "Repetisi";
+"Total" = "Total";
+"this week" = "Minggu ini";
+"Target" = "Target";
+"Adjust" = "Sesuaikan";
