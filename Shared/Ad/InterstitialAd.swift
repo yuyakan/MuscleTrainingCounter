@@ -14,6 +14,10 @@ class Interstitial: NSObject, FullScreenContentDelegate, ObservableObject {
 
     var interstitialAd: InterstitialAd?
 
+    // 広告のクールダウン。前回表示から this 秒間は再表示しない。
+    private let adCooldown: TimeInterval = 60
+    private let lastAdShownKey = "lastInterstitialShownAt"
+
     override init() {
         super.init()
     }
@@ -44,13 +48,22 @@ class Interstitial: NSObject, FullScreenContentDelegate, ObservableObject {
         } else {
             UserDefaults.standard.set(0, forKey: "saveCount")
         }
-        
+
+        // 前回の広告表示から adCooldown 秒以内なら、この回は見送る（次の対象回まで待つ）。
+        let lastShown = UserDefaults.standard.double(forKey: lastAdShownKey)
+        if lastShown > 0, Date().timeIntervalSince1970 - lastShown < adCooldown {
+            print("⏳: クールダウン中のため広告をスキップしました")
+            return
+        }
+
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         let root = windowScenes?.keyWindow?.rootViewController
         if let ad = interstitialAd {
             ad.present(from: root!)
             self.interstitialAdLoaded = false
+            // 表示できたので時刻を記録する。
+            UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: lastAdShownKey)
         } else {
             print("😭: 広告の準備ができていませんでした")
             self.interstitialAdLoaded = false
